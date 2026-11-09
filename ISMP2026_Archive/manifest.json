@@ -8,273 +8,9 @@
       "children": [
         {
           "type": "folder",
-          "id": "day-114",
-          "label": "11월 4일",
+          "id": "session-headline",
+          "label": "Plenary Speech and Keynote",
           "children": [
-            {
-              "type": "pdf",
-              "id": "T01",
-              "label": "솔더 레지스트의 물성 예측과 공정창 설계",
-              "file": "T01.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T01.pdf",
-              "pageCount": 14,
-              "topics": [
-                "Substrate",
-                "Packaging Materials",
-                "Warpage",
-                "AI / Simulation"
-              ],
-              "summary": "Kaede Ameyama · TAIYO HOLDINGS\nProcess Window Design Framework for Packaging Materials with Physics-Informed Property Prediction Models\n1. 노광, 현상, 후경화 조건이 솔더 레지스트의 패턴과 점탄성에 함께 영향을 준다. 재료 선택과 공정 조건을 동시에 탐색하는 물리 기반 예측 프레임워크를 제시했다.\n2. 일반화 Maxwell 모델을 바탕으로 DMA 응답을 물리 파라미터로 압축하고, 조건별 물성 예측과 재구성을 연결했다. 발표에는 83개 시편의 420차원 데이터를 5개 파라미터로 표현한 사례가 나온다.\n3. CTE, Tg와 비아 상·중·하부 형상을 별도로 예측한 뒤 목표 패턴과 열기계 특성에 맞는 공정창을 제안했다. 점탄성 완화와 CTE의 상충관계를 Pareto 해로 다뤘다.\n4. 발표 사례에서 제안 조건 A의 휨 해석값은 기준 대비 약 50% 감소했고, 시제품 조건 탐색 부담은 약 75% 감소했다고 설명했다. 휨 감소는 해석 결과이며 일반적인 실측 개선율로 확대할 수 없다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "TAIYO HOLDINGS",
-              "presenter": "Kaede Ameyama",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "솔더 레지스트는 배선 위에 남는 영구 절연층이다. 단순히 패턴이 잘 형성되는지만 볼 수 없고, 경화 후 재료가 열을 받을 때 얼마나 팽창하고 응력을 얼마나 완화하는지도 기판 신뢰성과 연결된다. 같은 재료라도 노광·현상·후경화 조건이 달라지면 비아 단면과 가교 구조가 함께 달라지기 때문에 재료와 공정을 따로 최적화하기 어렵다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "발표의 핵심은 DMA (Dynamic Mechanical Analysis)로 측정한 온도·주파수별 점탄성 응답을 물리적으로 해석 가능한 저차원 변수로 바꾸는 것이다. 일반화 Maxwell 모델은 서로 다른 완화시간을 갖는 요소의 합으로 응력 이완을 표현한다. 이를 Prony 급수로 나타내면 완화계수와 완화시간이 재료의 시간 의존성을 설명하는 입력이 된다. 완화탄성률을 G(t)=G∞+ΣGi·exp(−t/τi)로 표현하면 Gi는 각 요소의 기여, τi는 응력이 완화되는 시간 척도를 나타낸다.",
-                    "420차원 응답을 그대로 회귀하는 대신 Prony 파라미터 분포를 skew-normal distribution으로 근사해 5개 물리 변수로 압축한다. Encoder는 원래 응답을 이 변수로 바꾸고, decoder는 변수에서 DMA 응답을 복원한다. 여기에 재료의 흡광 특성과 공정 조건으로 물리 변수를 예측하는 모델을 연결해, 실험하지 않은 조건의 물성까지 재구성한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "열기계 모델은 Tg (Glass Transition Temperature) 전후의 CTE (Coefficient of Thermal Expansion)와 점탄성 완화 거동을 예측하고, 패턴 모델은 비아 단면의 상부·중부·하부 치수를 예측한다. 두 모델을 함께 사용해 목표 테이퍼와 물성 조건을 만족하는 노광량·현상시간·경화 조건의 영역을 찾는다. 목표값 하나를 맞추는 회귀에서 여러 제약을 동시에 만족하는 공정창 탐색으로 확장한 것이다.",
-                    "휨을 줄이는 방향은 별도의 FEA (Finite Element Analysis)로 확인했다. 20→260→20 °C 열이력에서 완화 특성과 Tg 위의 CTE를 바꾸어 민감도를 비교하고, 응력 완화는 크게 하면서 CTE는 작게 만드는 Pareto 조건을 선택했다. 따라서 예측 물성이 좋아 보인다는 이유만으로 조건을 선택하지 않고 패키지 구조의 응답까지 연결한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "노광, 현상, 후경화 조건이 솔더 레지스트의 패턴과 점탄성에 함께 영향을 준다. 재료 선택과 공정 조건을 동시에 탐색하는 물리 기반 예측 프레임워크를 제시했다.",
-                    "일반화 Maxwell 모델을 바탕으로 DMA 응답을 물리 파라미터로 압축하고, 조건별 물성 예측과 재구성을 연결했다. 발표에는 83개 시편의 420차원 데이터를 5개 파라미터로 표현한 사례가 나온다.",
-                    "CTE, Tg와 비아 상·중·하부 형상을 별도로 예측한 뒤 목표 패턴과 열기계 특성에 맞는 공정창을 제안했다. 점탄성 완화와 CTE의 상충관계를 Pareto 해로 다뤘다.",
-                    "발표 사례에서 제안 조건 A의 휨 해석값은 기준 대비 약 50% 감소했고, 시제품 조건 탐색 부담은 약 75% 감소했다고 설명했다. 휨 감소는 해석 결과이며 일반적인 실측 개선율로 확대할 수 없다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "이 접근은 모든 재료를 설명하는 범용식이라기보다 실험 데이터와 물리 모델을 결합한 공정 설계 체계다. 재료 변경, 노광 장비 변경 또는 경화 조건의 범위를 넓힐 때에는 물성 복원 정확도와 패턴 예측 정확도를 각각 확인해야 한다. 발표가 제시한 약 50% 휨 감소는 해당 조건의 해석 결과로 읽어야 하며, 공정 탐색 부담 감소와 같은 제조 효율 지표와 구분하는 것이 적절하다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "DMA",
-                  "full": "Dynamic Mechanical Analysis"
-                },
-                {
-                  "term": "Tg",
-                  "full": "Glass Transition Temperature"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                },
-                {
-                  "term": "FEA",
-                  "full": "Finite Element Analysis"
-                }
-              ],
-              "detailCharacters": 1723
-            },
-            {
-              "type": "pdf",
-              "id": "T02",
-              "label": "도메인 지식을 반영한 제조 AI와 가상계측",
-              "file": "T02.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T02.pdf",
-              "pageCount": 1,
-              "topics": [
-                "Virtual Metrology",
-                "AI / Simulation"
-              ],
-              "summary": "Jinwoo Kim · HEX A.I. LABS\nA Domain-Informed AI Agent Platform for Semiconductor Manufacturing: Unifying Virtual Metrology, Process Control, Fault Detection, and Variability Reduction\n1. 가상계측, 공정 제어, 이상 감시, 원인 분석을 에이전트로 연결하고 Titan 플랫폼에서 실행 이력, 승인, 재시도와 추적성을 관리하는 구상을 제시했다.\n2. PVD용 Magellan은 플라즈마·스퍼터링·박막 형성의 도메인 지식과 센서 시계열을 결합한다. ALD용 Columbus와 이상 탐지용 Hexa Scanner를 함께 소개했다.\n3. PVD 사례는 시험 웨이퍼 44장, R² 약 0.95, RMSE 4.8 nm로 기술되어 있다. 44장 모두 ±15 nm 규격을 만족했고 ±10 nm 범위는 약 79%로 설명한다.\n4. 목표 두께에서 허용 공정 조건을 역으로 찾는 안전운전영역(SOA)을 APC에 연결한다. 시험·교정 웨이퍼 절감률은 문서에서 70% 이상과 77%로 표현되어 있어 해당 사례의 주장으로 한정한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "HEX A.I. LABS",
-              "presenter": "Jinwoo Kim",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "가상계측의 출발점은 모든 웨이퍼를 실제로 측정하기에는 시간과 비용이 크다는 것이다. 일부 웨이퍼만 측정하면 그 사이의 공정 변화를 놓칠 수 있다. 센서와 장비 이력으로 막 두께 같은 결과값을 미리 예측할 수 있으면 측정 대기와 샘플링 부담을 줄이면서 공정을 더 촘촘하게 감시할 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "HEX AI (Artificial Intelligence)는 단일 예측 모델을 넘어 측정·제어·감시·분석 에이전트가 연결되는 구조를 제시했다. Titan은 데이터와 모델의 실행, 이력, 재시도 및 승인 흐름을 관리하고, 공정별 예측 엔진이 실제 물리와 센서 데이터를 연결한다. 예측값만 출력하는 도구에서 판단과 제어의 실행 경로를 추적하는 시스템으로 범위를 넓힌다.",
-                    "PVD (Physical Vapor Deposition)용 Magellan은 플라즈마, 스퍼터링과 막 형성의 도메인 지식을 시계열 특징과 결합한다. 센서 파형의 시간축 차이와 웨이퍼 위치 정보는 단순한 평균 센서값으로 사라질 수 있는 정보를 보완한다. ALD (Atomic Layer Deposition)용 Columbus는 표면 반응과 성장 거동의 지식을 이용하는 별도의 엔진이다. 서로 다른 공정에 동일한 입력·모델을 그대로 적용하는 접근과 구별된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "PVD 사례는 장비 로그와 FDC (Fault Detection and Classification) 센서 데이터를 결합한 hybrid model을 시험 웨이퍼 44장에 평가했다. R²는 결과의 변동을 얼마나 설명하는지, RMSE (Root Mean Square Error)는 두께 단위에서 예측 오차가 어느 정도인지를 보여준다. 규격 ±15 nm를 만족한 비율과 더 좁은 ±10 nm 범위의 만족률을 함께 제시해, 평균 오차와 실제 규격 적합성이 서로 다른 지표임을 보여준다.",
-                    "제어 단계에서는 정방향의 “이 조건에서 두께가 얼마인가”를 역방향의 “목표 두께를 얻으려면 어떤 조건이 필요한가”로 바꾼다. 이때 SOA (Safe Operating Area)는 목표와 제약을 만족하는 안전운전영역이다. 타깃 소모처럼 시간에 따라 장비 상태가 변하는 상황에서도 허용 조건을 갱신하려는 APC (Advanced Process Control)의 기반이 된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "가상계측, 공정 제어, 이상 감시, 원인 분석을 에이전트로 연결하고 Titan 플랫폼에서 실행 이력, 승인, 재시도와 추적성을 관리하는 구상을 제시했다.",
-                    "PVD용 Magellan은 플라즈마·스퍼터링·박막 형성의 도메인 지식과 센서 시계열을 결합한다. ALD용 Columbus와 이상 탐지용 Hexa Scanner를 함께 소개했다.",
-                    "PVD 사례는 시험 웨이퍼 44장, R² 약 0.95, RMSE 4.8 nm로 기술되어 있다. 44장 모두 ±15 nm 규격을 만족했고 ±10 nm 범위는 약 79%로 설명한다.",
-                    "목표 두께에서 허용 공정 조건을 역으로 찾는 안전운전영역(SOA)을 APC에 연결한다. 시험·교정 웨이퍼 절감률은 문서에서 70% 이상과 77%로 표현되어 있어 해당 사례의 주장으로 한정한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "제조 적용에서 중요한 것은 높은 R² 하나가 아니라 모델이 사용할 수 있는 공정 범위와 제어 권한을 정하는 일이다. 학습 범위를 벗어난 상태의 검출, 실제 계측으로 모델을 보정하는 주기, 제어 변경의 승인과 이력까지 함께 설계해야 한다. 시험 웨이퍼 절감은 이러한 절차 안에서 얻은 사례 성과로 해석하는 것이 적절하다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                },
-                {
-                  "term": "PVD",
-                  "full": "Physical Vapor Deposition"
-                },
-                {
-                  "term": "ALD",
-                  "full": "Atomic Layer Deposition"
-                },
-                {
-                  "term": "FDC",
-                  "full": "Fault Detection and Classification"
-                },
-                {
-                  "term": "RMSE",
-                  "full": "Root Mean Square Error"
-                },
-                {
-                  "term": "SOA",
-                  "full": "Safe Operating Area"
-                },
-                {
-                  "term": "APC",
-                  "full": "Advanced Process Control"
-                }
-              ],
-              "detailCharacters": 1658
-            },
-            {
-              "type": "pdf",
-              "id": "T03",
-              "label": "첨단 패키징 가상계측과 이상관리",
-              "file": "T03.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T03.pdf",
-              "pageCount": 21,
-              "topics": [
-                "Virtual Metrology",
-                "AI / Simulation",
-                "HBM / Memory",
-                "Reliability"
-              ],
-              "summary": "Mira Park · Samsung Electronics\nVirtual Metrology for Advanced Packaging: Yield & Anomaly Management\n1. HBM 적층과 이종집적에서는 작은 결함도 전체 수율에 영향을 준다. 광학, X-ray, 초음파 실측은 비용과 시간이 커서 모든 제품을 충분히 측정하기 어렵다는 문제에서 출발했다.\n2. 장비 센서, 측정값, 웨이퍼 이력으로 CD·두께·휨·결함 관련 지표를 예측한다. 전처리, 모델 적용, 실시간 이상관리의 흐름을 제시했다.\n3. 식각 중 광방출 스펙트럼을 이용한 CD 예측, 증착 FDC 데이터 기반 두께 예측, 이미지 기반 크랙·CMP 잔사 감시를 사례로 들었다.\n4. 장비별 샘플링 차이, 서로 다른 저장 형식, 시간에 따른 장비 상태 변화가 모델의 일반화를 방해한다. 표준화, 연결성, 데이터 품질, 사용성을 갖춘 AI-ready data가 핵심 기반이다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Samsung Electronics",
-              "presenter": "Mira Park",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "HBM (High Bandwidth Memory)처럼 여러 층을 적층하는 패키지는 한 공정의 작은 결함도 뒤 단계에서 회복하기 어렵다. 완성품에서 결함을 발견하면 이미 추가된 다이와 공정 비용까지 손실에 포함된다. 반면 실제 계측은 정확하지만 느리고, 샘플링 비율을 높여도 제품 전체의 상태를 연속적으로 알기는 어렵다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "VM (Virtual Metrology)은 공정 센서, 기존 측정값과 웨이퍼 이력을 이용해 실제 계측 변수를 예측한다. 예측 대상은 막 두께와 CD (Critical Dimension)처럼 연속적인 치수뿐 아니라 휨이나 결함과 관련된 지표까지 넓어질 수 있다. 센서 신호를 이상 점수로만 보는 방법보다 최종 품질 변수에 연결해 해석할 수 있다는 장점이 있다.",
-                    "발표는 예측값의 절대 정확도와 이상 감지 능력을 연결했다. 많은 제품에서 일관된 예측을 얻으면 소수 샘플의 실제 측정으로는 늦게 보이는 평균 이동도 더 빠르게 감지할 수 있다. 그러나 예측 오차의 편향이나 장비별 차이가 크면 정상 상태 자체를 잘못 판단할 수 있으므로 예측과 실제 계측의 불확실성을 함께 관리해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "식각 공정에서는 광방출 스펙트럼을 CD와 연결하고, 증착에서는 FDC (Fault Detection and Classification) 데이터로 두께를 예측하는 사례를 제시했다. 이미지 분석은 웨이퍼의 크랙이나 CMP (Chemical Mechanical Polishing) 이후 잔사를 정량화하는 데 사용한다. 각 사례는 입력 신호와 결함 발생의 물리적 연관성을 먼저 정의해야 한다는 공통점을 갖는다.",
-                    "데이터 기반을 만드는 과정에서는 장비별 샘플링, 저장 형식, 시간축, 웨이퍼 식별자와 상태 이력을 맞추는 일이 중요하다. 같은 수치라도 공정 단계나 측정 위치가 다르면 동일한 학습 사례로 사용할 수 없다. 표준화·연결성·품질·사용성이라는 AI (Artificial Intelligence)-ready data의 조건은 이러한 문제를 해결하기 위한 구조다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "HBM 적층과 이종집적에서는 작은 결함도 전체 수율에 영향을 준다. 광학, X-ray, 초음파 실측은 비용과 시간이 커서 모든 제품을 충분히 측정하기 어렵다는 문제에서 출발했다.",
-                    "장비 센서, 측정값, 웨이퍼 이력으로 CD·두께·휨·결함 관련 지표를 예측한다. 전처리, 모델 적용, 실시간 이상관리의 흐름을 제시했다.",
-                    "식각 중 광방출 스펙트럼을 이용한 CD 예측, 증착 FDC 데이터 기반 두께 예측, 이미지 기반 크랙·CMP 잔사 감시를 사례로 들었다.",
-                    "장비별 샘플링 차이, 서로 다른 저장 형식, 시간에 따른 장비 상태 변화가 모델의 일반화를 방해한다. 표준화, 연결성, 데이터 품질, 사용성을 갖춘 AI-ready data가 핵심 기반이다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "새로운 장비에 모델을 옮길 때에는 기존 시험 오차만 재사용하지 않고 장비 간 일반화 성능을 평가해야 한다. 실제 계측은 모델을 대체하는 대상이면서 동시에 보정과 신뢰도 확인의 기준이다. 따라서 VM을 도입하면 물리 계측이 사라진다기보다, 계측을 어디에 집중할지 결정하는 방식이 바뀐다고 이해할 수 있다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "HBM",
-                  "full": "High Bandwidth Memory"
-                },
-                {
-                  "term": "VM",
-                  "full": "Virtual Metrology"
-                },
-                {
-                  "term": "CD",
-                  "full": "Critical Dimension"
-                },
-                {
-                  "term": "FDC",
-                  "full": "Fault Detection and Classification"
-                },
-                {
-                  "term": "CMP",
-                  "full": "Chemical Mechanical Polishing"
-                },
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                }
-              ],
-              "detailCharacters": 1505
-            },
             {
               "type": "pdf",
               "id": "T04",
@@ -307,6 +43,7 @@
                 {
                   "heading": "기술 배경과 문제 정의",
                   "paragraphs": [
+                    "대규모 인공지능 모델의 발전은 연산 성능뿐 아니라 메모리 용량·대역폭, 칩 간 연결 속도, 전력 공급과 냉각 능력을 함께 요구한다. 이 발표는 로직·고대역폭 메모리·고속 입출력 칩렛을 인터포저와 실리콘 브리지로 연결하는 구조를 출발점으로, 더 큰 패키지와 높은 전력이 신호·전원·열·기계 신뢰성 및 제조 수율에 미치는 영향을 시스템 차원에서 다룬다.",
                     "AI (Artificial Intelligence) 가속기는 연산 다이와 HBM (High Bandwidth Memory)의 수를 늘리는 방향으로 확장하지만, 성능은 각 부품의 최고 사양을 단순히 더한 값으로 정해지지 않는다. 실제 다이에 전압이 안정적으로 공급되는지, 메모리와 연산부 사이의 신호가 유지되는지, 발생한 열을 빼낼 수 있는지, 조립 중 구조가 견디는지가 함께 작용한다."
                   ],
                   "list": false
@@ -396,1527 +133,11 @@
                   "full": "Coefficient of Thermal Expansion"
                 }
               ],
-              "detailCharacters": 1788
-            },
-            {
-              "type": "pdf",
-              "id": "T05",
-              "label": "AI 연산 확대의 물리적 비용과 시스템 공동설계",
-              "file": "T05.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T05.pdf",
-              "pageCount": 28,
-              "topics": [
-                "Chiplet / 3D Integration",
-                "HBM / Memory",
-                "Thermal Management",
-                "Power Integrity",
-                "Photonics / Optics",
-                "Panel-level Package"
-              ],
-              "summary": "Bill En · AMD\nThe Physics Bill is Due: Power, Thermal, and Mechanical Challenges for the Next Decade of AI\n1. AI 연산 수요의 증가를 실리콘 공정 미세화만으로 감당하기 어렵다는 문제를 제기했다. 패키징, 아키텍처와 시스템 설계가 추가적인 효율 개선 수단이다.\n2. HBM의 패키지 내 배치, 칩렛 분할, 3D V-Cache와 3.5D 통합 사례를 연결해 설명했다. 연산과 메모리를 가깝게 배치하면 데이터 이동 비용을 줄일 수 있다.\n3. 발표에는 MI100에서 MI250, MI300으로 이동하며 연산 에너지 효율을 개선한 사례가 나온다. 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 개선이 함께 기여했다.\n4. 최적화 범위를 패키지에서 보드, 랙, 데이터센터, 소프트웨어 배치까지 확장해야 한다. CPO와 패널 공정은 기회가 있지만 광학 결합과 대형 구조 제조의 어려움도 증가한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "AMD",
-              "presenter": "Bill En",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "실리콘 미세화만으로 AI (Artificial Intelligence) 연산 수요와 데이터 이동을 감당하기 어려워지면서, 아키텍처와 패키징이 추가적인 효율 개선 수단이 된다. 같은 연산기를 더 많이 배치하더라도 필요한 데이터를 공급하지 못하거나 열과 전원 한계를 넘으면 성능 증가가 제한된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "칩렛은 기능별로 공정과 다이 크기를 선택하고, 메모리와 연산부를 패키지 안에서 연결하는 수단이다. HBM (High Bandwidth Memory)의 근접 배치, 수평 칩렛 연결과 수직 캐시 적층은 서로 다른 데이터 이동 경로를 짧게 만든다. 단순히 트랜지스터 수를 늘리는 것과 달리 연산에 필요한 데이터가 어디에 있는지를 바꾸는 접근이다.",
-                    "데이터 이동 에너지는 연결 거리와 인터페이스에 따라 달라진다. 가까운 저장소의 접근과 패키지 밖 메모리·다른 장치와의 통신은 전기적 부하와 회로가 다르다. 3D 적층은 길이를 줄일 수 있지만 상부 다이가 하부 다이의 열경로를 가로막는 등 새로운 제약을 만든다. 따라서 연결 이득과 열의 비용을 함께 비교해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "AMD의 설명은 HBM, 칩렛과 3D 캐시를 결합해 온 제품 구조를 예로 들어 패키징과 아키텍처 개선의 효과를 연결한다. 효율 향상에는 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 변경이 함께 기여한다. 제품 세대 사이의 개선을 한 기술의 기여도로만 해석하지 않는 것이 중요하다.",
-                    "최적화 범위는 패키지에서 랙과 데이터센터까지 이어진다. 메모리 배치, GPU (Graphics Processing Unit)와 CPU (Central Processing Unit)의 역할, 네트워크 연결, 전원 분배와 냉각, 소프트웨어의 작업 분할이 같은 데이터 흐름을 결정한다. 광학 연결과 패널 제조도 이러한 확대된 시스템 요구에 대응하는 선택지다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "AI 연산 수요의 증가를 실리콘 공정 미세화만으로 감당하기 어렵다는 문제를 제기했다. 패키징, 아키텍처와 시스템 설계가 추가적인 효율 개선 수단이다.",
-                    "HBM의 패키지 내 배치, 칩렛 분할, 3D V-Cache와 3.5D 통합 사례를 연결해 설명했다. 연산과 메모리를 가깝게 배치하면 데이터 이동 비용을 줄일 수 있다.",
-                    "발표에는 MI100에서 MI250, MI300으로 이동하며 연산 에너지 효율을 개선한 사례가 나온다. 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 개선이 함께 기여했다.",
-                    "최적화 범위를 패키지에서 보드, 랙, 데이터센터, 소프트웨어 배치까지 확장해야 한다. CPO (Co-Packaged Optics)와 패널 공정은 기회가 있지만 광학 결합과 대형 구조 제조의 어려움도 증가한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "비교 기준은 칩 단독의 최고 처리량보다 실제 작업을 수행할 때의 에너지와 데이터 공급 능력이어야 한다. 같은 연산 성능이라도 메모리 대기나 장치 간 통신이 줄면 시스템 전체 효율이 달라진다. 패키징의 가치를 평가할 때에도 어떤 작업과 어떤 시스템 경계에서 개선을 측정했는지 먼저 정의해야 한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                },
-                {
-                  "term": "HBM",
-                  "full": "High Bandwidth Memory"
-                },
-                {
-                  "term": "GPU",
-                  "full": "Graphics Processing Unit"
-                },
-                {
-                  "term": "CPU",
-                  "full": "Central Processing Unit"
-                },
-                {
-                  "term": "CPO",
-                  "full": "Co-Packaged Optics"
-                }
-              ],
-              "detailCharacters": 1433
-            },
-            {
-              "type": "pdf",
-              "id": "T06",
-              "label": "HPC를 위한 OSAT의 시스템 통합 역할",
-              "file": "T06.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T06.pdf",
-              "pageCount": 7,
-              "topics": [
-                "Chiplet / 3D Integration",
-                "Thermal Management",
-                "Power Integrity"
-              ],
-              "summary": "Kyungrok Park · Amkor Technology Korea\nEnabling the AI Era: Advanced Semiconductor Packaging as the Foundation for High-Performance Computing (HPC)\n1. AI 시스템은 칩과 패키지 아키텍처를 함께 바꾸고 있으며, OSAT가 공정 실행을 넘어 시스템 통합의 연결점 역할을 해야 한다고 강조했다.\n2. 고객 요구와 패키징 로드맵을 맞추고, 전력·열·집적 문제를 개발 초기의 공동설계로 해결해야 한다.\n3. 제조·시험 역량과 생산능력 확대, 파운드리·IDM·EDA·소재·장비·테스트 기업의 협력을 소개했다. 대학 교육에서도 패키징 관련 실무 이해의 필요성을 언급했다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Amkor Technology Korea",
-              "presenter": "Kyungrok Park",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "AI (Artificial Intelligence) 패키지는 로직·메모리·기판·광학 부품을 복잡하게 결합하기 때문에 개별 공정의 성공만으로 완성되지 않는다. 고객이 요구하는 전원과 냉각, 테스트 전략을 실제 조립과 양산으로 연결하는 통합 역할이 중요해진다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "OSAT (Outsourced Semiconductor Assembly and Test)의 역할은 여러 기업에서 만든 부품이 하나의 패키지로 동작하도록 공정과 시험을 연결하는 데 있다. Foundry, IDM (Integrated Device Manufacturer), 소재·장비 기업, EDA (Electronic Design Automation)와 테스트 솔루션이 제공하는 조건을 공통 구조와 인터페이스에서 맞춰야 한다. 조립을 마지막 단계에서 추가하는 방식보다 초기 공동설계가 필요하다는 설명이다.",
-                    "고밀도 패키지는 조립 전에는 개별 다이로 존재하던 수율과 테스트 문제가 전체 구조의 비용으로 결합된다. 다이 배치와 접합 방식뿐 아니라 어느 시점에 어떤 결함을 검출할지, 고가 부품을 추가하기 전에 무엇을 확인할지가 제조 전략에 포함되어야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "발표는 고객·시장 요구와 패키징 로드맵의 정렬, 제조 및 테스트 역량, 생산능력 확대와 협력 사례를 소개한다. 기술 선정은 설계 가능 여부에 더해 반복 생산, 품질과 테스트가 함께 가능한지의 문제로 제시된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "AI 시스템은 칩과 패키지 아키텍처를 함께 바꾸고 있으며, OSAT가 공정 실행을 넘어 시스템 통합의 연결점 역할을 해야 한다고 강조했다.",
-                    "고객 요구와 패키징 로드맵을 맞추고, 전력·열·집적 문제를 개발 초기의 공동설계로 해결해야 한다.",
-                    "제조·시험 역량과 생산능력 확대, 파운드리·IDM·EDA·소재·장비·테스트 기업의 협력을 소개했다. 대학 교육에서도 패키징 관련 실무 이해의 필요성을 언급했다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "고객이 제공해야 할 요구는 목표 성능뿐 아니라 열·전력 조건, 패키지 크기, 테스트 범위와 생산 규모까지 포함한다. 이를 개발 초기에 공유하면 구조 변경이 조립·검사·수율에 미치는 영향을 일찍 비교할 수 있다. 이 발표는 개별 소재의 수치 경쟁보다 시스템 통합의 책임과 협력 구조를 강조한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                },
-                {
-                  "term": "OSAT",
-                  "full": "Outsourced Semiconductor Assembly and Test"
-                },
-                {
-                  "term": "IDM",
-                  "full": "Integrated Device Manufacturer"
-                },
-                {
-                  "term": "EDA",
-                  "full": "Electronic Design Automation"
-                }
-              ],
-              "detailCharacters": 1060
-            },
-            {
-              "type": "pdf",
-              "id": "T07",
-              "label": "3D 시스템 집적과 상호연결 밀도",
-              "file": "T07.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T07.pdf",
-              "pageCount": 30,
-              "topics": [
-                "Chiplet / 3D Integration",
-                "HBM / Memory",
-                "Hybrid Bonding",
-                "Thermal Management",
-                "Power Integrity",
-                "Substrate"
-              ],
-              "summary": "Zsolt Tokei · imec\n3D System Integration Technology\n1. 시스템 발전을 I/O 대역폭 밀도와 상호연결 밀도의 증가로 설명했다. 이미지 센서, HBM, AI 연산 시스템이 3D 집적 기술을 이끄는 주요 응용이다.\n2. 미세 마이크로범프, D2W·W2W 하이브리드 본딩, TSV와 고밀도 Cu/polymer RDL을 서로 보완적인 기술 요소로 제시했다.\n3. 전원 공급, 열 제거, 메모리·로직 밀도와 통신을 하나의 집적 문제로 다뤄야 한다. 냉각 구조와 후면 전원 등도 기술 선택에 영향을 준다.\n4. 극저온 양자 시스템에서는 단계별 냉각 능력과 배선 수가 함께 제약이 된다. 높은 연결 밀도만으로 해결되지 않으며 열격리와 초전도 연결이 필요하다.\n5. 질의응답에서는 미세 피치의 overlay 정확도, 매우 평탄하고 깨끗한 표면, 밀접하게 연결된 공정 제어가 한계 요인으로 지적되었다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "imec",
-              "presenter": "Zsolt Tokei",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "3D 집적은 소자를 쌓는 형상뿐 아니라 단위 면적에 얼마나 많은 연결을 만들고, 그 연결로 얼마나 효율적으로 데이터를 전달할 수 있는가의 문제다. 이미지 센서, HBM (High Bandwidth Memory)과 AI (Artificial Intelligence) 연산기는 서로 다른 기능을 요구하지만 더 높은 연결 밀도가 필요하다는 공통점을 갖는다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "마이크로범프, D2W (Die-to-Wafer) 및 W2W (Wafer-to-Wafer) 하이브리드 본딩, TSV (Through-Silicon Via)와 미세 RDL (Redistribution Layer)은 서로 다른 위치의 연결을 담당한다. 정사각 배열에서 같은 면적 사용 조건을 가정하면 연결 수는 대략 피치의 제곱에 반비례한다. 피치를 줄일수록 정렬 오차와 표면 형상의 허용 범위도 함께 작아지므로, 연결 밀도만 높이는 독립적인 개선은 어렵다.",
-                    "수평 칩렛 연결은 인터포저와 브리지, 수직 연결은 본딩과 TSV를 통해 구성할 수 있다. 여기에 후면 전원 공급, 고밀도 메모리와 로직 적층, 열 확산 및 액체 냉각을 결합해야 한다. 전기 연결의 위치와 밀도는 전원 경로와 hotspot 위치를 동시에 바꾸므로 집적 기술을 시스템 설계와 분리하기 어렵다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "발표는 개별 공정 요소의 로드맵과 다양한 응용의 요구를 함께 비교한다. 극저온 양자 시스템을 예로 들면 배선 수를 늘리는 것과 열 유입을 줄이는 것이 동시에 필요하다. 단계별 냉각 능력이 제한되기 때문에 상온의 고집적 패키지와 같은 기준만으로 연결을 설계할 수 없다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "시스템 발전을 I/O (Input/Output) 대역폭 밀도와 상호연결 밀도의 증가로 설명했다. 이미지 센서, HBM, AI 연산 시스템이 3D 집적 기술을 이끄는 주요 응용이다.",
-                    "미세 마이크로범프, D2W·W2W 하이브리드 본딩, TSV와 고밀도 Cu/polymer RDL을 서로 보완적인 기술 요소로 제시했다.",
-                    "전원 공급, 열 제거, 메모리·로직 밀도와 통신을 하나의 집적 문제로 다뤄야 한다. 냉각 구조와 후면 전원 등도 기술 선택에 영향을 준다.",
-                    "극저온 양자 시스템에서는 단계별 냉각 능력과 배선 수가 함께 제약이 된다. 높은 연결 밀도만으로 해결되지 않으며 열격리와 초전도 연결이 필요하다.",
-                    "질의응답에서는 미세 피치의 overlay 정확도, 매우 평탄하고 깨끗한 표면, 밀접하게 연결된 공정 제어가 한계 요인으로 지적되었다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "핵심 비교 항목은 피치, 연결 밀도, 연결 에너지와 정렬 정밀도이며, 이를 전원·냉각 조건과 함께 보아야 한다. 하이브리드 본딩의 확대에서는 overlay, 평탄도와 청정 표면의 동시 확보가 중요하다. 이 발표는 특정 접합 방식 하나보다 서로 다른 기술 요소를 조합하는 집적 플랫폼의 관점을 제공한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "HBM",
-                  "full": "High Bandwidth Memory"
-                },
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                },
-                {
-                  "term": "D2W",
-                  "full": "Die-to-Wafer"
-                },
-                {
-                  "term": "W2W",
-                  "full": "Wafer-to-Wafer"
-                },
-                {
-                  "term": "TSV",
-                  "full": "Through-Silicon Via"
-                },
-                {
-                  "term": "RDL",
-                  "full": "Redistribution Layer"
-                },
-                {
-                  "term": "I/O",
-                  "full": "Input/Output"
-                }
-              ],
-              "detailCharacters": 1342
-            },
-            {
-              "type": "pdf",
-              "id": "T08",
-              "label": "AI 다이 복합체의 2.5D 및 3D 패키징",
-              "file": "T08.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T08.pdf",
-              "pageCount": 12,
-              "topics": [
-                "Chiplet / 3D Integration",
-                "Substrate",
-                "Hybrid Bonding",
-                "HBM / Memory",
-                "Thermal Management",
-                "Power Integrity",
-                "Photonics / Optics"
-              ],
-              "summary": "Kyuoh Lee · Intel\nAdvanced Packaging Architectures for AI Die Complex Scaling\n1. 칩렛 분할은 기능별 공정 선택을 가능하게 하지만 분할 자체가 성능을 보장하지 않는다. 데이터 이동, 전원, 열, 수율과 제조성을 함께 최적화해야 한다.\n2. 국부 실리콘 브리지를 사용하는 EMIB, TSV와 수동소자 기능을 확대하는 EMIB-T, 인터포저 기반 Foveros 및 직접 Cu-Cu 연결을 사용하는 Foveros Direct를 소개했다.\n3. 2.5D 브리지와 3D 적층을 결합한 3.5D 통합으로 더 큰 AI 패키지를 구성한다. 패키지 확대에 따라 휨, 조립 정밀도, 테스트와 누적 수율 문제가 커진다.\n4. 광학 I/O를 연산부에 가까이 배치하는 방향을 설명했다. CPO는 짧은 전기 경로를 제공하지만 조립·시험·신뢰성·서비스성을 함께 고려해야 한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Intel",
-              "presenter": "Kyuoh Lee",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "모든 기능을 하나의 큰 로직 다이에 넣으면 다이 크기, 수율, 공정 선택과 전원·냉각의 제약이 커진다. 기능별 칩렛은 이를 나눌 수 있지만, 칩렛 사이의 연결 비용과 조립 복잡성이 증가하므로 시스템 전체의 이득을 확인해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "EMIB (Embedded Multi-Die Interconnect Bridge)는 연결이 필요한 다이 경계 부근에 작은 실리콘 브리지를 넣어 고밀도 라우팅을 제공한다. 전체 영역을 실리콘 인터포저로 덮는 방법과 달리 필요한 위치에 고밀도 자원을 집중한다. EMIB-T는 TSV (Through-Silicon Via)와 수동소자 기능을 포함해 전원과 메모리 집적 요구를 지원하는 방향으로 설명된다.",
-                    "Foveros 계열의 2.5D 연결과 Foveros Direct의 수직 Cu-Cu 연결은 집적 방향이 다르다. 3D 연결은 짧은 다이 간 경로와 높은 밀도를 제공하지만, 적층 다이의 테스트와 열경로가 설계 제약이 된다. 브리지 기반 수평 연결과 3D 적층을 조합한 3.5D 구조는 두 종류의 제약을 동시에 다루는 아키텍처다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "발표는 인터커넥트 밀도와 전송 에너지의 관점에서 여러 구조를 비교하고, 더 큰 연산 다이·HBM (High Bandwidth Memory) 복합체로 확장할 때의 기판과 조립 문제를 설명한다. 큰 패키지는 더 많은 부품을 수용하지만 휨, 기판 제조, 접합 정밀도와 누적 수율을 더 엄격하게 요구한다.",
-                    "CPO (Co-Packaged Optics)는 광학 I/O (Input/Output)를 연산부 가까이에 두어 긴 전기 경로의 손실을 줄이는 방향이다. 다만 광학 엔진을 패키지에 추가하면 테스트, 조립, 신뢰성과 서비스성이 새로운 평가 항목이 된다. 연결 에너지 이득만으로 전체 시스템의 우열이 결정되지는 않는다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "칩렛 분할은 기능별 공정 선택을 가능하게 하지만 분할 자체가 성능을 보장하지 않는다. 데이터 이동, 전원, 열, 수율과 제조성을 함께 최적화해야 한다.",
-                    "국부 실리콘 브리지를 사용하는 EMIB, TSV와 수동소자 기능을 확대하는 EMIB-T, 인터포저 기반 Foveros 및 직접 Cu-Cu 연결을 사용하는 Foveros Direct를 소개했다.",
-                    "2.5D 브리지와 3D 적층을 결합한 3.5D 통합으로 더 큰 AI (Artificial Intelligence) 패키지를 구성한다. 패키지 확대에 따라 휨, 조립 정밀도, 테스트와 누적 수율 문제가 커진다.",
-                    "광학 I/O를 연산부에 가까이 배치하는 방향을 설명했다. CPO는 짧은 전기 경로를 제공하지만 조립·시험·신뢰성·서비스성을 함께 고려해야 한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "Intel의 기술 포트폴리오는 하나의 접합 방식이 모든 제품을 대체한다기보다 제품 요구에 맞는 구조를 선택하는 것으로 읽을 수 있다. 칩렛 수나 실리콘 면적보다 유효 대역폭, 열·전원 조건, 비용과 제조성이 함께 좋아지는지를 기준으로 판단해야 한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "EMIB",
-                  "full": "Embedded Multi-Die Interconnect Bridge"
-                },
-                {
-                  "term": "TSV",
-                  "full": "Through-Silicon Via"
-                },
-                {
-                  "term": "HBM",
-                  "full": "High Bandwidth Memory"
-                },
-                {
-                  "term": "CPO",
-                  "full": "Co-Packaged Optics"
-                },
-                {
-                  "term": "I/O",
-                  "full": "Input/Output"
-                },
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                }
-              ],
-              "detailCharacters": 1396
-            },
-            {
-              "type": "pdf",
-              "id": "T09",
-              "label": "고밀도 유기 기판과 대형 패널 활용",
-              "file": "T09.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T09.pdf",
-              "pageCount": 9,
-              "topics": [
-                "Substrate",
-                "Panel-level Package",
-                "Power Integrity",
-                "Signal Integrity",
-                "Packaging Materials",
-                "Warpage"
-              ],
-              "summary": "Venkat Mokkapati · AT&S\nAdvanced IC substrates to address new Advanced Packaging Challenges\n1. 다층 코어와 부품 임베딩으로 기판 내부의 구리와 전원 경로를 확보하고, 휨을 제어하는 접근을 소개했다. 유리 코어 전환 이전의 연결 단계로도 설명했다.\n2. 국부적으로 필요한 상부 층을 고밀도화하는 유기 기판 구조를 통해 실리콘 인터포저 의존도를 줄이는 방향을 다뤘다.\n3. 기판 대형화는 층수·두께·미세배선 요구와 동시에 증가한다. 미세배선의 개발 난도와 실제 고객 설계 요구 사이에 균형이 필요하다.\n4. 더 큰 신규 패널로 전환하기 전에 기존 패널의 quarter·half·full 배치와 keep-out 영역을 재설계해 활용도를 높일 수 있다고 강조했다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "AT&S",
-              "presenter": "Venkat Mokkapati",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "첨단 패키지의 유기 기판은 단순한 기계 지지체에서 전원 분배, 부품 임베딩과 고밀도 라우팅을 담당하는 구조로 바뀌고 있다. 대형화할수록 배선 미세화뿐 아니라 두께, 구리 분포와 휨 제어가 함께 중요해진다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "다층 코어는 내부의 구리층과 연결 경로를 늘려 전원 전달과 강성 조절에 활용한다. 코어의 역할을 분할하고 능동·수동 부품을 임베딩하면 배치 자유도가 커지지만, 부품 두께와 위치, 코어 간 연결과 열이력을 함께 설계해야 한다.",
-                    "두꺼운 코어의 관통홀은 깊이와 도금 조건 때문에 모든 구간을 동일하게 구리로 채우기 어렵다. 발표의 differential drilling과 thick-wall plating은 홀과 구리의 구성을 달리해 전류 경로와 코어 활용도를 높이는 방향이다. 필요한 상부 층만 고밀도로 만들고 나머지는 상대적으로 완화된 배선 규칙을 쓰는 구조도 같은 비용·기능 분할의 관점이다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "실리콘 인터포저를 줄이거나 일부 기능을 고밀도 유기 층으로 옮길 때에는 미세 L/S (Line/Space)와 비아뿐 아니라 수율과 패널 공정성을 평가해야 한다. 유리 코어는 낮은 CTE (Coefficient of Thermal Expansion)와 강성의 장점이 있지만 새로운 제조 생태계를 요구하므로 기존 유기 코어의 개선과 병행되는 선택지다.",
-                    "대형 패널 논의에서는 크기를 늘리는 것과 현재 패널의 실사용 면적을 늘리는 것을 구분한다. Quarter·half·full panel 배치, 가장자리 keep-out과 핸들링 방식의 변경도 같은 크기의 패널에서 더 많은 유효 제품을 얻는 방법이 될 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "다층 코어와 부품 임베딩으로 기판 내부의 구리와 전원 경로를 확보하고, 휨을 제어하는 접근을 소개했다. 유리 코어 전환 이전의 연결 단계로도 설명했다.",
-                    "국부적으로 필요한 상부 층을 고밀도화하는 유기 기판 구조를 통해 실리콘 인터포저 의존도를 줄이는 방향을 다뤘다.",
-                    "기판 대형화는 층수·두께·미세배선 요구와 동시에 증가한다. 미세배선의 개발 난도와 실제 고객 설계 요구 사이에 균형이 필요하다.",
-                    "더 큰 신규 패널로 전환하기 전에 기존 패널의 quarter·half·full 배치와 keep-out 영역을 재설계해 활용도를 높일 수 있다고 강조했다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "기판의 미세배선 사양만 비교하기보다 전류 용량, 임베딩, 기계적 지지와 패널 활용도를 함께 보아야 한다. 신규 패널 크기는 장비 투자까지 영향을 주므로, 기존 형식에서 가능한 레이아웃·공정 개선과 나란히 비교하는 것이 유용하다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "L/S",
-                  "full": "Line/Space"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                }
-              ],
-              "detailCharacters": 1211
-            },
-            {
-              "type": "pdf",
-              "id": "T10",
-              "label": "공개형 실리콘 브리지 플랫폼",
-              "file": "T10.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T10.pdf",
-              "pageCount": 3,
-              "topics": [
-                "Substrate",
-                "Chiplet / 3D Integration"
-              ],
-              "summary": "HeeJun Jang · National NanoFab Center\nDevelopment of an Open Silicon Bridge Interposer Platform for Advanced Packaging Ecosystem\n1. 칩렛 연결에서 국부 실리콘 브리지가 미세 라우팅을 제공하는 구조를 소개한다. 전체 면적의 인터포저와 국부 브리지의 역할을 구분할 수 있다.\n2. 오픈 플랫폼 전략은 오픈 실리콘 브리지 플랫폼을 통해 첨단 패키징 생태계를 지원하려는 방향을 제시한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "National NanoFab Center",
-              "presenter": "HeeJun Jang",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "칩렛 구조에서는 서로 가까운 다이 사이에 매우 조밀한 연결이 필요하지만, 패키지 전체가 같은 수준의 미세배선을 필요로 하는 것은 아니다. 이 차이를 이용하는 방법이 국부 실리콘 브리지다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "실리콘 브리지는 다이 경계의 짧은 영역에서 미세 라우팅을 제공하고, 나머지 패키지 연결은 기판이나 재배선 구조가 담당하도록 역할을 분담한다. 실리콘 인터포저를 전체 면적에 사용하는 구조와 비교할 때, 고밀도 영역을 어디에 얼마나 배치할지가 주요 설계 변수가 된다.",
-                    "실제 패키지에서는 브리지와 다이의 접합 위치, 브리지 주변의 재료, 수직 전원 경로와 외부 기판 연결이 함께 정해져야 한다. 따라서 브리지 자체의 배선 능력과 이를 패키지로 구현하는 조립 능력은 구분해 평가해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "NNFC (National NanoFab Center)의 발표는 오픈 실리콘 브리지 인터포저 플랫폼과 이를 활용할 첨단 패키징 생태계를 주제로 한다. 표지와 구조 설명에서 드러나는 중심은 특정 완제품 하나보다 여러 개발 주체가 사용할 수 있는 연결 플랫폼의 제공이다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "칩렛 연결에서 국부 실리콘 브리지가 미세 라우팅을 제공하는 구조를 소개한다. 전체 면적의 인터포저와 국부 브리지의 역할을 구분할 수 있다.",
-                    "오픈 플랫폼 전략은 오픈 실리콘 브리지 플랫폼을 통해 첨단 패키징 생태계를 지원하려는 방향을 제시한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "이 발표를 시스템 설계 관점에서 읽으면 브리지를 어떤 구조에 연결하고, 어떤 인터페이스와 설계 규칙을 공유할지가 중요해진다. 설계자·공정 공급자·조립 기업 사이에 배선·접합·검사 범위를 맞추는 것이 오픈 플랫폼의 실질적인 가치다. 기판 및 칩렛 발표와 함께 보면 고밀도 연결을 국부적으로 배치하는 산업 방향을 이해할 수 있다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "NNFC",
-                  "full": "National NanoFab Center"
-                }
-              ],
-              "detailCharacters": 837
-            },
-            {
-              "type": "pdf",
-              "id": "T11",
-              "label": "기판 개발의 누적 공정 해석과 AI 활용",
-              "file": "T11.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T11.pdf",
-              "pageCount": 27,
-              "topics": [
-                "Substrate",
-                "AI / Simulation",
-                "Warpage",
-                "Packaging Materials",
-                "Thermal Management"
-              ],
-              "summary": "Shinhe Nam · LG Innotek\nDevelopment Modeling and Simulation Technology Application for Advanced Package Substrate\n1. 대면적·다층 기판에서는 최종 형상뿐 아니라 제조 이력 전체를 누적해 휨을 예측해야 한다. TMA·DMA·DSC 실측과 경화수축 값을 해석 입력에 반영한다.\n2. 상온 휨이 작아도 리플로 중 변형이 커질 수 있어, 온도에 따른 동적 휨과 C4 영역의 국부 평탄도를 함께 평가한다.\n3. 도금 해석은 전기장, 유동, 약품과 설비 구조를 결합한다. shield 조건 변경 사례에서 Cu 두께 범위가 1.4 µm에서 0.6 µm로 감소했다.\n4. 디지털 트윈의 방향은 물리 해석으로 만든 가상 데이터로 AI 대체모델을 학습하고, 실제 제조 데이터와 융합해 예측·감시·제어로 확장하는 것이다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "LG Innotek",
-              "presenter": "Shinhe Nam",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "대형·다층 기판은 최종 단면과 상온 물성만으로 휨을 예측하기 어렵다. 패널에서 스트립과 단위 제품으로 변하는 과정, 경화와 냉각, 실장 이후의 열이력이 각각 변형과 잔류응력에 영향을 주기 때문이다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "누적 공정 해석은 단계별로 형상과 재료 상태가 바뀌는 과정을 따라간다. 재료를 추가하거나 공정을 종료할 때 기준 상태와 응력을 적절하게 넘겨야 실제 제조 이력에 가까운 결과를 얻을 수 있다. 어느 단계에서 휨이 시작되고 어떤 재료가 기여하는지 찾는 것이 핵심이다.",
-                    "물성 입력은 공급업체의 단일 값보다 TMA (Thermomechanical Analysis)·DMA (Dynamic Mechanical Analysis)·DSC (Differential Scanning Calorimetry) 실측으로 보완한다. CTE (Coefficient of Thermal Expansion), 온도·시간 의존 탄성률과 경화수축은 서로 다른 역할을 하며, 같은 재료도 공정 상태에 따라 응답이 달라질 수 있다. 상온에서 평탄해 보이더라도 리플로 중 C4 (Controlled Collapse Chip Connection) 영역의 높이 차이가 커질 수 있어 동적 휨을 추적해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "도금 모델은 전기장과 전해액 유동, 제품 패턴 및 장비의 anode·shield 형상을 결합한다. 전류가 집중되는 위치와 유동 조건이 달라지면 두께 분포도 달라진다. Shield 개구와 dummy pattern을 바꾸는 사례는 제품과 설비 설계가 도금 균일도에 함께 영향을 준다는 것을 보여준다.",
-                    "AI (Artificial Intelligence)와의 연결에서는 물리 해석으로 설계·공정 조건별 가상 데이터를 만들고 이를 대체모델로 학습한다. 이후 실제 제조 데이터를 융합해 보정하는 방향을 제시한다. 유동·열유동·분사·입자 이동도 이러한 장비 디지털 트윈의 대상으로 소개된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "대면적·다층 기판에서는 최종 형상뿐 아니라 제조 이력 전체를 누적해 휨을 예측해야 한다. TMA·DMA·DSC 실측과 경화수축 값을 해석 입력에 반영한다.",
-                    "상온 휨이 작아도 리플로 중 변형이 커질 수 있어, 온도에 따른 동적 휨과 C4 영역의 국부 평탄도를 함께 평가한다.",
-                    "도금 해석은 전기장, 유동, 약품과 설비 구조를 결합한다. shield 조건 변경 사례에서 Cu 두께 범위가 1.4 µm에서 0.6 µm로 감소했다.",
-                    "디지털 트윈의 방향은 물리 해석으로 만든 가상 데이터로 AI 대체모델을 학습하고, 실제 제조 데이터와 융합해 예측·감시·제어로 확장하는 것이다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "물리 해석은 새로운 조건을 설명하고 원인을 좁히는 데 강점이 있고, 대체모델은 반복 예측과 최적화의 속도를 높인다. 실제 제조에 적용할 때에는 학습 범위와 새로운 설계의 차이를 확인하고, 실측을 통해 모델을 계속 보정하는 연결 구조가 중요하다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "TMA",
-                  "full": "Thermomechanical Analysis"
-                },
-                {
-                  "term": "DMA",
-                  "full": "Dynamic Mechanical Analysis"
-                },
-                {
-                  "term": "DSC",
-                  "full": "Differential Scanning Calorimetry"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                },
-                {
-                  "term": "C4",
-                  "full": "Controlled Collapse Chip Connection"
-                },
-                {
-                  "term": "AI",
-                  "full": "Artificial Intelligence"
-                }
-              ],
-              "detailCharacters": 1366
-            },
-            {
-              "type": "pdf",
-              "id": "T12",
-              "label": "고성능 기판의 신호 전력 및 기계적 설계",
-              "file": "T12.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T12.pdf",
-              "pageCount": 11,
-              "topics": [
-                "Substrate",
-                "Signal Integrity",
-                "Power Integrity",
-                "Warpage",
-                "Packaging Materials"
-              ],
-              "summary": "Sanghun Kim · Samsung Electro-Mechanics\nTechnology Trends and Challenges in High-Performance Semiconductor Package Substrates\n1. 기판의 요구를 SI·PI·MI로 나누고 미세배선·비아·범프, 전원 부품 임베딩, 고강성 코어를 함께 다룬다.\n2. 고속 신호 손실 저감을 위해 Cu 표면 거칠기와 절연재 Df를 낮추고, 배선 L/S와 비아 크기를 축소하는 방향을 제시한다.\n3. 기판 내부의 커패시터 등 수동소자는 칩까지의 전원 경로를 줄인다. 부품 수와 두께의 다양화는 임베딩 구조의 추가 제약이다.\n4. 대형·다층화에 따른 휨 문제에는 두꺼운 저CTE 코어, 다층 코어(MLC), 유리 코어를 제시한다. 유리 코어에서도 TGV 미세화와 신뢰성을 함께 확보해야 한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Samsung Electro-Mechanics",
-              "presenter": "Sanghun Kim",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "고성능 패키지 기판은 많은 I/O (Input/Output)를 수용하면서 빠른 신호와 큰 전류를 전달하고, 조립 온도에서도 평탄도를 유지해야 한다. 이 요구는 SI (Signal Integrity)·PI (Power Integrity)·MI (Mechanical Integrity)라는 서로 다른 설계 관점으로 나뉘지만 실제 기판에서는 같은 재료와 적층을 공유한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "신호 관점에서는 배선 미세화와 함께 유전 손실과 Cu 표면의 거칠기를 관리한다. 고주파 전류의 분포가 표면 상태에 민감해지므로, 거칠기가 크면 도체 손실에 불리할 수 있다. 반면 Cu 접착을 위해 필요한 표면 처리와도 관계가 있어 저손실과 접착 신뢰성 사이의 균형이 필요하다.",
-                    "전원 관점에서는 커패시터를 칩 가까이 임베딩해 경로의 기생 성분을 낮추고 전압 변동을 줄이는 방향을 제시한다. 부품의 수와 두께가 다양해지면 코어 내부 공간, 연결과 평탄도에 영향을 주므로 전기적 이득과 제조 구조를 함께 설계해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "미세 L/S (Line/Space), 작은 비아와 범프 피치는 노광·도금·식각·레이저 가공 및 정렬을 동시에 요구한다. 기판을 대형·다층화하면 이러한 미세 형상의 공정 균일도를 넓은 면적에서 유지해야 한다.",
-                    "기계 관점의 선택지는 저CTE (Coefficient of Thermal Expansion)·고강성 코어, MLC (Multi-Layer Core)와 유리 코어다. 코어의 강성과 열팽창을 바꾸면 휨을 제어할 수 있지만, 국부 응력과 가공·연결 조건도 달라진다. 유리 코어에서는 TGV (Through-Glass Via)의 미세화와 Cu·유리 계면의 열기계적 거동이 추가적으로 중요해진다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "기판의 요구를 SI·PI·MI로 나누고 미세배선·비아·범프, 전원 부품 임베딩, 고강성 코어를 함께 다룬다.",
-                    "고속 신호 손실 저감을 위해 Cu 표면 거칠기와 절연재 Df (Dissipation Factor)를 낮추고, 배선 L/S와 비아 크기를 축소하는 방향을 제시한다.",
-                    "기판 내부의 커패시터 등 수동소자는 칩까지의 전원 경로를 줄인다. 부품 수와 두께의 다양화는 임베딩 구조의 추가 제약이다.",
-                    "대형·다층화에 따른 휨 문제에는 두꺼운 저CTE 코어, 다층 코어(MLC), 유리 코어를 제시한다. 유리 코어에서도 TGV 미세화와 신뢰성을 함께 확보해야 한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "기판 사양은 한 항목의 최고값보다 같은 구조에서의 신호 손실, 전원 경로, 휨과 신뢰성을 묶어 비교해야 한다. 저손실 절연재나 임베디드 수동소자도 기판 제조와 조립 공정에서 재현될 때 시스템 성능으로 이어진다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "I/O",
-                  "full": "Input/Output"
-                },
-                {
-                  "term": "SI",
-                  "full": "Signal Integrity"
-                },
-                {
-                  "term": "PI",
-                  "full": "Power Integrity"
-                },
-                {
-                  "term": "MI",
-                  "full": "Mechanical Integrity"
-                },
-                {
-                  "term": "L/S",
-                  "full": "Line/Space"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                },
-                {
-                  "term": "MLC",
-                  "full": "Multi-Layer Core"
-                },
-                {
-                  "term": "TGV",
-                  "full": "Through-Glass Via"
-                },
-                {
-                  "term": "Df",
-                  "full": "Dissipation Factor"
-                }
-              ],
-              "detailCharacters": 1246
-            },
-            {
-              "type": "pdf",
-              "id": "T26",
-              "label": "미세 본딩을 위한 소재 장비 공정 및 계측",
-              "file": "T26.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T26.pdf",
-              "pageCount": 2,
-              "topics": [
-                "Hybrid Bonding",
-                "Bonding Equipment / Process",
-                "Metrology / DIC",
-                "Reliability"
-              ],
-              "summary": "Ami Eitan · ASMPT\nAdvances in Bonding Technology to Enable Advanced Packaging\n1. 피치 축소와 박막·대형 다이의 휨으로 인해 mass reflow, TCB와 hybrid bonding의 적용 영역이 달라진다.\n2. 입력 표면의 Cu dishing, 화학 상태, particle, die warpage와 장비 정렬·청정도를 함께 관리해야 한다. 공정과 metrology가 별도로 움직이면 양산에 필요한 제어가 어렵다.\n3. hybrid bonding에서는 silanol·오염·표면 형상·void·overlay를 관리하고, fluxless TCB에서는 수소 플라즈마 기반 AOR(Active Oxide Removal)과 재산화 억제를 설명했다.\n4. 장비 단독 공급에서 소재·고객·계측 기업과의 공동 개발로 전환해야 한다는 메시지다. 정렬·throughput 수치는 발표 당시 장비 사양과 계획을 구분해야 한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "ASMPT",
-              "presenter": "Ami Eitan",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "고밀도 패키징에서 접합 방식은 피치만으로 정해지지 않는다. 다이와 기판의 휨, 표면 상태와 간극, 허용 열이력이 mass reflow·TCB (Thermocompression Bonding)·hybrid bonding의 적용 범위를 함께 결정한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "Hybrid bonding의 투입 조건에는 Cu dishing과 표면 거칠기, 절연막의 화학 상태, particle과 다이 휨이 포함된다. 장비는 높은 정렬 정확도뿐 아니라 청정도를 제공해야 하고, 공정은 이 입력 상태에 맞는 접촉·본딩 profile을 적용해야 한다. 소재·장비·공정·계측을 독립적으로 최적화하기 어려운 이유다.",
-                    "Dielectric 표면의 활성화와 hydrophilicity는 접촉 및 초기 접합에 영향을 주며, Cu의 오염과 산화 상태는 금속 접합의 조건을 바꾼다. 표면 준비가 좋더라도 접촉 중 공기가 갇히거나 overlay가 틀어지면 최종 접합은 달라질 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "발표의 fluxless TCB에서는 수소 플라즈마 기반 AOR (Active Oxide Removal)로 산화물 제거를 지원하고, 이후 불활성 분위기로 재산화를 억제하는 방향을 설명한다. 이는 투입 표면의 산화 상태를 알고 제거·보존·접합을 이어야 한다는 공정 통합의 예다.",
-                    "Metrology는 표면 형상·화학·particle, 접합 후 alignment와 void를 각각 확인한다. 장비가 빠르고 정확하게 움직였다는 기록과 실제 접합면이 양호하다는 증거는 다르다. 공정 중에 방어·검사 기능을 넣어야 양산 품질을 관리할 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "피치 축소와 박막·대형 다이의 휨으로 인해 mass reflow, TCB와 hybrid bonding의 적용 영역이 달라진다.",
-                    "입력 표면의 Cu dishing, 화학 상태, particle, die warpage와 장비 정렬·청정도를 함께 관리해야 한다. 공정과 metrology가 별도로 움직이면 양산에 필요한 제어가 어렵다.",
-                    "hybrid bonding에서는 silanol·오염·표면 형상·void·overlay를 관리하고, fluxless TCB에서는 수소 플라즈마 기반 AOR과 재산화 억제를 설명했다.",
-                    "장비 단독 공급에서 소재·고객·계측 기업과의 공동 개발로 전환해야 한다는 메시지다. 정렬·throughput 수치는 발표 당시 장비 사양과 계획을 구분해야 한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "장비 사양의 비교에는 정확도와 UPH (Units Per Hour) 외에 입력 표면 스펙, 전처리 및 이송, 인라인 계측과 재작업 전략을 포함해야 한다. ASMPT의 메시지는 장비 공급자가 기계만 제공하는 역할에서 소재와 고객 공정·계측까지 함께 설계하는 역할로 확장된다는 것이다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "TCB",
-                  "full": "Thermocompression Bonding"
-                },
-                {
-                  "term": "AOR",
-                  "full": "Active Oxide Removal"
-                },
-                {
-                  "term": "UPH",
-                  "full": "Units Per Hour"
-                }
-              ],
-              "detailCharacters": 1290
-            },
-            {
-              "type": "pdf",
-              "id": "T27",
-              "label": "CMP 접촉역학과 Cu dishing 제어",
-              "file": "T27.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T27.pdf",
-              "pageCount": 9,
-              "topics": [
-                "Hybrid Bonding",
-                "Bonding Equipment / Process",
-                "AI / Simulation",
-                "Metrology / DIC"
-              ],
-              "summary": "Sukkyung Kang · Hanyang University\nCu Dishing Mechanism Based on CMP Pad-Wafer Contact Mechanics\n1. Cu dishing이 너무 깊으면 본딩 후에도 접촉이 부족하고, 너무 얕으면 열팽창으로 절연막에 응력이 생길 수 있다. 적절한 recess 제어가 필요하다.\n2. Cu와 SiO₂의 경도 차이로 초기 dishing이 발생하고, compliant pad가 trench 안으로 변형되면서 Cu 제거가 계속되는 메커니즘을 제시했다.\n3. 패드 변형과 연마를 분리한 모델에 국부 접촉압과 asperity 높이 편차를 반영한다. 3D 프린팅 microstructured pad로 접촉 형상과 탄성률을 조절했다.\n4. 발표의 약 70% dishing 감소는 해당 pad·조건의 비교 결과다. 더 부드러운 pad도 더 많은 asperity가 하중을 분담하면 최대 국부압이 낮아져 dishing이 감소할 수 있다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Hanyang University",
-              "presenter": "Sukkyung Kang",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "Hybrid bonding에서는 Cu가 절연막보다 적절하게 낮은 recess를 가져야 열처리 후 접촉을 형성할 수 있다. Dishing이 너무 깊으면 접촉이 부족하고, 반대로 너무 얕으면 Cu의 열팽창이 주변 절연막에 과도한 응력을 줄 수 있어 정밀한 제어가 필요하다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "CMP (Chemical Mechanical Polishing)에서 Cu와 SiO₂의 경도 차이는 같은 연마 조건에서도 다른 제거 깊이를 만들 수 있다. 초기 dishing 이후에는 compliant pad가 오목한 영역으로 변형해 Cu에 하중을 계속 전달한다. 그 결과 연마가 더 진행되지만, 주어진 하중에서 pad가 변형할 수 있는 정도에는 한계가 있어 포화 거동을 갖는다.",
-                    "모델은 접촉 압력을 pad 변형에 쓰이는 부분과 실제 제거에 기여하는 부분으로 나누고, 제거 거동을 Preston 관계와 연결한다. 이 관계에서는 제거율이 접촉 압력과 상대 운동 속도에 의존한다. 평균 압력만 알면 충분하지 않고 개별 asperity의 하중 분담을 알아야 하는 이유다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "연구는 3D 프린팅한 microstructured pad로 돌기 형상·면적과 재료 탄성률을 조절한다. 상용 pad의 무작위 표면과 비교해 실제 접촉 상태를 더 통제하려는 접근이다. 여기에 asperity 높이 편차를 반영하면 국부 압력과 최대 dishing의 변화를 설명할 수 있다.",
-                    "부드러운 pad가 더 깊게 변형되므로 항상 dishing이 커질 것이라는 예상과 달리, 더 많은 돌기가 접촉해 하중을 나누면 국부 압력이 낮아질 수 있다. 따라서 pad 탄성률의 효과는 실접촉 면적이 변하는 효과와 함께 해석해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "Cu dishing이 너무 깊으면 본딩 후에도 접촉이 부족하고, 너무 얕으면 열팽창으로 절연막에 응력이 생길 수 있다. 적절한 recess 제어가 필요하다.",
-                    "Cu와 SiO₂의 경도 차이로 초기 dishing이 발생하고, compliant pad가 trench 안으로 변형되면서 Cu 제거가 계속되는 메커니즘을 제시했다.",
-                    "패드 변형과 연마를 분리한 모델에 국부 접촉압과 asperity 높이 편차를 반영한다. 3D 프린팅 microstructured pad로 접촉 형상과 탄성률을 조절했다.",
-                    "발표의 약 70% dishing 감소는 해당 pad·조건의 비교 결과다. 더 부드러운 pad도 더 많은 asperity가 하중을 분담하면 최대 국부압이 낮아져 dishing이 감소할 수 있다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "발표의 약 70% 감소는 특정 pad와 연마 조건에서의 dishing 비교다. 핵심 설계 변수는 명목 압력이나 형상 이름 하나보다 최대 국부압과 돌기 높이 분포다. Wafer 전체의 waviness, 패턴 밀도와 slurry 화학은 별도의 길이 스케일과 원인을 갖기 때문에 국부 dishing 모델과 구분해 다루어야 한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "CMP",
-                  "full": "Chemical Mechanical Polishing"
-                }
-              ],
-              "detailCharacters": 1367
-            },
-            {
-              "type": "pdf",
-              "id": "T28",
-              "label": "FCBGA pad cratering의 열사이클 손상",
-              "file": "T28.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T28.pdf",
-              "pageCount": 6,
-              "topics": [
-                "Reliability",
-                "AI / Simulation",
-                "Metrology / DIC",
-                "Packaging Materials"
-              ],
-              "summary": "Minho Oh · KAIST\nEvaluation of Pad Cratering Fracture in FCBGA Packages Under Thermal Cycling\n1. 강한 solder joint에서는 파괴가 solder/IMC뿐 아니라 Cu pad 아래 prepreg 내부로 이동할 수 있다는 문제를 다룬다.\n2. DCB 시험과 탄소성 FEM의 J-integral을 이용해 파괴 위치와 저항을 평가했다. 단순 인장·전단 강도와 달리 fracture mechanics 관점의 비교다.\n3. 발표에는 0~125 °C 열사이클 후 0·200·400·500 cycle 상태를 비교한 것으로 기술된다. 열사이클이 진행될수록 파괴하중과 J-integral이 감소하고 약 400 cycle 이후 완만해지는 경향을 설명한다.\n4. 파면 분석은 Cu-pad/PPG 계면보다 PPG 내부 파괴를 지지한다. 점탄성 prepreg와 viscoplastic solder의 잔류응력·누적 creep을 함께 고려했다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "KAIST",
-              "presenter": "Minho Oh",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "Solder joint가 강해져도 패키지 전체가 항상 더 견고해지는 것은 아니다. 하중이 더 약한 위치로 전달되면 파괴가 solder/IMC (Intermetallic Compound) 근처에서 Cu pad 아래의 복합재 내부로 이동할 수 있다. Pad cratering은 이러한 파괴 위치의 변화를 보여주는 사례다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "DCB (Double Cantilever Beam) 시험은 균열을 벌리는 하중과 변위를 측정해 계면 또는 재료 내부의 파괴 저항을 평가한다. 단순한 최대 전단·인장 강도와 달리 균열 진전에 필요한 에너지의 관점으로 분석할 수 있다. J-integral은 시험 형상과 탄소성 응답을 해석 모델에 연결해 균열 선단의 에너지 상태를 평가하는 지표다.",
-                    "열사이클 동안 solder는 시간 의존 변형을 하고 prepreg도 점탄성 응답을 보인다. 한 사이클 후의 응력이나 변형이 완전히 원래 상태로 돌아오지 않으면 잔류 상태와 누적 손상이 달라진다. 특정 시점의 변형률 크기와 전체 이력의 누적 equivalent creep strain은 서로 다른 정보를 제공한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "시험 하중을 이용한 3D·2D 모델을 비교하고, 경계 조건을 맞춘 뒤 계산 효율을 위해 2D 모델을 활용했다. 파면 성분과 단면 관찰은 균열이 Cu-pad/prepreg 접착면인지, prepreg 내부인지 구분하는 근거로 사용한다.",
-                    "0~125 °C 열사이클 이후의 DCB 결과를 비교해 파괴하중과 J-integral이 낮아지는 경향을 분석했다. 약 400 cycle 이후 변화가 완만해지는 것은 해당 시험에서 관찰한 저항의 변화이며, 모든 형태의 손상 축적이 멈춘다는 의미는 아니다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "강한 solder joint에서는 파괴가 solder/IMC뿐 아니라 Cu pad 아래 prepreg 내부로 이동할 수 있다는 문제를 다룬다.",
-                    "DCB 시험과 탄소성 FEM (Finite Element Method)의 J-integral을 이용해 파괴 위치와 저항을 평가했다. 단순 인장·전단 강도와 달리 fracture mechanics 관점의 비교다.",
-                    "발표에는 0~125 °C 열사이클 후 0·200·400·500 cycle 상태를 비교한 것으로 기술된다. 열사이클이 진행될수록 파괴하중과 J-integral이 감소하고 약 400 cycle 이후 완만해지는 경향을 설명한다.",
-                    "파면 분석은 Cu-pad/PPG (Prepreg) 계면보다 PPG 내부 파괴를 지지한다. 점탄성 prepreg와 viscoplastic solder의 잔류응력·누적 creep을 함께 고려했다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "접합재를 강화한 이후에는 평가 위치를 solder joint에만 고정하지 말고 pad 아래 재료와 계면까지 넓혀야 한다. 파면·단면·하중 응답·파괴역학 해석을 함께 사용할 때 손상의 위치와 원인을 구분하고 재료 변경의 효과를 평가할 수 있다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "IMC",
-                  "full": "Intermetallic Compound"
-                },
-                {
-                  "term": "DCB",
-                  "full": "Double Cantilever Beam"
-                },
-                {
-                  "term": "FEM",
-                  "full": "Finite Element Method"
-                },
-                {
-                  "term": "PPG",
-                  "full": "Prepreg"
-                }
-              ],
-              "detailCharacters": 1374
-            },
-            {
-              "type": "pdf",
-              "id": "T29",
-              "label": "D2D 하이브리드 본딩의 표면과 열처리",
-              "file": "T29.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T29.pdf",
-              "pageCount": 6,
-              "topics": [
-                "Hybrid Bonding",
-                "Bonding Equipment / Process",
-                "Metrology / DIC",
-                "Reliability"
-              ],
-              "summary": "Byungchan Jung · JUSTEM\nExperimental Investigation of Key Process Parameters for Die-to-Die Hybrid Bonding\n1. plasma activation, 표면 젖음성, Cu topography와 annealing 조건이 dielectric 및 Cu/SiO₂ 본딩에 미치는 영향을 평가했다.\n2. 발표에는 물 접촉각이 약 62°에서 3.2°로 감소하고, dielectric 최대 shear stress가 0.301 MPa에서 1.951 MPa로 약 6.5배 증가한 것으로 기록되어 있다.\n3. 초기 Cu dishing 약 3 nm인 시험면에서 2시간 anneal을 비교했다. 250 °C는 불완전 접촉, 300 °C 이상에서 더 연속적인 Cu 접촉을 관찰했다고 설명한다.\n4. 350 °C EBSD 결과만으로 계면 전체의 결정립 연속성을 확정하지 않았다. 중앙부와 가장자리의 접합 차이도 존재하며 D2W prototype 장비 개발에 반영하고 있다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "JUSTEM",
-              "presenter": "Byungchan Jung",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "Die-to-die hybrid bonding은 절연막과 Cu의 접합을 함께 만족해야 한다. 표면이 친수성으로 바뀌었다는 관측, 전단 강도가 높아졌다는 결과와 Cu 계면이 연속적으로 보인다는 결과는 각각 다른 단계의 증거다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "Plasma activation은 절연막 표면의 화학 상태와 젖음성을 바꾸고 초기 접합을 돕는다. 물 접촉각은 이를 확인하는 한 가지 지표지만 최종 접합강도 자체와 같지는 않다. 발표는 접촉각 변화와 die shear 결과를 연결해 표면 처리의 효과를 비교한다.",
-                    "Cu/SiO₂ 면에서는 초기 dishing과 annealing 온도가 Cu 접촉을 좌우한다. Cu와 절연막의 열팽창 차이 및 열처리 중 계면 변화가 작용하므로, 동일한 온도에서도 초기 표면과 형상이 다르면 결과가 달라질 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "초기 Cu topography는 AFM (Atomic Force Microscopy)으로 평가하고, 250·300·350 °C에서 2시간 anneal한 뒤 단면 SEM (Scanning Electron Microscopy)으로 접촉 상태를 비교한다. 250 °C의 불완전 접촉과 300 °C 이상의 연속적인 접촉은 이 시험면에서 온도 의존성이 크다는 결과다.",
-                    "350 °C의 EBSD (Electron Backscatter Diffraction)는 결정방향과 grain boundary를 관찰하는 별도 분석이다. 단면에서 접촉이 보인다는 사실만으로 전체 계면에서 결정립이 이어졌다고 결론 내리지는 않는다. 중앙과 가장자리의 균일도, alignment key의 영상 인식과 장비 동작도 prototype 개발에 반영한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "plasma activation, 표면 젖음성, Cu topography와 annealing 조건이 dielectric 및 Cu/SiO₂ 본딩에 미치는 영향을 평가했다.",
-                    "발표에는 물 접촉각이 약 62°에서 3.2°로 감소하고, dielectric 최대 shear stress가 0.301 MPa에서 1.951 MPa로 약 6.5배 증가한 것으로 기록되어 있다.",
-                    "초기 Cu dishing 약 3 nm인 시험면에서 2시간 anneal을 비교했다. 250 °C는 불완전 접촉, 300 °C 이상에서 더 연속적인 Cu 접촉을 관찰했다고 설명한다.",
-                    "350 °C EBSD 결과만으로 계면 전체의 결정립 연속성을 확정하지 않았다. 중앙부와 가장자리의 접합 차이도 존재하며 D2W (Die-to-Wafer) prototype 장비 개발에 반영하고 있다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "이 연구는 접촉각, 전단 강도, 표면 topography, 단면과 결정구조의 증거를 분리해 접합 조건을 평가하는 예다. 특정 시험의 온도를 모든 hybrid bonding의 최소 요구 온도로 일반화하기보다, 표면 준비와 형상·열이력이 함께 정해진 공정창으로 이해해야 한다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "AFM",
-                  "full": "Atomic Force Microscopy"
-                },
-                {
-                  "term": "SEM",
-                  "full": "Scanning Electron Microscopy"
-                },
-                {
-                  "term": "EBSD",
-                  "full": "Electron Backscatter Diffraction"
-                },
-                {
-                  "term": "D2W",
-                  "full": "Die-to-Wafer"
-                }
-              ],
-              "detailCharacters": 1361
-            },
-            {
-              "type": "pdf",
-              "id": "T33",
-              "label": "WLUF 기반 3D 적층의 하중과 휨",
-              "file": "T33.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T33.pdf",
-              "pageCount": 5,
-              "topics": [
-                "Chiplet / 3D Integration",
-                "Warpage",
-                "Reliability",
-                "AI / Simulation",
-                "Bonding Equipment / Process",
-                "Packaging Materials"
-              ],
-              "summary": "Hsuan-Fang Liang · National Tsing Hua University\nThermomechanical Reliability and Bonding-Induced Warpage Analysis of Wafer-Level Underfill Based 3D Stacked-Chip Packages\n1. wafer-level underfill을 적용한 3D 적층에서 본딩 하중, 상부 die 두께와 microbump 배치의 영향을 실험과 2D FEM으로 비교했다.\n2. 발표에서는 50 µm 상부 다이의 휨 약 1.84 µm와 실험의 일치를 설명한다. 얇은 다이는 유연해 solder 변형을 분산할 수 있으나 본딩 하중에 따른 휨 민감도도 커진다.\n3. 상부 die가 100 µm 미만일 때 4 kgf와 1 kgf 본딩 조건 사이의 휨 차이가 커졌다고 설명한다. 중심부의 bump-free 공간은 내부 microbump의 위험을 증가시킬 수 있다.\n4. 열사이클에서 solder/IMC 부근 손상과 CTE 불일치가 주요 failure mode로 논의되며, 적절한 하중 제한과 dummy bump 배치를 설계 방향으로 제시한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "National Tsing Hua University",
-              "presenter": "Hsuan-Fang Liang",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "Wafer-level underfill을 적용한 3D 적층은 본딩 중의 하중과 경화·냉각 이력이 최종 microbump의 상태를 바꾼다. 같은 bump 구조도 상부 die의 두께와 bump-free 영역, 하중 조건에 따라 휨과 국부 변형이 달라질 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "얇은 다이는 유연해서 열변형을 일부 분산할 수 있지만 본딩 하중에 더 크게 휘어질 수 있다. 따라서 “얇을수록 신뢰성에 유리하다” 또는 “두꺼울수록 안정적이다”라는 한 방향의 판단이 어렵다. 조립 중에 만들어진 잔류 형상과 운용 중의 반복 변형을 함께 고려해야 한다.",
-                    "중심부에 bump가 없는 영역은 안쪽 bump가 지지해야 하는 간격과 다이 굽힘을 바꾼다. 보통 바깥쪽 bump만 위험하다고 가정하기 쉽지만 구조에 따라 안쪽 bump에도 변형이 집중될 수 있다. Dummy bump는 전기적 기능 외에 기계적 지지의 역할로 배치할 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "해석은 microbump 접촉, 본딩 하중, underfill 경화와 냉각 및 열사이클을 순서대로 반영한다. 실험에서 관찰한 휨과 solder/IMC (Intermetallic Compound) 주변의 균열 위치를 함께 비교해 모델을 검증한다. 변형값 하나와 failure mode가 동시에 맞는지 확인하는 것이 중요하다.",
-                    "상부 die 두께와 본딩 하중, 중심부 배치 간격을 바꾸는 parametric study로 설계 민감도를 비교한다. CTE (Coefficient of Thermal Expansion) 불일치에 의한 반복 변형과 solder의 국부 소성 응답이 손상의 핵심이며, 초기 조립 형상이 이후 열사이클의 출발 조건이 된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "wafer-level underfill을 적용한 3D 적층에서 본딩 하중, 상부 die 두께와 microbump 배치의 영향을 실험과 2D FEM (Finite Element Method)으로 비교했다.",
-                    "발표에서는 50 µm 상부 다이의 휨 약 1.84 µm와 실험의 일치를 설명한다. 얇은 다이는 유연해 solder 변형을 분산할 수 있으나 본딩 하중에 따른 휨 민감도도 커진다.",
-                    "상부 die가 100 µm 미만인 구조에서는 본딩 하중에 따른 휨 차이가 커졌다. 중심부의 bump-free 공간이 커지면 내부 microbump의 위험이 증가할 수 있으므로, 본딩 하중과 지지 배치를 함께 설계한다.",
-                    "열사이클에서 solder/IMC 부근 손상과 CTE 불일치가 주요 failure mode로 논의되며, 적절한 하중 제한과 dummy bump 배치를 설계 방향으로 제시한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "이 발표의 설계 방향은 본딩 하중을 제한하고, 박막 다이의 유연성과 지지 구조를 함께 설계하는 것이다. 내부와 외부 bump를 같은 관점으로 평가하고, 휨만 줄이는 변경이 solder의 변형률까지 개선하는지 확인해야 한다. 공정 해석과 신뢰성 해석을 이어야 하는 이유를 구체적인 적층 사례로 보여준다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "IMC",
-                  "full": "Intermetallic Compound"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                },
-                {
-                  "term": "FEM",
-                  "full": "Finite Element Method"
-                }
-              ],
-              "detailCharacters": 1399
-            },
-            {
-              "type": "pdf",
-              "id": "T34",
-              "label": "첨단 패키징 소재의 기능별 요구와 개발 방향",
-              "file": "T34.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T34.pdf",
-              "pageCount": 4,
-              "topics": [
-                "Packaging Materials",
-                "Substrate",
-                "Thermal Management",
-                "Signal Integrity",
-                "HBM / Memory",
-                "Polymer / Interface Engineering"
-              ],
-              "summary": "이광주 · KwangJoo Lee · LG Chem\n첨단 패키징 소재 포트폴리오 및 핵심 기술 과제\n1. 기존 CCL·DAF·DFSR 및 공정 재료에서 NCF·MUF·PID·build-up film·액상 몰드·임시 접착 재료로 포트폴리오를 확장하는 방향을 제시했다.\n2. 핵심 과제를 미세 피치, 높은 열전달, 고속 신호를 위한 낮은 유전 손실, 박형 웨이퍼·기판 취급으로 정리했다.\n3. 미세 패턴·간극 충전·열전달·저손실·박형 취급의 요구를 소재별로 나누고, 양산 성숙도와 공정 호환성을 함께 평가하는 것이 핵심이다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "LG Chem",
-              "presenter": "이광주 · KwangJoo Lee",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "발표는 패키지의 대형화·박형화와 2.5D·3D 집적이 소재에 어떤 기능을 요구하는지 정리한다. 기존 패키지는 몰드·접착·기판·회로 보호에 초점이 있었다면, 첨단 패키지에서는 미세 배선과 고적층 메모리의 접합, 열 전달, 고속 신호, 얇은 웨이퍼 취급이 동시에 소재 설계를 좌우한다. 한 종류의 수지가 모든 요구를 해결하는 구조가 아니라, 위치와 공정에 따라 서로 다른 절연·접착·보호 재료를 조합하는 접근이다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "CCL (Copper-Clad Laminate)은 기판 배선의 지지 구조, DAF (Die Attach Film)는 다이 부착용 접착층, DFSR (Dry Film Solder Resist)은 기판 최외곽 회로의 보호막으로 구분된다. HBM (High Bandwidth Memory) 적층의 NCF (Non-Conductive Film)는 칩 사이 접합과 간극 충전에 사용되는 절연 접착 필름이며, MUF (Molded Underfill)는 성형 공정에서 간극 충전과 봉지를 통합하는 방향이다. 같은 에폭시 기반 재료라도 흐름성·접착·경화·기계 응답의 설계 목표가 서로 다르다.",
-                    "미세 피치에서는 PID (Photo Imageable Dielectric)의 감광 특성과 절연 성능, build-up film의 층간 절연 및 가공성, 얇은 Cu 배선과 도금액의 조합이 중요하다. 절연층이 미세 비아와 배선을 구현할 수 있어야 하고, 이후 도금과 세정 공정까지 견뎌야 실제 배선 구조로 완성된다.",
-                    "고속 신호용 소재는 낮은 Dk (Dielectric Constant)와 Df (Dissipation Factor)를 통해 전파 지연과 유전 손실을 줄이는 방향이다. 반면 방열 소재는 filler의 종류·함량과 계면을 통해 열 전달을 높이는 방향이다. 열관리용 high K는 높은 열전도 특성을 뜻하며, 유전율을 높이려는 설계와는 구분된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "소재 개발은 기능별 제품군과 공정 요구를 연결하는 방식으로 구성된다. 기존 양산 제품군과 개발 중 제품군을 구분하므로, 제시된 모든 소재가 동일한 양산 성숙도를 가졌다고 볼 수 없다. 향후 평가에서는 패턴 해상도·비아 형성성, 접착 강도, 경화수축, 온도별 탄성률, 열전도율, 유전 특성을 각각의 용도에 맞추어 검증해야 한다.",
-                    "얇은 웨이퍼의 공정에는 TBDB (Temporary Bonding and De-Bonding)와 고강성 carrier가 필요하다. 접착 상태에서는 연마·이송 중 변형을 억제하고, 분리 단계에서는 얇은 다이를 손상시키지 않아야 한다. 이는 최종 패키지에 남는 재료뿐 아니라 제조 중 사용하는 임시 재료도 집적 수율을 좌우한다는 의미다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "기존 CCL·DAF·DFSR 및 공정 재료에서 NCF·MUF·PID·build-up film·액상 몰드·임시 접착 재료로 포트폴리오를 확장하는 방향을 제시했다.",
-                    "핵심 과제를 미세 피치, 높은 열전달, 고속 신호를 위한 낮은 유전 손실, 박형 웨이퍼·기판 취급으로 정리했다.",
-                    "미세 패턴·간극 충전·열전달·저손실·박형 취급의 요구를 소재별로 나누고, 양산 성숙도와 공정 호환성을 함께 평가하는 것이 핵심이다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "설계 관점에서는 저손실과 고열전도, 높은 강성과 응력 완화가 항상 같은 배합 방향으로 개선되지 않는다는 점이 중요하다. 예를 들어 filler를 늘리면 열·기계 특성은 바뀌지만 점도와 좁은 간극 충전성도 변한다. 따라서 소재 단품의 최고 물성보다 실제 간극·배선·열이력에서 구현 가능한 공정 창을 기준으로 재료를 선정해야 한다. 이 소재 지도는 기판·접합·열설계를 초기 단계에서 함께 논의해야 하는 이유를 보여준다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "CCL",
-                  "full": "Copper-Clad Laminate"
-                },
-                {
-                  "term": "DAF",
-                  "full": "Die Attach Film"
-                },
-                {
-                  "term": "DFSR",
-                  "full": "Dry Film Solder Resist"
-                },
-                {
-                  "term": "HBM",
-                  "full": "High Bandwidth Memory"
-                },
-                {
-                  "term": "NCF",
-                  "full": "Non-Conductive Film"
-                },
-                {
-                  "term": "MUF",
-                  "full": "Molded Underfill"
-                },
-                {
-                  "term": "PID",
-                  "full": "Photo Imageable Dielectric"
-                },
-                {
-                  "term": "Dk",
-                  "full": "Dielectric Constant"
-                },
-                {
-                  "term": "Df",
-                  "full": "Dissipation Factor"
-                },
-                {
-                  "term": "TBDB",
-                  "full": "Temporary Bonding and De-Bonding"
-                }
-              ],
-              "program": "11/4 · 소재 기술 소개",
-              "detailCharacters": 1739
-            }
-          ]
-        },
-        {
-          "type": "folder",
-          "id": "day-115",
-          "label": "11월 5일",
-          "children": [
-            {
-              "type": "pdf",
-              "id": "T13",
-              "label": "EMC 경화수축과 얇은 실리콘의 휨 분기",
-              "file": "T13.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T13.pdf",
-              "pageCount": 21,
-              "topics": [
-                "Warpage",
-                "Packaging Materials",
-                "AI / Simulation",
-                "Reliability",
-                "Chiplet / 3D Integration",
-                "Metrology / DIC"
-              ],
-              "summary": "Min Sang Ju · KAIST\nSimultaneous measurement of cure shrinkage and warpage via 3D-DIC for full-process warpage prediction of EMC-encapsulated package\n1. 3D-DIC로 경화 중 표면의 면내 변형률과 면외 휨을 동시에 추적한다. 경화수축과 열팽창 불일치가 구속된 EMC/Si 구조의 응력과 곡률을 만든다.\n2. 시험 구조는 25 × 25 mm 이층 시편, EMC 100 µm, Si 100 µm 또는 525 µm이다. 액상 EMC는 silica filler 75 wt%와 epoxy resin으로 소개된다.\n3. 경화가 진행되며 표면 변형률은 감소하고 곡률은 증가했다. 525 µm Si와 달리 100 µm Si에서는 냉각 중 대각 방향의 휨 모드와 곡률 분기가 관찰되었다.\n4. 실리콘의 이방성과 큰 변형을 반영한 비선형 FEM이 대각 휨 모드를 재현했다. 등방성 탄성만으로는 얇은 Si의 모드 전환을 충분히 설명하기 어렵다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "KAIST",
-              "presenter": "Min Sang Ju",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "EMC (Epoxy Molding Compound)가 경화하며 발생하는 화학적 수축과 냉각 중 열변형은 실리콘에 구속될 때 휨과 잔류응력으로 나타난다. 최종 휨 한 값만 측정하면 경화 중의 수축과 열팽창 불일치가 언제부터 구조에 작용했는지 분리해 이해하기 어렵다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "3D-DIC (Digital Image Correlation)는 표면의 패턴을 두 시점 또는 두 카메라 영상에서 추적해 면내 변형률과 면외 변위를 함께 얻는다. 발표는 이를 경화 과정에 적용해 표면 변형률이 줄어드는 시점과 곡률이 커지는 시점을 연결한다. 구속된 시편의 표면 변형률은 자유 상태의 순수 화학 수축과 같지 않으며, 실리콘과의 구속 및 굽힘을 함께 반영한 관측량이다.",
-                    "Si 두께를 바꾸면 재료는 같아도 구조의 굽힘 강성이 크게 바뀐다. 같은 재료와 폭의 판에서 굽힘 강성은 두께의 세제곱에 민감하다. 얇은 Si는 열응력에 더 유연하게 변형되며, 큰 변형과 결정 방향에 따른 강성 차이가 결합하면 구면형 굽힘에서 대각 방향의 모드로 전환될 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "비교 시편은 EMC 100 µm와 Si 100 또는 525 µm의 이층 구조다. 경화와 냉각 동안 방향별 곡률을 비교해 얇은 Si에서의 곡률 분기와 대각 휨을 관찰한다. 같은 최대 높이만 비교하는 것보다 변형 방향과 모드를 함께 확인하는 것이 중요한 측정 설계다.",
-                    "FEM (Finite Element Method)에서는 온도 의존 EMC 물성과 점탄성, Si의 이방성 및 기하학적 비선형성을 고려한다. 등방성 선형 판의 강성만으로 계산하면 방향에 따른 모드 선택과 분기를 놓칠 수 있다. 측정과 해석의 비교는 최대값뿐 아니라 두 방향의 곡률 변화가 재현되는지로 평가한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "3D-DIC로 경화 중 표면의 면내 변형률과 면외 휨을 동시에 추적한다. 경화수축과 열팽창 불일치가 구속된 EMC/Si 구조의 응력과 곡률을 만든다.",
-                    "시험 구조는 25 × 25 mm 이층 시편, EMC 100 µm, Si 100 µm 또는 525 µm이다. 액상 EMC는 silica filler 75 wt%와 epoxy resin으로 소개된다.",
-                    "경화가 진행되며 표면 변형률은 감소하고 곡률은 증가했다. 525 µm Si와 달리 100 µm Si에서는 냉각 중 대각 방향의 휨 모드와 곡률 분기가 관찰되었다.",
-                    "실리콘의 이방성과 큰 변형을 반영한 비선형 FEM이 대각 휨 모드를 재현했다. 등방성 탄성만으로는 얇은 Si의 모드 전환을 충분히 설명하기 어렵다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "박막 다이의 휨을 재료 CTE (Coefficient of Thermal Expansion) 한 값으로 보정하는 접근보다 경화 응답, 구속 조건과 결정 방향을 함께 사용하는 것이 필요하다. 이 연구는 재료 데이터베이스를 만드는 실험과 패키지 형상을 예측하는 해석 사이에 전영역 변형 측정이 중요한 연결 역할을 한다는 것을 보여준다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "EMC",
-                  "full": "Epoxy Molding Compound"
-                },
-                {
-                  "term": "DIC",
-                  "full": "Digital Image Correlation"
-                },
-                {
-                  "term": "FEM",
-                  "full": "Finite Element Method"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                }
-              ],
-              "detailCharacters": 1382
-            },
-            {
-              "type": "pdf",
-              "id": "T14",
-              "label": "에폭시 경화와 열변형의 분리 측정",
-              "file": "T14.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T14.pdf",
-              "pageCount": 15,
-              "topics": [
-                "Warpage",
-                "Packaging Materials",
-                "AI / Simulation",
-                "Metrology / DIC",
-                "Reliability"
-              ],
-              "summary": "Doojin Jeong · KETI\nTransient Warpage Analysis and Process-Based Numerical Simulation of Substrate-Epoxy-Silicon Structures Decoupled Cure Shrinkage\n1. DSC의 경화도(DOC)와 rheometer의 기계적 전이를 연결하고, 경화와 냉각에 따른 휨을 구분하는 실험 절차를 제시했다.\n2. 시험은 Si/3M DP460 epoxy/기판 구조에서 FR-4와 glass를 비교한다. 시편은 80 × 80 mm, 분석 영역은 중앙 60 × 60 mm이다.\n3. 60·80·100 °C에서 60분 유지하는 조건과 반복 열이력을 비교했다. TDM projection moiré로 얻은 높이 프로파일에서 곡률, PV, RMS를 계산한다.\n4. FR-4에서는 특히 상온으로 냉각할 때 휨이 크게 늘었고, glass는 시험 조건에서 더 낮은 휨을 보였다. 경화온도뿐 아니라 기판 물성과 열이력이 중요하다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "KETI",
-              "presenter": "Doojin Jeong",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "에폭시 접착층을 포함한 구조는 경화 반응에 따른 수축과 온도 변화에 따른 수축·팽창이 동시에 일어난다. 특히 겔화 전에는 재료가 유동하며 응력을 완화할 수 있지만, 네트워크가 형성된 뒤의 수축은 구속된 구조에 응력으로 전달될 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "DSC (Differential Scanning Calorimetry)는 경화 발열을 적분해 반응 진행도를 구하고, rheometer는 저장·손실 탄성률의 시간 변화를 통해 기계적 전이를 본다. 두 장비는 같은 현상을 다른 관측량으로 측정하므로, 같은 열이력의 시간축을 맞춰야 화학 반응과 하중 전달의 변화를 연결할 수 있다.",
-                    "발표에서 사용하는 등온 구간의 relative DOC (Degree of Cure)는 관측 구간에서의 반응 진행을 정규화한 값이다. 이를 모든 반응이 완결된 절대 경화도와 자동으로 같게 두어서는 안 된다. 또한 겔점을 탄성률 교차로 정의할 때에는 사용한 측정 조건과 교차점 선택이 해석의 기준 상태에 영향을 준다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "Si/epoxy/substrate 구조에서 FR-4와 glass를 비교하고, 60·80·100 °C 유지 조건 및 두 차례 열이력을 사용한다. 첫 번째 주기는 경화와 열변형이 함께 들어 있고, 이후 주기는 이미 경화된 구조의 열적 응답을 더 강하게 반영한다. 두 응답을 비교해 화학 반응의 기여와 냉각 시 CTE (Coefficient of Thermal Expansion) 불일치의 기여를 구분하는 접근이다.",
-                    "투영 모아레로 높이 형상을 얻고 중앙 영역의 대표 방향 프로파일에서 곡률, PV (Peak-to-Valley)와 RMS (Root Mean Square)를 계산한다. 곡률은 전체 굽힘의 크기와 방향, PV는 최고·최저 높이의 차이, RMS는 기준 형상과의 편차를 나타낸다. 서로 다른 변형 모드는 하나의 수치에서 같아 보일 수 있으므로 지표들을 함께 읽는다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "DSC의 경화도(DOC)와 rheometer의 기계적 전이를 연결하고, 경화와 냉각에 따른 휨을 구분하는 실험 절차를 제시했다.",
-                    "시험은 Si/3M DP460 epoxy/기판 구조에서 FR-4와 glass를 비교한다. 시편은 80 × 80 mm, 분석 영역은 중앙 60 × 60 mm이다.",
-                    "60·80·100 °C에서 60분 유지하는 조건과 반복 열이력을 비교했다. TDM projection moiré로 얻은 높이 프로파일에서 곡률, PV, RMS를 계산한다.",
-                    "FR-4에서는 특히 상온으로 냉각할 때 휨이 크게 늘었고, glass는 시험 조건에서 더 낮은 휨을 보였다. 경화온도뿐 아니라 기판 물성과 열이력이 중요하다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "FR-4에서 냉각 중 변형이 커지고 glass에서 더 낮은 휨이 나타난 결과는 기판 선택과 열이력이 함께 중요하다는 뜻이다. 단순히 낮은 경화온도를 고르는 것보다 최종 경화 상태, 점탄성 이완, 기판 강성과 CTE의 조합을 평가해야 한다. 이 절차는 공정 기반 휨 해석의 입력과 검증 데이터를 만드는 데 활용할 수 있다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "DSC",
-                  "full": "Differential Scanning Calorimetry"
-                },
-                {
-                  "term": "DOC",
-                  "full": "Degree of Cure"
-                },
-                {
-                  "term": "CTE",
-                  "full": "Coefficient of Thermal Expansion"
-                },
-                {
-                  "term": "PV",
-                  "full": "Peak-to-Valley"
-                },
-                {
-                  "term": "RMS",
-                  "full": "Root Mean Square"
-                }
-              ],
-              "detailCharacters": 1438
-            },
-            {
-              "type": "pdf",
-              "id": "T15",
-              "label": "하이브리드 본딩의 radial collet 설계",
-              "file": "T15.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T15.pdf",
-              "pageCount": 6,
-              "topics": [
-                "Hybrid Bonding",
-                "Bonding Equipment / Process",
-                "AI / Simulation",
-                "Reliability"
-              ],
-              "summary": "Ah-Young Park · University of Seoul\nDesign of a Radial Collet for Reducing Voids and Alignment Errors in Hybrid Bonding\n1. D2W 장비의 pick-up, 이송, 정렬·접근, 본딩 전파 순서를 따라 접촉 거동을 해석하고 push pin과 radial collet을 비교했다.\n2. 50·80 µm 돌출 조건에서 최대 응력은 push pin의 131.07·185.96 MPa 대비 radial collet의 11.64·16.51 MPa로 제시된다. 해당 모델에서 약 91% 감소다.\n3. 50 µm 조건의 본딩 완료 시간은 0.3194 s에서 0.4692 s로 증가했다. 전파가 느려지면서 공기 배출 시간을 확보하는 설계 방향을 제시한다.\n4. 응력과 접합 전파를 고려한 설계안으로 50 µm radial collet을 선택했다. 응력, 전파속도, void hotspot 위치와 공기 배출 경로를 함께 평가해야 한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "University of Seoul",
-              "presenter": "Ah-Young Park",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "하이브리드 본딩에서는 다이를 정확하게 놓는 것뿐 아니라 두 표면이 어디서 먼저 닿고 접촉이 어떻게 전파되는지도 중요하다. 접촉이 너무 빠르게 진행되거나 특정 위치에 하중이 집중되면 응력과 공기 포획의 위험이 커질 수 있다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "Push pin과 radial collet은 다이에 힘을 전달하는 위치와 분포가 다르다. 중앙에 집중된 힘은 국부 굽힘과 높은 응력을 만들 수 있고, 하중을 분산하는 툴은 같은 접합을 다른 압력 분포로 유도한다. 본딩 파의 속도는 접촉 진행과 공기 배출에 남는 시간에도 영향을 준다.",
-                    "툴의 돌출 높이는 더 크거나 더 작다는 이유만으로 좋은 값이 정해지지 않는다. 응력이 낮아져도 접촉 전파의 경로와 마지막에 닫히는 영역이 달라질 수 있기 때문이다. 따라서 최대 응력, 전파 시간과 void hotspot 위치를 함께 평가해야 한다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "해석은 pick-up, 이송, 정렬·접근과 접합 전파라는 실제 장비의 순서를 따른다. 50·80 µm 조건에서 두 툴을 비교하고, 국부 응력과 본딩 완료 시간을 평가했다. 50 µm radial collet의 완료 시간이 늘어난 결과는 공기 배출 시간을 확보하는 설계 방향과 연결된다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "D2W (Die-to-Wafer) 장비의 pick-up, 이송, 정렬·접근, 본딩 전파 순서를 따라 접촉 거동을 해석하고 push pin과 radial collet을 비교했다.",
-                    "50·80 µm 돌출 조건에서 최대 응력은 push pin의 131.07·185.96 MPa 대비 radial collet의 11.64·16.51 MPa로 제시된다. 해당 모델에서 약 91% 감소다.",
-                    "50 µm 조건의 본딩 완료 시간은 0.3194 s에서 0.4692 s로 증가했다. 전파가 느려지면서 공기 배출 시간을 확보하는 설계 방향을 제시한다.",
-                    "응력과 접합 전파를 고려한 설계안으로 50 µm radial collet을 선택했다. 응력, 전파속도, void hotspot 위치와 공기 배출 경로를 함께 평가해야 한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "응력 감소 약 91%와 완료 시간 증가 약 46.9%는 서로 다른 지표다. 전자는 다이의 국부 하중 상태, 후자는 접촉 전파를 설명하며 수율 개선율과 직접 같지 않다. 최종 선택은 공기 배출 경로까지 고려한 50 µm radial collet으로 제시된다. 이 연구는 접촉 툴의 형상이 정렬과 접합 품질의 일부라는 점을 보여준다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "D2W",
-                  "full": "Die-to-Wafer"
-                }
-              ],
-              "detailCharacters": 1152
-            },
-            {
-              "type": "pdf",
-              "id": "T16",
-              "label": "양산을 위한 장비와 공정의 통합 엔지니어링",
-              "file": "T16.pdf",
-              "relPath": "ISMP2026_Archive/pdfs/T16.pdf",
-              "pageCount": 10,
-              "topics": [
-                "Hybrid Bonding",
-                "Bonding Equipment / Process",
-                "AI / Simulation",
-                "Warpage"
-              ],
-              "summary": "Taewoo (Tim) Kang · Hanwha Semitech\nIntegrated Equipment & Process Engineering for Next-Generation High-Volume Advanced Packaging\n1. 장비의 명목 성능이 높아져도 다이 박막화·대형화와 공정창 축소가 더 빠르게 진행되면 안정적인 양산 결과를 얻기 어렵다는 engineering gap을 설명했다.\n2. 같은 장비와 recipe에서도 두께, 휨, 표면, 툴 특성이 달라지면 void·die shift·접합 품질이 달라진다. TCB와 D2W hybrid bonding은 접촉 방식도 다르다.\n3. 실제 장비의 force·Z-motion 응답, 툴 compliance와 평행도, 다이 물성을 측정해 접촉역학 디지털 트윈을 만들고 검증하는 절차를 제시했다.\n4. 물리 모델로 민감도와 위험을 먼저 좁힌 뒤 집중 DOE, 모델 검증, 툴·recipe 최적화로 연결한다. 장비 설치 이후에도 qualification과 HVM 안정화까지 협력 범위를 확장한다.",
-              "industry": {
-                "id": "semiconductor",
-                "label": "Semiconductor Packaging"
-              },
-              "organization": "Hanwha Semitech",
-              "presenter": "Taewoo (Tim) Kang",
-              "detailSections": [
-                {
-                  "heading": "기술 배경과 문제 정의",
-                  "paragraphs": [
-                    "제품의 다이가 더 얇고 커지고 피치가 줄면 공정창은 좁아지지만, 장비의 명목 정렬 정확도나 처리량이 개선되었다는 사실만으로 안정적인 양산이 보장되지는 않는다. 제품·재료·툴·장비의 상호작용을 함께 다루는 통합 엔지니어링이 필요하다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "구조와 작동 메커니즘",
-                  "paragraphs": [
-                    "TCB (Thermocompression Bonding)의 범프 접촉과 D2W (Die-to-Wafer) 하이브리드 본딩의 표면 접촉은 하중에 대응하는 방식이 다르다. 범프나 솔더의 변형은 일부 높이 차이를 흡수할 수 있지만, 표면 전체의 접촉은 다이 굽힘과 접촉 개시 위치에 민감하다. 같은 장비·recipe라도 다이 두께와 휨이 달라지면 압력 분포와 전파 경로가 바뀔 수 있다.",
-                    "측정해야 할 대상은 장비의 힘·접촉 응답과 Z축 운동, 툴의 기계적 물성과 평행도, 제품의 두께·휨 및 표면 상태다. 예를 들어 설정 하중이 같아도 툴의 compliance와 접촉 면적이 달라지면 실제 다이에 전달되는 응력은 달라진다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "실험과 해석 및 설계 방법",
-                  "paragraphs": [
-                    "발표의 예측 엔지니어링은 실제 시스템 특성화, 물리 모델 구축, 민감도·공정창 예측, 집중 DOE (Design of Experiments)와 검증, 최적화의 순서로 구성된다. 디지털 트윈은 장비 입력을 결과로 바로 치환하는 가상 복제품이라기보다 실측으로 보정한 접촉역학 모델을 통해 보이지 않는 압력·변형 분포를 추정하는 수단이다."
-                  ],
-                  "list": false
-                },
-                {
-                  "heading": "발표에서 제시한 주요 결과",
-                  "paragraphs": [
-                    "장비의 명목 성능이 높아져도 다이 박막화·대형화와 공정창 축소가 더 빠르게 진행되면 안정적인 양산 결과를 얻기 어렵다는 engineering gap을 설명했다.",
-                    "같은 장비와 recipe에서도 두께, 휨, 표면, 툴 특성이 달라지면 void·die shift·접합 품질이 달라진다. TCB와 D2W hybrid bonding은 접촉 방식도 다르다.",
-                    "실제 장비의 force·Z-motion 응답, 툴 compliance와 평행도, 다이 물성을 측정해 접촉역학 디지털 트윈을 만들고 검증하는 절차를 제시했다.",
-                    "물리 모델로 민감도와 위험을 먼저 좁힌 뒤 집중 DOE, 모델 검증, 툴·recipe 최적화로 연결한다. 장비 설치 이후에도 qualification과 HVM (High-Volume Manufacturing) 안정화까지 협력 범위를 확장한다."
-                  ],
-                  "list": true
-                },
-                {
-                  "heading": "설계와 공정 관점의 해석",
-                  "paragraphs": [
-                    "해석의 목적은 모든 실험을 없애는 것이 아니라 어떤 변수와 조합을 먼저 시험할지 좁히는 데 있다. 장비 설치 이전의 샘플 평가부터 recipe 개발, qualification과 HVM 안정화까지 모델과 실험을 반복 연결해야 한다. 공정창은 고정된 표가 아니라 제품과 재료 변경에 따라 이동하는 영역으로 관리하는 것이 핵심이다."
-                  ],
-                  "list": false
-                }
-              ],
-              "glossary": [
-                {
-                  "term": "TCB",
-                  "full": "Thermocompression Bonding"
-                },
-                {
-                  "term": "D2W",
-                  "full": "Die-to-Wafer"
-                },
-                {
-                  "term": "DOE",
-                  "full": "Design of Experiments"
-                },
-                {
-                  "term": "HVM",
-                  "full": "High-Volume Manufacturing"
-                }
-              ],
-              "detailCharacters": 1255
+              "detailCharacters": 1983,
+              "sessionType": "Plenary",
+              "sessionLabel": "Plenary Talk 1",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/4 10:45–11:15"
             },
             {
               "type": "pdf",
@@ -1943,6 +164,7 @@
                 {
                   "heading": "기술 배경과 문제 정의",
                   "paragraphs": [
+                    "메모리의 성능 확장은 셀 미세화만으로 해결되지 않는다. 연결 피치 축소, 첨단 접합, 고적층 구조의 열관리와 3차원 시스템 집적을 함께 개선해야 대역폭과 용량을 늘릴 수 있다. 이 발표는 메모리 고유의 기술 역량을 강화하면서 패키지·시스템과 협업하는 경로를 제시하며, 냉각이 확보되지 않으면 적층 높이와 성능의 확장도 제한된다는 점을 강조한다.",
                     "HBM (High Bandwidth Memory)의 발전은 단순한 저장 용량 증가가 아니라 대역폭·용량·전력·냉각을 함께 확장하는 집적 문제다. DRAM (Dynamic Random-Access Memory) 층과 I/O (Input/Output)가 늘어나면 메모리 안에서도 전력과 열이 균일하게 분포하지 않으므로, 외부 냉각 성능만으로 모든 hotspot을 해결하기 어렵다."
                   ],
                   "list": false
@@ -2026,7 +248,289 @@
                   "full": "System Technology Co-Optimization"
                 }
               ],
-              "detailCharacters": 1998
+              "detailCharacters": 2190,
+              "sessionType": "Plenary",
+              "sessionLabel": "Plenary Talk 2",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/5 11:00–11:30"
+            },
+            {
+              "type": "pdf",
+              "id": "T05",
+              "label": "AI 연산 확대의 물리적 비용과 시스템 공동설계",
+              "file": "T05.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T05.pdf",
+              "pageCount": 28,
+              "topics": [
+                "Chiplet / 3D Integration",
+                "HBM / Memory",
+                "Thermal Management",
+                "Power Integrity",
+                "Photonics / Optics",
+                "Panel-level Package"
+              ],
+              "summary": "Bill En · AMD\nThe Physics Bill is Due: Power, Thermal, and Mechanical Challenges for the Next Decade of AI\n1. AI 연산 수요의 증가를 실리콘 공정 미세화만으로 감당하기 어렵다는 문제를 제기했다. 패키징, 아키텍처와 시스템 설계가 추가적인 효율 개선 수단이다.\n2. HBM의 패키지 내 배치, 칩렛 분할, 3D V-Cache와 3.5D 통합 사례를 연결해 설명했다. 연산과 메모리를 가깝게 배치하면 데이터 이동 비용을 줄일 수 있다.\n3. 발표에는 MI100에서 MI250, MI300으로 이동하며 연산 에너지 효율을 개선한 사례가 나온다. 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 개선이 함께 기여했다.\n4. 최적화 범위를 패키지에서 보드, 랙, 데이터센터, 소프트웨어 배치까지 확장해야 한다. CPO와 패널 공정은 기회가 있지만 광학 결합과 대형 구조 제조의 어려움도 증가한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "AMD",
+              "presenter": "Bill En",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "킬로와트급 가속기에서는 칩의 전력당 성능을 높이는 것만으로 데이터센터의 유효 연산량을 늘리기 어렵다. 패키지·보드·랙·시설의 전력 예산과 냉각·기계적 제약이 시스템 성능의 경계를 정한다. 이 발표는 전력 공급, 열 제거와 기계 구조를 제품 설계 초기에 함께 결정해야 하며, 고정된 시설 전력 안에서 전달할 수 있는 실제 연산을 기준으로 공동 설계해야 한다는 문제를 제기한다.",
+                    "실리콘 미세화만으로 AI (Artificial Intelligence) 연산 수요와 데이터 이동을 감당하기 어려워지면서, 아키텍처와 패키징이 추가적인 효율 개선 수단이 된다. 같은 연산기를 더 많이 배치하더라도 필요한 데이터를 공급하지 못하거나 열과 전원 한계를 넘으면 성능 증가가 제한된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "칩렛은 기능별로 공정과 다이 크기를 선택하고, 메모리와 연산부를 패키지 안에서 연결하는 수단이다. HBM (High Bandwidth Memory)의 근접 배치, 수평 칩렛 연결과 수직 캐시 적층은 서로 다른 데이터 이동 경로를 짧게 만든다. 단순히 트랜지스터 수를 늘리는 것과 달리 연산에 필요한 데이터가 어디에 있는지를 바꾸는 접근이다.",
+                    "데이터 이동 에너지는 연결 거리와 인터페이스에 따라 달라진다. 가까운 저장소의 접근과 패키지 밖 메모리·다른 장치와의 통신은 전기적 부하와 회로가 다르다. 3D 적층은 길이를 줄일 수 있지만 상부 다이가 하부 다이의 열경로를 가로막는 등 새로운 제약을 만든다. 따라서 연결 이득과 열의 비용을 함께 비교해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "AMD의 설명은 HBM, 칩렛과 3D 캐시를 결합해 온 제품 구조를 예로 들어 패키징과 아키텍처 개선의 효과를 연결한다. 효율 향상에는 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 변경이 함께 기여한다. 제품 세대 사이의 개선을 한 기술의 기여도로만 해석하지 않는 것이 중요하다.",
+                    "최적화 범위는 패키지에서 랙과 데이터센터까지 이어진다. 메모리 배치, GPU (Graphics Processing Unit)와 CPU (Central Processing Unit)의 역할, 네트워크 연결, 전원 분배와 냉각, 소프트웨어의 작업 분할이 같은 데이터 흐름을 결정한다. 광학 연결과 패널 제조도 이러한 확대된 시스템 요구에 대응하는 선택지다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "AI 연산 수요의 증가를 실리콘 공정 미세화만으로 감당하기 어렵다는 문제를 제기했다. 패키징, 아키텍처와 시스템 설계가 추가적인 효율 개선 수단이다.",
+                    "HBM의 패키지 내 배치, 칩렛 분할, 3D V-Cache와 3.5D 통합 사례를 연결해 설명했다. 연산과 메모리를 가깝게 배치하면 데이터 이동 비용을 줄일 수 있다.",
+                    "발표에는 MI100에서 MI250, MI300으로 이동하며 연산 에너지 효율을 개선한 사례가 나온다. 패키징뿐 아니라 클록 게이팅과 마이크로아키텍처 개선이 함께 기여했다.",
+                    "최적화 범위를 패키지에서 보드, 랙, 데이터센터, 소프트웨어 배치까지 확장해야 한다. CPO (Co-Packaged Optics)와 패널 공정은 기회가 있지만 광학 결합과 대형 구조 제조의 어려움도 증가한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "비교 기준은 칩 단독의 최고 처리량보다 실제 작업을 수행할 때의 에너지와 데이터 공급 능력이어야 한다. 같은 연산 성능이라도 메모리 대기나 장치 간 통신이 줄면 시스템 전체 효율이 달라진다. 패키징의 가치를 평가할 때에도 어떤 작업과 어떤 시스템 경계에서 개선을 측정했는지 먼저 정의해야 한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                },
+                {
+                  "term": "HBM",
+                  "full": "High Bandwidth Memory"
+                },
+                {
+                  "term": "GPU",
+                  "full": "Graphics Processing Unit"
+                },
+                {
+                  "term": "CPU",
+                  "full": "Central Processing Unit"
+                },
+                {
+                  "term": "CPO",
+                  "full": "Co-Packaged Optics"
+                }
+              ],
+              "detailCharacters": 1642,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 1",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/4 11:15–11:45"
+            },
+            {
+              "type": "pdf",
+              "id": "T06",
+              "label": "HPC를 위한 OSAT의 시스템 통합 역할",
+              "file": "T06.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T06.pdf",
+              "pageCount": 7,
+              "topics": [
+                "Chiplet / 3D Integration",
+                "Thermal Management",
+                "Power Integrity"
+              ],
+              "summary": "Kyungrok Park · Amkor Technology Korea\nEnabling the AI Era: Advanced Semiconductor Packaging as the Foundation for High-Performance Computing (HPC)\n1. AI 시스템은 칩과 패키지 아키텍처를 함께 바꾸고 있으며, OSAT가 공정 실행을 넘어 시스템 통합의 연결점 역할을 해야 한다고 강조했다.\n2. 고객 요구와 패키징 로드맵을 맞추고, 전력·열·집적 문제를 개발 초기의 공동설계로 해결해야 한다.\n3. 제조·시험 역량과 생산능력 확대, 파운드리·IDM·EDA·소재·장비·테스트 기업의 협력을 소개했다. 대학 교육에서도 패키징 관련 실무 이해의 필요성을 언급했다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Amkor Technology Korea",
+              "presenter": "Kyungrok Park",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "생성형·추론형·에이전트형 인공지능의 확장은 더 높은 대역폭과 전력 효율, 유연한 집적 구조를 요구한다. 이 발표는 2.5D·3D 패키징, 칩렛, 고대역폭 메모리 및 광학 집적을 연결해 차세대 연산 플랫폼을 구현하는 접근을 다룬다. 핵심은 서로 다른 소자를 한 패키지에 모으는 데서 나아가 설계된 성능을 제조·조립·검증 가능한 구조로 구현하는 것이다.",
+                    "AI (Artificial Intelligence) 패키지는 로직·메모리·기판·광학 부품을 복잡하게 결합하기 때문에 개별 공정의 성공만으로 완성되지 않는다. 고객이 요구하는 전원과 냉각, 테스트 전략을 실제 조립과 양산으로 연결하는 통합 역할이 중요해진다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "OSAT (Outsourced Semiconductor Assembly and Test)의 역할은 여러 기업에서 만든 부품이 하나의 패키지로 동작하도록 공정과 시험을 연결하는 데 있다. Foundry, IDM (Integrated Device Manufacturer), 소재·장비 기업, EDA (Electronic Design Automation)와 테스트 솔루션이 제공하는 조건을 공통 구조와 인터페이스에서 맞춰야 한다. 조립을 마지막 단계에서 추가하는 방식보다 초기 공동설계가 필요하다는 설명이다.",
+                    "고밀도 패키지는 조립 전에는 개별 다이로 존재하던 수율과 테스트 문제가 전체 구조의 비용으로 결합된다. 다이 배치와 접합 방식뿐 아니라 어느 시점에 어떤 결함을 검출할지, 고가 부품을 추가하기 전에 무엇을 확인할지가 제조 전략에 포함되어야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "발표는 고객·시장 요구와 패키징 로드맵의 정렬, 제조 및 테스트 역량, 생산능력 확대와 협력 사례를 소개한다. 기술 선정은 설계 가능 여부에 더해 반복 생산, 품질과 테스트가 함께 가능한지의 문제로 제시된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "AI 시스템은 칩과 패키지 아키텍처를 함께 바꾸고 있으며, OSAT가 공정 실행을 넘어 시스템 통합의 연결점 역할을 해야 한다고 강조했다.",
+                    "고객 요구와 패키징 로드맵을 맞추고, 전력·열·집적 문제를 개발 초기의 공동설계로 해결해야 한다.",
+                    "제조·시험 역량과 생산능력 확대, 파운드리·IDM·EDA·소재·장비·테스트 기업의 협력을 소개했다. 대학 교육에서도 패키징 관련 실무 이해의 필요성을 언급했다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "고객이 제공해야 할 요구는 목표 성능뿐 아니라 열·전력 조건, 패키지 크기, 테스트 범위와 생산 규모까지 포함한다. 이를 개발 초기에 공유하면 구조 변경이 조립·검사·수율에 미치는 영향을 일찍 비교할 수 있다. 이 발표는 개별 소재의 수치 경쟁보다 시스템 통합의 책임과 협력 구조를 강조한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                },
+                {
+                  "term": "OSAT",
+                  "full": "Outsourced Semiconductor Assembly and Test"
+                },
+                {
+                  "term": "IDM",
+                  "full": "Integrated Device Manufacturer"
+                },
+                {
+                  "term": "EDA",
+                  "full": "Electronic Design Automation"
+                }
+              ],
+              "detailCharacters": 1255,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 2",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/4 13:00–13:30"
+            },
+            {
+              "type": "pdf",
+              "id": "T07",
+              "label": "3D 시스템 집적과 상호연결 밀도",
+              "file": "T07.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T07.pdf",
+              "pageCount": 30,
+              "topics": [
+                "Chiplet / 3D Integration",
+                "HBM / Memory",
+                "Hybrid Bonding",
+                "Thermal Management",
+                "Power Integrity",
+                "Substrate"
+              ],
+              "summary": "Zsolt Tokei · imec\n3D System Integration Technology\n1. 시스템 발전을 I/O 대역폭 밀도와 상호연결 밀도의 증가로 설명했다. 이미지 센서, HBM, AI 연산 시스템이 3D 집적 기술을 이끄는 주요 응용이다.\n2. 미세 마이크로범프, D2W·W2W 하이브리드 본딩, TSV와 고밀도 Cu/polymer RDL을 서로 보완적인 기술 요소로 제시했다.\n3. 전원 공급, 열 제거, 메모리·로직 밀도와 통신을 하나의 집적 문제로 다뤄야 한다. 냉각 구조와 후면 전원 등도 기술 선택에 영향을 준다.\n4. 극저온 양자 시스템에서는 단계별 냉각 능력과 배선 수가 함께 제약이 된다. 높은 연결 밀도만으로 해결되지 않으며 열격리와 초전도 연결이 필요하다.\n5. 질의응답에서는 미세 피치의 overlay 정확도, 매우 평탄하고 깨끗한 표면, 밀접하게 연결된 공정 제어가 한계 요인으로 지적되었다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "imec",
+              "presenter": "Zsolt Tokei",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "고밀도 3차원 집적의 목표는 더 많은 기능을 짧은 지연과 낮은 데이터 이동 에너지로 연결하는 것이다. 연산·메모리뿐 아니라 광학·고주파·극저온·양자 시스템은 서로 다른 열·전력·배선 조건을 요구하므로, 하나의 적층 기술로 모든 적용처를 최적화할 수 없다. 이 발표는 칩 내부 배선에서 다이·패키지·보드에 이르는 연결 계층마다 재료·공정·접합 방식을 선택하는 계층적 집적 관점을 제시한다.",
+                    "3D 집적은 소자를 쌓는 형상뿐 아니라 단위 면적에 얼마나 많은 연결을 만들고, 그 연결로 얼마나 효율적으로 데이터를 전달할 수 있는가의 문제다. 이미지 센서, HBM (High Bandwidth Memory)과 AI (Artificial Intelligence) 연산기는 서로 다른 기능을 요구하지만 더 높은 연결 밀도가 필요하다는 공통점을 갖는다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "마이크로범프, D2W (Die-to-Wafer) 및 W2W (Wafer-to-Wafer) 하이브리드 본딩, TSV (Through-Silicon Via)와 미세 RDL (Redistribution Layer)은 서로 다른 위치의 연결을 담당한다. 정사각 배열에서 같은 면적 사용 조건을 가정하면 연결 수는 대략 피치의 제곱에 반비례한다. 피치를 줄일수록 정렬 오차와 표면 형상의 허용 범위도 함께 작아지므로, 연결 밀도만 높이는 독립적인 개선은 어렵다.",
+                    "수평 칩렛 연결은 인터포저와 브리지, 수직 연결은 본딩과 TSV를 통해 구성할 수 있다. 여기에 후면 전원 공급, 고밀도 메모리와 로직 적층, 열 확산 및 액체 냉각을 결합해야 한다. 전기 연결의 위치와 밀도는 전원 경로와 hotspot 위치를 동시에 바꾸므로 집적 기술을 시스템 설계와 분리하기 어렵다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "발표는 개별 공정 요소의 로드맵과 다양한 응용의 요구를 함께 비교한다. 극저온 양자 시스템을 예로 들면 배선 수를 늘리는 것과 열 유입을 줄이는 것이 동시에 필요하다. 단계별 냉각 능력이 제한되기 때문에 상온의 고집적 패키지와 같은 기준만으로 연결을 설계할 수 없다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "시스템 발전을 I/O (Input/Output) 대역폭 밀도와 상호연결 밀도의 증가로 설명했다. 이미지 센서, HBM, AI 연산 시스템이 3D 집적 기술을 이끄는 주요 응용이다.",
+                    "미세 마이크로범프, D2W·W2W 하이브리드 본딩, TSV와 고밀도 Cu/polymer RDL을 서로 보완적인 기술 요소로 제시했다.",
+                    "전원 공급, 열 제거, 메모리·로직 밀도와 통신을 하나의 집적 문제로 다뤄야 한다. 냉각 구조와 후면 전원 등도 기술 선택에 영향을 준다.",
+                    "극저온 양자 시스템에서는 단계별 냉각 능력과 배선 수가 함께 제약이 된다. 높은 연결 밀도만으로 해결되지 않으며 열격리와 초전도 연결이 필요하다.",
+                    "질의응답에서는 미세 피치의 overlay 정확도, 매우 평탄하고 깨끗한 표면, 밀접하게 연결된 공정 제어가 한계 요인으로 지적되었다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "핵심 비교 항목은 피치, 연결 밀도, 연결 에너지와 정렬 정밀도이며, 이를 전원·냉각 조건과 함께 보아야 한다. 하이브리드 본딩의 확대에서는 overlay, 평탄도와 청정 표면의 동시 확보가 중요하다. 이 발표는 특정 접합 방식 하나보다 서로 다른 기술 요소를 조합하는 집적 플랫폼의 관점을 제공한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "HBM",
+                  "full": "High Bandwidth Memory"
+                },
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                },
+                {
+                  "term": "D2W",
+                  "full": "Die-to-Wafer"
+                },
+                {
+                  "term": "W2W",
+                  "full": "Wafer-to-Wafer"
+                },
+                {
+                  "term": "TSV",
+                  "full": "Through-Silicon Via"
+                },
+                {
+                  "term": "RDL",
+                  "full": "Redistribution Layer"
+                },
+                {
+                  "term": "I/O",
+                  "full": "Input/Output"
+                }
+              ],
+              "detailCharacters": 1558,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 3",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/4 13:30–14:00"
             },
             {
               "type": "pdf",
@@ -2058,6 +562,7 @@
                 {
                   "heading": "기술 배경과 문제 정의",
                   "paragraphs": [
+                    "연산 성능의 병목은 트랜지스터 밀도에서 메모리 대역폭, 전력 전달과 연결 거리로 확장되고 있다. 이 발표는 하이브리드 구리 접합을 이용한 고대역폭 메모리, 로직의 3차원 적층, 패키지 내 광학 연결을 세 축으로 묶는다. 패키지는 제품 정의 초기부터 실리콘과 함께 최적화하는 아키텍처 변수이며, 각 기술을 따로 평가하기보다 대역폭·전력·열·제조 제약의 결합으로 판단해야 한다.",
                     "AI (Artificial Intelligence) 시스템은 메모리의 용량과 대역폭, 연산부와의 지연, 전원과 냉각을 동시에 요구한다. 어느 한 부품의 사양이 높더라도 다른 부분의 병목이 남으면 시스템 성능이 제한되므로, 메모리·로직·광학 연결과 열관리를 하나의 설계 문제로 다룬다."
                   ],
                   "list": false
@@ -2167,7 +672,11 @@
                   "full": "Power Integrity"
                 }
               ],
-              "detailCharacters": 2541
+              "detailCharacters": 2750,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 4",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/5 11:30–12:00"
             },
             {
               "type": "pdf",
@@ -2193,6 +702,7 @@
                 {
                   "heading": "기술 배경과 문제 정의",
                   "paragraphs": [
+                    "광학 엔진을 패키지 안으로 더 가깝게 옮기면 전기 연결의 부담을 줄일 수 있지만, 다이와 패키지의 제한된 둘레를 통해 더 많은 대역폭을 전달해야 한다. 이 발표는 미세 실리콘 연결 또는 공통 인터포저로 연산 칩과 광학 엔진을 결합하고, 마이크로링 기반 다중 파장 전송으로 둘레 길이당 대역폭을 높이는 접근을 다룬다. 광원 효율·공진기의 온도 민감도·편광 제어가 이를 구현하는 핵심 제약이다.",
                     "CPO (Co-Packaged Optics)에서 광학 엔진을 더 안쪽인 인터포저 위로 옮기는 CIO (Co-Integrated Optics)는 전기 경로를 줄이는 대신 값비싼 면적을 사용한다. 따라서 대역폭이 큰 것뿐 아니라 면적당·가장자리 길이당 대역폭과 전체 링크 에너지가 중요해진다."
                   ],
                   "list": false
@@ -2302,7 +812,11 @@
                   "full": "Semiconductor Optical Amplifier"
                 }
               ],
-              "detailCharacters": 2631
+              "detailCharacters": 2849,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 5",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/5 14:00–14:30"
             },
             {
               "type": "pdf",
@@ -2329,6 +843,7 @@
                 {
                   "heading": "기술 배경과 문제 정의",
                   "paragraphs": [
+                    "하이브리드 본딩은 캐시·가속기·메모리·광학 연결을 관통하는 고밀도 집적 기반으로 제시된다. 간극 없는 구리 직접 접속의 이점을 양산에서 확보하려면 좁은 피치의 정렬 성능뿐 아니라 표면 준비, 입자, 활성화, 대기 시간, 열처리와 계측을 하나의 공정으로 관리해야 한다. 이 발표의 중심은 장비 단품의 혁신과 소재·공정·설계 협업을 연결해 반복 가능한 제조 수율을 만드는 데 있다.",
                     "AI (Artificial Intelligence) 시스템은 로직·메모리·네트워크와 광학 엔진에 걸쳐 높은 연결 밀도와 에너지 효율을 요구한다. Besi는 이 여러 응용을 연결하는 제조 기술로 hybrid bonding을 설명하고, 이를 양산하기 위한 표면 전처리와 본딩 장비의 통합을 강조했다."
                   ],
                   "list": false
@@ -2404,7 +919,1593 @@
                   "full": "Units Per Hour"
                 }
               ],
-              "detailCharacters": 2021
+              "detailCharacters": 2232,
+              "sessionType": "Keynote",
+              "sessionLabel": "Keynote Talk 6",
+              "sessionGroup": "Plenary Speech and Keynote",
+              "program": "11/5 14:30–15:00"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "id": "day-114",
+          "label": "11월 4일",
+          "children": [
+            {
+              "type": "pdf",
+              "id": "T01",
+              "label": "솔더 레지스트의 물성 예측과 공정창 설계",
+              "file": "T01.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T01.pdf",
+              "pageCount": 14,
+              "topics": [
+                "Substrate",
+                "Packaging Materials",
+                "Warpage",
+                "AI / Simulation"
+              ],
+              "summary": "Kaede Ameyama · TAIYO HOLDINGS\nProcess Window Design Framework for Packaging Materials with Physics-Informed Property Prediction Models\n1. 노광, 현상, 후경화 조건이 솔더 레지스트의 패턴과 점탄성에 함께 영향을 준다. 재료 선택과 공정 조건을 동시에 탐색하는 물리 기반 예측 프레임워크를 제시했다.\n2. 일반화 Maxwell 모델을 바탕으로 DMA 응답을 물리 파라미터로 압축하고, 조건별 물성 예측과 재구성을 연결했다. 발표에는 83개 시편의 420차원 데이터를 5개 파라미터로 표현한 사례가 나온다.\n3. CTE, Tg와 비아 상·중·하부 형상을 별도로 예측한 뒤 목표 패턴과 열기계 특성에 맞는 공정창을 제안했다. 점탄성 완화와 CTE의 상충관계를 Pareto 해로 다뤘다.\n4. 발표 사례에서 제안 조건 A의 휨 해석값은 기준 대비 약 50% 감소했고, 시제품 조건 탐색 부담은 약 75% 감소했다고 설명했다. 휨 감소는 해석 결과이며 일반적인 실측 개선율로 확대할 수 없다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "TAIYO HOLDINGS",
+              "presenter": "Kaede Ameyama",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "솔더 레지스트는 배선 위에 남는 영구 절연층이다. 단순히 패턴이 잘 형성되는지만 볼 수 없고, 경화 후 재료가 열을 받을 때 얼마나 팽창하고 응력을 얼마나 완화하는지도 기판 신뢰성과 연결된다. 같은 재료라도 노광·현상·후경화 조건이 달라지면 비아 단면과 가교 구조가 함께 달라지기 때문에 재료와 공정을 따로 최적화하기 어렵다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "발표의 핵심은 DMA (Dynamic Mechanical Analysis)로 측정한 온도·주파수별 점탄성 응답을 물리적으로 해석 가능한 저차원 변수로 바꾸는 것이다. 일반화 Maxwell 모델은 서로 다른 완화시간을 갖는 요소의 합으로 응력 이완을 표현한다. 이를 Prony 급수로 나타내면 완화계수와 완화시간이 재료의 시간 의존성을 설명하는 입력이 된다. 완화탄성률을 G(t)=G∞+ΣGi·exp(−t/τi)로 표현하면 Gi는 각 요소의 기여, τi는 응력이 완화되는 시간 척도를 나타낸다.",
+                    "420차원 응답을 그대로 회귀하는 대신 Prony 파라미터 분포를 skew-normal distribution으로 근사해 5개 물리 변수로 압축한다. Encoder는 원래 응답을 이 변수로 바꾸고, decoder는 변수에서 DMA 응답을 복원한다. 여기에 재료의 흡광 특성과 공정 조건으로 물리 변수를 예측하는 모델을 연결해, 실험하지 않은 조건의 물성까지 재구성한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "열기계 모델은 Tg (Glass Transition Temperature) 전후의 CTE (Coefficient of Thermal Expansion)와 점탄성 완화 거동을 예측하고, 패턴 모델은 비아 단면의 상부·중부·하부 치수를 예측한다. 두 모델을 함께 사용해 목표 테이퍼와 물성 조건을 만족하는 노광량·현상시간·경화 조건의 영역을 찾는다. 목표값 하나를 맞추는 회귀에서 여러 제약을 동시에 만족하는 공정창 탐색으로 확장한 것이다.",
+                    "휨을 줄이는 방향은 별도의 FEA (Finite Element Analysis)로 확인했다. 20→260→20 °C 열이력에서 완화 특성과 Tg 위의 CTE를 바꾸어 민감도를 비교하고, 응력 완화는 크게 하면서 CTE는 작게 만드는 Pareto 조건을 선택했다. 따라서 예측 물성이 좋아 보인다는 이유만으로 조건을 선택하지 않고 패키지 구조의 응답까지 연결한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "노광, 현상, 후경화 조건이 솔더 레지스트의 패턴과 점탄성에 함께 영향을 준다. 재료 선택과 공정 조건을 동시에 탐색하는 물리 기반 예측 프레임워크를 제시했다.",
+                    "일반화 Maxwell 모델을 바탕으로 DMA 응답을 물리 파라미터로 압축하고, 조건별 물성 예측과 재구성을 연결했다. 발표에는 83개 시편의 420차원 데이터를 5개 파라미터로 표현한 사례가 나온다.",
+                    "CTE, Tg와 비아 상·중·하부 형상을 별도로 예측한 뒤 목표 패턴과 열기계 특성에 맞는 공정창을 제안했다. 점탄성 완화와 CTE의 상충관계를 Pareto 해로 다뤘다.",
+                    "발표 사례에서 제안 조건 A의 휨 해석값은 기준 대비 약 50% 감소했고, 시제품 조건 탐색 부담은 약 75% 감소했다고 설명했다. 휨 감소는 해석 결과이며 일반적인 실측 개선율로 확대할 수 없다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "이 접근은 모든 재료를 설명하는 범용식이라기보다 실험 데이터와 물리 모델을 결합한 공정 설계 체계다. 재료 변경, 노광 장비 변경 또는 경화 조건의 범위를 넓힐 때에는 물성 복원 정확도와 패턴 예측 정확도를 각각 확인해야 한다. 발표가 제시한 약 50% 휨 감소는 해당 조건의 해석 결과로 읽어야 하며, 공정 탐색 부담 감소와 같은 제조 효율 지표와 구분하는 것이 적절하다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "DMA",
+                  "full": "Dynamic Mechanical Analysis"
+                },
+                {
+                  "term": "Tg",
+                  "full": "Glass Transition Temperature"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                },
+                {
+                  "term": "FEA",
+                  "full": "Finite Element Analysis"
+                }
+              ],
+              "detailCharacters": 1723,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T02",
+              "label": "도메인 지식을 반영한 제조 AI와 가상계측",
+              "file": "T02.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T02.pdf",
+              "pageCount": 1,
+              "topics": [
+                "Virtual Metrology",
+                "AI / Simulation"
+              ],
+              "summary": "Jinwoo Kim · HEX A.I. LABS\nA Domain-Informed AI Agent Platform for Semiconductor Manufacturing: Unifying Virtual Metrology, Process Control, Fault Detection, and Variability Reduction\n1. 가상계측, 공정 제어, 이상 감시, 원인 분석을 에이전트로 연결하고 Titan 플랫폼에서 실행 이력, 승인, 재시도와 추적성을 관리하는 구상을 제시했다.\n2. PVD용 Magellan은 플라즈마·스퍼터링·박막 형성의 도메인 지식과 센서 시계열을 결합한다. ALD용 Columbus와 이상 탐지용 Hexa Scanner를 함께 소개했다.\n3. PVD 사례는 시험 웨이퍼 44장, R² 약 0.95, RMSE 4.8 nm로 기술되어 있다. 44장 모두 ±15 nm 규격을 만족했고 ±10 nm 범위는 약 79%로 설명한다.\n4. 목표 두께에서 허용 공정 조건을 역으로 찾는 안전운전영역(SOA)을 APC에 연결한다. 시험·교정 웨이퍼 절감률은 문서에서 70% 이상과 77%로 표현되어 있어 해당 사례의 주장으로 한정한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "HEX A.I. LABS",
+              "presenter": "Jinwoo Kim",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "가상계측의 출발점은 모든 웨이퍼를 실제로 측정하기에는 시간과 비용이 크다는 것이다. 일부 웨이퍼만 측정하면 그 사이의 공정 변화를 놓칠 수 있다. 센서와 장비 이력으로 막 두께 같은 결과값을 미리 예측할 수 있으면 측정 대기와 샘플링 부담을 줄이면서 공정을 더 촘촘하게 감시할 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "HEX AI (Artificial Intelligence)는 단일 예측 모델을 넘어 측정·제어·감시·분석 에이전트가 연결되는 구조를 제시했다. Titan은 데이터와 모델의 실행, 이력, 재시도 및 승인 흐름을 관리하고, 공정별 예측 엔진이 실제 물리와 센서 데이터를 연결한다. 예측값만 출력하는 도구에서 판단과 제어의 실행 경로를 추적하는 시스템으로 범위를 넓힌다.",
+                    "PVD (Physical Vapor Deposition)용 Magellan은 플라즈마, 스퍼터링과 막 형성의 도메인 지식을 시계열 특징과 결합한다. 센서 파형의 시간축 차이와 웨이퍼 위치 정보는 단순한 평균 센서값으로 사라질 수 있는 정보를 보완한다. ALD (Atomic Layer Deposition)용 Columbus는 표면 반응과 성장 거동의 지식을 이용하는 별도의 엔진이다. 서로 다른 공정에 동일한 입력·모델을 그대로 적용하는 접근과 구별된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "PVD 사례는 장비 로그와 FDC (Fault Detection and Classification) 센서 데이터를 결합한 hybrid model을 시험 웨이퍼 44장에 평가했다. R²는 결과의 변동을 얼마나 설명하는지, RMSE (Root Mean Square Error)는 두께 단위에서 예측 오차가 어느 정도인지를 보여준다. 규격 ±15 nm를 만족한 비율과 더 좁은 ±10 nm 범위의 만족률을 함께 제시해, 평균 오차와 실제 규격 적합성이 서로 다른 지표임을 보여준다.",
+                    "제어 단계에서는 정방향의 “이 조건에서 두께가 얼마인가”를 역방향의 “목표 두께를 얻으려면 어떤 조건이 필요한가”로 바꾼다. 이때 SOA (Safe Operating Area)는 목표와 제약을 만족하는 안전운전영역이다. 타깃 소모처럼 시간에 따라 장비 상태가 변하는 상황에서도 허용 조건을 갱신하려는 APC (Advanced Process Control)의 기반이 된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "가상계측, 공정 제어, 이상 감시, 원인 분석을 에이전트로 연결하고 Titan 플랫폼에서 실행 이력, 승인, 재시도와 추적성을 관리하는 구상을 제시했다.",
+                    "PVD용 Magellan은 플라즈마·스퍼터링·박막 형성의 도메인 지식과 센서 시계열을 결합한다. ALD용 Columbus와 이상 탐지용 Hexa Scanner를 함께 소개했다.",
+                    "PVD 사례는 시험 웨이퍼 44장, R² 약 0.95, RMSE 4.8 nm로 기술되어 있다. 44장 모두 ±15 nm 규격을 만족했고 ±10 nm 범위는 약 79%로 설명한다.",
+                    "목표 두께에서 허용 공정 조건을 역으로 찾는 안전운전영역(SOA)을 APC에 연결한다. 시험·교정 웨이퍼 절감률은 문서에서 70% 이상과 77%로 표현되어 있어 해당 사례의 주장으로 한정한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "제조 적용에서 중요한 것은 높은 R² 하나가 아니라 모델이 사용할 수 있는 공정 범위와 제어 권한을 정하는 일이다. 학습 범위를 벗어난 상태의 검출, 실제 계측으로 모델을 보정하는 주기, 제어 변경의 승인과 이력까지 함께 설계해야 한다. 시험 웨이퍼 절감은 이러한 절차 안에서 얻은 사례 성과로 해석하는 것이 적절하다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                },
+                {
+                  "term": "PVD",
+                  "full": "Physical Vapor Deposition"
+                },
+                {
+                  "term": "ALD",
+                  "full": "Atomic Layer Deposition"
+                },
+                {
+                  "term": "FDC",
+                  "full": "Fault Detection and Classification"
+                },
+                {
+                  "term": "RMSE",
+                  "full": "Root Mean Square Error"
+                },
+                {
+                  "term": "SOA",
+                  "full": "Safe Operating Area"
+                },
+                {
+                  "term": "APC",
+                  "full": "Advanced Process Control"
+                }
+              ],
+              "detailCharacters": 1658,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T03",
+              "label": "첨단 패키징 가상계측과 이상관리",
+              "file": "T03.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T03.pdf",
+              "pageCount": 21,
+              "topics": [
+                "Virtual Metrology",
+                "AI / Simulation",
+                "HBM / Memory",
+                "Reliability"
+              ],
+              "summary": "Mira Park · Samsung Electronics\nVirtual Metrology for Advanced Packaging: Yield & Anomaly Management\n1. HBM 적층과 이종집적에서는 작은 결함도 전체 수율에 영향을 준다. 광학, X-ray, 초음파 실측은 비용과 시간이 커서 모든 제품을 충분히 측정하기 어렵다는 문제에서 출발했다.\n2. 장비 센서, 측정값, 웨이퍼 이력으로 CD·두께·휨·결함 관련 지표를 예측한다. 전처리, 모델 적용, 실시간 이상관리의 흐름을 제시했다.\n3. 식각 중 광방출 스펙트럼을 이용한 CD 예측, 증착 FDC 데이터 기반 두께 예측, 이미지 기반 크랙·CMP 잔사 감시를 사례로 들었다.\n4. 장비별 샘플링 차이, 서로 다른 저장 형식, 시간에 따른 장비 상태 변화가 모델의 일반화를 방해한다. 표준화, 연결성, 데이터 품질, 사용성을 갖춘 AI-ready data가 핵심 기반이다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Samsung Electronics",
+              "presenter": "Mira Park",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "HBM (High Bandwidth Memory)처럼 여러 층을 적층하는 패키지는 한 공정의 작은 결함도 뒤 단계에서 회복하기 어렵다. 완성품에서 결함을 발견하면 이미 추가된 다이와 공정 비용까지 손실에 포함된다. 반면 실제 계측은 정확하지만 느리고, 샘플링 비율을 높여도 제품 전체의 상태를 연속적으로 알기는 어렵다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "VM (Virtual Metrology)은 공정 센서, 기존 측정값과 웨이퍼 이력을 이용해 실제 계측 변수를 예측한다. 예측 대상은 막 두께와 CD (Critical Dimension)처럼 연속적인 치수뿐 아니라 휨이나 결함과 관련된 지표까지 넓어질 수 있다. 센서 신호를 이상 점수로만 보는 방법보다 최종 품질 변수에 연결해 해석할 수 있다는 장점이 있다.",
+                    "발표는 예측값의 절대 정확도와 이상 감지 능력을 연결했다. 많은 제품에서 일관된 예측을 얻으면 소수 샘플의 실제 측정으로는 늦게 보이는 평균 이동도 더 빠르게 감지할 수 있다. 그러나 예측 오차의 편향이나 장비별 차이가 크면 정상 상태 자체를 잘못 판단할 수 있으므로 예측과 실제 계측의 불확실성을 함께 관리해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "식각 공정에서는 광방출 스펙트럼을 CD와 연결하고, 증착에서는 FDC (Fault Detection and Classification) 데이터로 두께를 예측하는 사례를 제시했다. 이미지 분석은 웨이퍼의 크랙이나 CMP (Chemical Mechanical Polishing) 이후 잔사를 정량화하는 데 사용한다. 각 사례는 입력 신호와 결함 발생의 물리적 연관성을 먼저 정의해야 한다는 공통점을 갖는다.",
+                    "데이터 기반을 만드는 과정에서는 장비별 샘플링, 저장 형식, 시간축, 웨이퍼 식별자와 상태 이력을 맞추는 일이 중요하다. 같은 수치라도 공정 단계나 측정 위치가 다르면 동일한 학습 사례로 사용할 수 없다. 표준화·연결성·품질·사용성이라는 AI (Artificial Intelligence)-ready data의 조건은 이러한 문제를 해결하기 위한 구조다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "HBM 적층과 이종집적에서는 작은 결함도 전체 수율에 영향을 준다. 광학, X-ray, 초음파 실측은 비용과 시간이 커서 모든 제품을 충분히 측정하기 어렵다는 문제에서 출발했다.",
+                    "장비 센서, 측정값, 웨이퍼 이력으로 CD·두께·휨·결함 관련 지표를 예측한다. 전처리, 모델 적용, 실시간 이상관리의 흐름을 제시했다.",
+                    "식각 중 광방출 스펙트럼을 이용한 CD 예측, 증착 FDC 데이터 기반 두께 예측, 이미지 기반 크랙·CMP 잔사 감시를 사례로 들었다.",
+                    "장비별 샘플링 차이, 서로 다른 저장 형식, 시간에 따른 장비 상태 변화가 모델의 일반화를 방해한다. 표준화, 연결성, 데이터 품질, 사용성을 갖춘 AI-ready data가 핵심 기반이다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "새로운 장비에 모델을 옮길 때에는 기존 시험 오차만 재사용하지 않고 장비 간 일반화 성능을 평가해야 한다. 실제 계측은 모델을 대체하는 대상이면서 동시에 보정과 신뢰도 확인의 기준이다. 따라서 VM을 도입하면 물리 계측이 사라진다기보다, 계측을 어디에 집중할지 결정하는 방식이 바뀐다고 이해할 수 있다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "HBM",
+                  "full": "High Bandwidth Memory"
+                },
+                {
+                  "term": "VM",
+                  "full": "Virtual Metrology"
+                },
+                {
+                  "term": "CD",
+                  "full": "Critical Dimension"
+                },
+                {
+                  "term": "FDC",
+                  "full": "Fault Detection and Classification"
+                },
+                {
+                  "term": "CMP",
+                  "full": "Chemical Mechanical Polishing"
+                },
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                }
+              ],
+              "detailCharacters": 1505,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T08",
+              "label": "AI 다이 복합체의 2.5D 및 3D 패키징",
+              "file": "T08.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T08.pdf",
+              "pageCount": 12,
+              "topics": [
+                "Chiplet / 3D Integration",
+                "Substrate",
+                "Hybrid Bonding",
+                "HBM / Memory",
+                "Thermal Management",
+                "Power Integrity",
+                "Photonics / Optics"
+              ],
+              "summary": "Kyuoh Lee · Intel\nAdvanced Packaging Architectures for AI Die Complex Scaling\n1. 칩렛 분할은 기능별 공정 선택을 가능하게 하지만 분할 자체가 성능을 보장하지 않는다. 데이터 이동, 전원, 열, 수율과 제조성을 함께 최적화해야 한다.\n2. 국부 실리콘 브리지를 사용하는 EMIB, TSV와 수동소자 기능을 확대하는 EMIB-T, 인터포저 기반 Foveros 및 직접 Cu-Cu 연결을 사용하는 Foveros Direct를 소개했다.\n3. 2.5D 브리지와 3D 적층을 결합한 3.5D 통합으로 더 큰 AI 패키지를 구성한다. 패키지 확대에 따라 휨, 조립 정밀도, 테스트와 누적 수율 문제가 커진다.\n4. 광학 I/O를 연산부에 가까이 배치하는 방향을 설명했다. CPO는 짧은 전기 경로를 제공하지만 조립·시험·신뢰성·서비스성을 함께 고려해야 한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Intel",
+              "presenter": "Kyuoh Lee",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "모든 기능을 하나의 큰 로직 다이에 넣으면 다이 크기, 수율, 공정 선택과 전원·냉각의 제약이 커진다. 기능별 칩렛은 이를 나눌 수 있지만, 칩렛 사이의 연결 비용과 조립 복잡성이 증가하므로 시스템 전체의 이득을 확인해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "EMIB (Embedded Multi-Die Interconnect Bridge)는 연결이 필요한 다이 경계 부근에 작은 실리콘 브리지를 넣어 고밀도 라우팅을 제공한다. 전체 영역을 실리콘 인터포저로 덮는 방법과 달리 필요한 위치에 고밀도 자원을 집중한다. EMIB-T는 TSV (Through-Silicon Via)와 수동소자 기능을 포함해 전원과 메모리 집적 요구를 지원하는 방향으로 설명된다.",
+                    "Foveros 계열의 2.5D 연결과 Foveros Direct의 수직 Cu-Cu 연결은 집적 방향이 다르다. 3D 연결은 짧은 다이 간 경로와 높은 밀도를 제공하지만, 적층 다이의 테스트와 열경로가 설계 제약이 된다. 브리지 기반 수평 연결과 3D 적층을 조합한 3.5D 구조는 두 종류의 제약을 동시에 다루는 아키텍처다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "발표는 인터커넥트 밀도와 전송 에너지의 관점에서 여러 구조를 비교하고, 더 큰 연산 다이·HBM (High Bandwidth Memory) 복합체로 확장할 때의 기판과 조립 문제를 설명한다. 큰 패키지는 더 많은 부품을 수용하지만 휨, 기판 제조, 접합 정밀도와 누적 수율을 더 엄격하게 요구한다.",
+                    "CPO (Co-Packaged Optics)는 광학 I/O (Input/Output)를 연산부 가까이에 두어 긴 전기 경로의 손실을 줄이는 방향이다. 다만 광학 엔진을 패키지에 추가하면 테스트, 조립, 신뢰성과 서비스성이 새로운 평가 항목이 된다. 연결 에너지 이득만으로 전체 시스템의 우열이 결정되지는 않는다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "칩렛 분할은 기능별 공정 선택을 가능하게 하지만 분할 자체가 성능을 보장하지 않는다. 데이터 이동, 전원, 열, 수율과 제조성을 함께 최적화해야 한다.",
+                    "국부 실리콘 브리지를 사용하는 EMIB, TSV와 수동소자 기능을 확대하는 EMIB-T, 인터포저 기반 Foveros 및 직접 Cu-Cu 연결을 사용하는 Foveros Direct를 소개했다.",
+                    "2.5D 브리지와 3D 적층을 결합한 3.5D 통합으로 더 큰 AI (Artificial Intelligence) 패키지를 구성한다. 패키지 확대에 따라 휨, 조립 정밀도, 테스트와 누적 수율 문제가 커진다.",
+                    "광학 I/O를 연산부에 가까이 배치하는 방향을 설명했다. CPO는 짧은 전기 경로를 제공하지만 조립·시험·신뢰성·서비스성을 함께 고려해야 한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "Intel의 기술 포트폴리오는 하나의 접합 방식이 모든 제품을 대체한다기보다 제품 요구에 맞는 구조를 선택하는 것으로 읽을 수 있다. 칩렛 수나 실리콘 면적보다 유효 대역폭, 열·전원 조건, 비용과 제조성이 함께 좋아지는지를 기준으로 판단해야 한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "EMIB",
+                  "full": "Embedded Multi-Die Interconnect Bridge"
+                },
+                {
+                  "term": "TSV",
+                  "full": "Through-Silicon Via"
+                },
+                {
+                  "term": "HBM",
+                  "full": "High Bandwidth Memory"
+                },
+                {
+                  "term": "CPO",
+                  "full": "Co-Packaged Optics"
+                },
+                {
+                  "term": "I/O",
+                  "full": "Input/Output"
+                },
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                }
+              ],
+              "detailCharacters": 1396,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T09",
+              "label": "고밀도 유기 기판과 대형 패널 활용",
+              "file": "T09.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T09.pdf",
+              "pageCount": 9,
+              "topics": [
+                "Substrate",
+                "Panel-level Package",
+                "Power Integrity",
+                "Signal Integrity",
+                "Packaging Materials",
+                "Warpage"
+              ],
+              "summary": "Venkat Mokkapati · AT&S\nAdvanced IC substrates to address new Advanced Packaging Challenges\n1. 다층 코어와 부품 임베딩으로 기판 내부의 구리와 전원 경로를 확보하고, 휨을 제어하는 접근을 소개했다. 유리 코어 전환 이전의 연결 단계로도 설명했다.\n2. 국부적으로 필요한 상부 층을 고밀도화하는 유기 기판 구조를 통해 실리콘 인터포저 의존도를 줄이는 방향을 다뤘다.\n3. 기판 대형화는 층수·두께·미세배선 요구와 동시에 증가한다. 미세배선의 개발 난도와 실제 고객 설계 요구 사이에 균형이 필요하다.\n4. 더 큰 신규 패널로 전환하기 전에 기존 패널의 quarter·half·full 배치와 keep-out 영역을 재설계해 활용도를 높일 수 있다고 강조했다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "AT&S",
+              "presenter": "Venkat Mokkapati",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "첨단 패키지의 유기 기판은 단순한 기계 지지체에서 전원 분배, 부품 임베딩과 고밀도 라우팅을 담당하는 구조로 바뀌고 있다. 대형화할수록 배선 미세화뿐 아니라 두께, 구리 분포와 휨 제어가 함께 중요해진다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "다층 코어는 내부의 구리층과 연결 경로를 늘려 전원 전달과 강성 조절에 활용한다. 코어의 역할을 분할하고 능동·수동 부품을 임베딩하면 배치 자유도가 커지지만, 부품 두께와 위치, 코어 간 연결과 열이력을 함께 설계해야 한다.",
+                    "두꺼운 코어의 관통홀은 깊이와 도금 조건 때문에 모든 구간을 동일하게 구리로 채우기 어렵다. 발표의 differential drilling과 thick-wall plating은 홀과 구리의 구성을 달리해 전류 경로와 코어 활용도를 높이는 방향이다. 필요한 상부 층만 고밀도로 만들고 나머지는 상대적으로 완화된 배선 규칙을 쓰는 구조도 같은 비용·기능 분할의 관점이다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "실리콘 인터포저를 줄이거나 일부 기능을 고밀도 유기 층으로 옮길 때에는 미세 L/S (Line/Space)와 비아뿐 아니라 수율과 패널 공정성을 평가해야 한다. 유리 코어는 낮은 CTE (Coefficient of Thermal Expansion)와 강성의 장점이 있지만 새로운 제조 생태계를 요구하므로 기존 유기 코어의 개선과 병행되는 선택지다.",
+                    "대형 패널 논의에서는 크기를 늘리는 것과 현재 패널의 실사용 면적을 늘리는 것을 구분한다. Quarter·half·full panel 배치, 가장자리 keep-out과 핸들링 방식의 변경도 같은 크기의 패널에서 더 많은 유효 제품을 얻는 방법이 될 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "다층 코어와 부품 임베딩으로 기판 내부의 구리와 전원 경로를 확보하고, 휨을 제어하는 접근을 소개했다. 유리 코어 전환 이전의 연결 단계로도 설명했다.",
+                    "국부적으로 필요한 상부 층을 고밀도화하는 유기 기판 구조를 통해 실리콘 인터포저 의존도를 줄이는 방향을 다뤘다.",
+                    "기판 대형화는 층수·두께·미세배선 요구와 동시에 증가한다. 미세배선의 개발 난도와 실제 고객 설계 요구 사이에 균형이 필요하다.",
+                    "더 큰 신규 패널로 전환하기 전에 기존 패널의 quarter·half·full 배치와 keep-out 영역을 재설계해 활용도를 높일 수 있다고 강조했다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "기판의 미세배선 사양만 비교하기보다 전류 용량, 임베딩, 기계적 지지와 패널 활용도를 함께 보아야 한다. 신규 패널 크기는 장비 투자까지 영향을 주므로, 기존 형식에서 가능한 레이아웃·공정 개선과 나란히 비교하는 것이 유용하다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "L/S",
+                  "full": "Line/Space"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                }
+              ],
+              "detailCharacters": 1211,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T10",
+              "label": "공개형 실리콘 브리지 플랫폼",
+              "file": "T10.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T10.pdf",
+              "pageCount": 3,
+              "topics": [
+                "Substrate",
+                "Chiplet / 3D Integration"
+              ],
+              "summary": "HeeJun Jang · National NanoFab Center\nDevelopment of an Open Silicon Bridge Interposer Platform for Advanced Packaging Ecosystem\n1. 칩렛 연결에서 국부 실리콘 브리지가 미세 라우팅을 제공하는 구조를 소개한다. 전체 면적의 인터포저와 국부 브리지의 역할을 구분할 수 있다.\n2. 오픈 플랫폼 전략은 오픈 실리콘 브리지 플랫폼을 통해 첨단 패키징 생태계를 지원하려는 방향을 제시한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "National NanoFab Center",
+              "presenter": "HeeJun Jang",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "칩렛 구조에서는 서로 가까운 다이 사이에 매우 조밀한 연결이 필요하지만, 패키지 전체가 같은 수준의 미세배선을 필요로 하는 것은 아니다. 이 차이를 이용하는 방법이 국부 실리콘 브리지다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "실리콘 브리지는 다이 경계의 짧은 영역에서 미세 라우팅을 제공하고, 나머지 패키지 연결은 기판이나 재배선 구조가 담당하도록 역할을 분담한다. 실리콘 인터포저를 전체 면적에 사용하는 구조와 비교할 때, 고밀도 영역을 어디에 얼마나 배치할지가 주요 설계 변수가 된다.",
+                    "실제 패키지에서는 브리지와 다이의 접합 위치, 브리지 주변의 재료, 수직 전원 경로와 외부 기판 연결이 함께 정해져야 한다. 따라서 브리지 자체의 배선 능력과 이를 패키지로 구현하는 조립 능력은 구분해 평가해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "NNFC (National NanoFab Center)의 발표는 오픈 실리콘 브리지 인터포저 플랫폼과 이를 활용할 첨단 패키징 생태계를 주제로 한다. 표지와 구조 설명에서 드러나는 중심은 특정 완제품 하나보다 여러 개발 주체가 사용할 수 있는 연결 플랫폼의 제공이다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "칩렛 연결에서 국부 실리콘 브리지가 미세 라우팅을 제공하는 구조를 소개한다. 전체 면적의 인터포저와 국부 브리지의 역할을 구분할 수 있다.",
+                    "오픈 플랫폼 전략은 오픈 실리콘 브리지 플랫폼을 통해 첨단 패키징 생태계를 지원하려는 방향을 제시한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "이 발표를 시스템 설계 관점에서 읽으면 브리지를 어떤 구조에 연결하고, 어떤 인터페이스와 설계 규칙을 공유할지가 중요해진다. 설계자·공정 공급자·조립 기업 사이에 배선·접합·검사 범위를 맞추는 것이 오픈 플랫폼의 실질적인 가치다. 기판 및 칩렛 발표와 함께 보면 고밀도 연결을 국부적으로 배치하는 산업 방향을 이해할 수 있다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "NNFC",
+                  "full": "National NanoFab Center"
+                }
+              ],
+              "detailCharacters": 837,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T11",
+              "label": "기판 개발의 누적 공정 해석과 AI 활용",
+              "file": "T11.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T11.pdf",
+              "pageCount": 27,
+              "topics": [
+                "Substrate",
+                "AI / Simulation",
+                "Warpage",
+                "Packaging Materials",
+                "Thermal Management"
+              ],
+              "summary": "Shinhe Nam · LG Innotek\nDevelopment Modeling and Simulation Technology Application for Advanced Package Substrate\n1. 대면적·다층 기판에서는 최종 형상뿐 아니라 제조 이력 전체를 누적해 휨을 예측해야 한다. TMA·DMA·DSC 실측과 경화수축 값을 해석 입력에 반영한다.\n2. 상온 휨이 작아도 리플로 중 변형이 커질 수 있어, 온도에 따른 동적 휨과 C4 영역의 국부 평탄도를 함께 평가한다.\n3. 도금 해석은 전기장, 유동, 약품과 설비 구조를 결합한다. shield 조건 변경 사례에서 Cu 두께 범위가 1.4 µm에서 0.6 µm로 감소했다.\n4. 디지털 트윈의 방향은 물리 해석으로 만든 가상 데이터로 AI 대체모델을 학습하고, 실제 제조 데이터와 융합해 예측·감시·제어로 확장하는 것이다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "LG Innotek",
+              "presenter": "Shinhe Nam",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "대형·다층 기판은 최종 단면과 상온 물성만으로 휨을 예측하기 어렵다. 패널에서 스트립과 단위 제품으로 변하는 과정, 경화와 냉각, 실장 이후의 열이력이 각각 변형과 잔류응력에 영향을 주기 때문이다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "누적 공정 해석은 단계별로 형상과 재료 상태가 바뀌는 과정을 따라간다. 재료를 추가하거나 공정을 종료할 때 기준 상태와 응력을 적절하게 넘겨야 실제 제조 이력에 가까운 결과를 얻을 수 있다. 어느 단계에서 휨이 시작되고 어떤 재료가 기여하는지 찾는 것이 핵심이다.",
+                    "물성 입력은 공급업체의 단일 값보다 TMA (Thermomechanical Analysis)·DMA (Dynamic Mechanical Analysis)·DSC (Differential Scanning Calorimetry) 실측으로 보완한다. CTE (Coefficient of Thermal Expansion), 온도·시간 의존 탄성률과 경화수축은 서로 다른 역할을 하며, 같은 재료도 공정 상태에 따라 응답이 달라질 수 있다. 상온에서 평탄해 보이더라도 리플로 중 C4 (Controlled Collapse Chip Connection) 영역의 높이 차이가 커질 수 있어 동적 휨을 추적해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "도금 모델은 전기장과 전해액 유동, 제품 패턴 및 장비의 anode·shield 형상을 결합한다. 전류가 집중되는 위치와 유동 조건이 달라지면 두께 분포도 달라진다. Shield 개구와 dummy pattern을 바꾸는 사례는 제품과 설비 설계가 도금 균일도에 함께 영향을 준다는 것을 보여준다.",
+                    "AI (Artificial Intelligence)와의 연결에서는 물리 해석으로 설계·공정 조건별 가상 데이터를 만들고 이를 대체모델로 학습한다. 이후 실제 제조 데이터를 융합해 보정하는 방향을 제시한다. 유동·열유동·분사·입자 이동도 이러한 장비 디지털 트윈의 대상으로 소개된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "대면적·다층 기판에서는 최종 형상뿐 아니라 제조 이력 전체를 누적해 휨을 예측해야 한다. TMA·DMA·DSC 실측과 경화수축 값을 해석 입력에 반영한다.",
+                    "상온 휨이 작아도 리플로 중 변형이 커질 수 있어, 온도에 따른 동적 휨과 C4 영역의 국부 평탄도를 함께 평가한다.",
+                    "도금 해석은 전기장, 유동, 약품과 설비 구조를 결합한다. shield 조건 변경 사례에서 Cu 두께 범위가 1.4 µm에서 0.6 µm로 감소했다.",
+                    "디지털 트윈의 방향은 물리 해석으로 만든 가상 데이터로 AI 대체모델을 학습하고, 실제 제조 데이터와 융합해 예측·감시·제어로 확장하는 것이다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "물리 해석은 새로운 조건을 설명하고 원인을 좁히는 데 강점이 있고, 대체모델은 반복 예측과 최적화의 속도를 높인다. 실제 제조에 적용할 때에는 학습 범위와 새로운 설계의 차이를 확인하고, 실측을 통해 모델을 계속 보정하는 연결 구조가 중요하다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "TMA",
+                  "full": "Thermomechanical Analysis"
+                },
+                {
+                  "term": "DMA",
+                  "full": "Dynamic Mechanical Analysis"
+                },
+                {
+                  "term": "DSC",
+                  "full": "Differential Scanning Calorimetry"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                },
+                {
+                  "term": "C4",
+                  "full": "Controlled Collapse Chip Connection"
+                },
+                {
+                  "term": "AI",
+                  "full": "Artificial Intelligence"
+                }
+              ],
+              "detailCharacters": 1366,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T12",
+              "label": "고성능 기판의 신호 전력 및 기계적 설계",
+              "file": "T12.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T12.pdf",
+              "pageCount": 11,
+              "topics": [
+                "Substrate",
+                "Signal Integrity",
+                "Power Integrity",
+                "Warpage",
+                "Packaging Materials"
+              ],
+              "summary": "Sanghun Kim · Samsung Electro-Mechanics\nTechnology Trends and Challenges in High-Performance Semiconductor Package Substrates\n1. 기판의 요구를 SI·PI·MI로 나누고 미세배선·비아·범프, 전원 부품 임베딩, 고강성 코어를 함께 다룬다.\n2. 고속 신호 손실 저감을 위해 Cu 표면 거칠기와 절연재 Df를 낮추고, 배선 L/S와 비아 크기를 축소하는 방향을 제시한다.\n3. 기판 내부의 커패시터 등 수동소자는 칩까지의 전원 경로를 줄인다. 부품 수와 두께의 다양화는 임베딩 구조의 추가 제약이다.\n4. 대형·다층화에 따른 휨 문제에는 두꺼운 저CTE 코어, 다층 코어(MLC), 유리 코어를 제시한다. 유리 코어에서도 TGV 미세화와 신뢰성을 함께 확보해야 한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Samsung Electro-Mechanics",
+              "presenter": "Sanghun Kim",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "고성능 패키지 기판은 많은 I/O (Input/Output)를 수용하면서 빠른 신호와 큰 전류를 전달하고, 조립 온도에서도 평탄도를 유지해야 한다. 이 요구는 SI (Signal Integrity)·PI (Power Integrity)·MI (Mechanical Integrity)라는 서로 다른 설계 관점으로 나뉘지만 실제 기판에서는 같은 재료와 적층을 공유한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "신호 관점에서는 배선 미세화와 함께 유전 손실과 Cu 표면의 거칠기를 관리한다. 고주파 전류의 분포가 표면 상태에 민감해지므로, 거칠기가 크면 도체 손실에 불리할 수 있다. 반면 Cu 접착을 위해 필요한 표면 처리와도 관계가 있어 저손실과 접착 신뢰성 사이의 균형이 필요하다.",
+                    "전원 관점에서는 커패시터를 칩 가까이 임베딩해 경로의 기생 성분을 낮추고 전압 변동을 줄이는 방향을 제시한다. 부품의 수와 두께가 다양해지면 코어 내부 공간, 연결과 평탄도에 영향을 주므로 전기적 이득과 제조 구조를 함께 설계해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "미세 L/S (Line/Space), 작은 비아와 범프 피치는 노광·도금·식각·레이저 가공 및 정렬을 동시에 요구한다. 기판을 대형·다층화하면 이러한 미세 형상의 공정 균일도를 넓은 면적에서 유지해야 한다.",
+                    "기계 관점의 선택지는 저CTE (Coefficient of Thermal Expansion)·고강성 코어, MLC (Multi-Layer Core)와 유리 코어다. 코어의 강성과 열팽창을 바꾸면 휨을 제어할 수 있지만, 국부 응력과 가공·연결 조건도 달라진다. 유리 코어에서는 TGV (Through-Glass Via)의 미세화와 Cu·유리 계면의 열기계적 거동이 추가적으로 중요해진다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "기판의 요구를 SI·PI·MI로 나누고 미세배선·비아·범프, 전원 부품 임베딩, 고강성 코어를 함께 다룬다.",
+                    "고속 신호 손실 저감을 위해 Cu 표면 거칠기와 절연재 Df (Dissipation Factor)를 낮추고, 배선 L/S와 비아 크기를 축소하는 방향을 제시한다.",
+                    "기판 내부의 커패시터 등 수동소자는 칩까지의 전원 경로를 줄인다. 부품 수와 두께의 다양화는 임베딩 구조의 추가 제약이다.",
+                    "대형·다층화에 따른 휨 문제에는 두꺼운 저CTE 코어, 다층 코어(MLC), 유리 코어를 제시한다. 유리 코어에서도 TGV 미세화와 신뢰성을 함께 확보해야 한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "기판 사양은 한 항목의 최고값보다 같은 구조에서의 신호 손실, 전원 경로, 휨과 신뢰성을 묶어 비교해야 한다. 저손실 절연재나 임베디드 수동소자도 기판 제조와 조립 공정에서 재현될 때 시스템 성능으로 이어진다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "I/O",
+                  "full": "Input/Output"
+                },
+                {
+                  "term": "SI",
+                  "full": "Signal Integrity"
+                },
+                {
+                  "term": "PI",
+                  "full": "Power Integrity"
+                },
+                {
+                  "term": "MI",
+                  "full": "Mechanical Integrity"
+                },
+                {
+                  "term": "L/S",
+                  "full": "Line/Space"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                },
+                {
+                  "term": "MLC",
+                  "full": "Multi-Layer Core"
+                },
+                {
+                  "term": "TGV",
+                  "full": "Through-Glass Via"
+                },
+                {
+                  "term": "Df",
+                  "full": "Dissipation Factor"
+                }
+              ],
+              "detailCharacters": 1246,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T26",
+              "label": "미세 본딩을 위한 소재 장비 공정 및 계측",
+              "file": "T26.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T26.pdf",
+              "pageCount": 2,
+              "topics": [
+                "Hybrid Bonding",
+                "Bonding Equipment / Process",
+                "Metrology / DIC",
+                "Reliability"
+              ],
+              "summary": "Ami Eitan · ASMPT\nAdvances in Bonding Technology to Enable Advanced Packaging\n1. 피치 축소와 박막·대형 다이의 휨으로 인해 mass reflow, TCB와 hybrid bonding의 적용 영역이 달라진다.\n2. 입력 표면의 Cu dishing, 화학 상태, particle, die warpage와 장비 정렬·청정도를 함께 관리해야 한다. 공정과 metrology가 별도로 움직이면 양산에 필요한 제어가 어렵다.\n3. hybrid bonding에서는 silanol·오염·표면 형상·void·overlay를 관리하고, fluxless TCB에서는 수소 플라즈마 기반 AOR(Active Oxide Removal)과 재산화 억제를 설명했다.\n4. 장비 단독 공급에서 소재·고객·계측 기업과의 공동 개발로 전환해야 한다는 메시지다. 정렬·throughput 수치는 발표 당시 장비 사양과 계획을 구분해야 한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "ASMPT",
+              "presenter": "Ami Eitan",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "고밀도 패키징에서 접합 방식은 피치만으로 정해지지 않는다. 다이와 기판의 휨, 표면 상태와 간극, 허용 열이력이 mass reflow·TCB (Thermocompression Bonding)·hybrid bonding의 적용 범위를 함께 결정한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "Hybrid bonding의 투입 조건에는 Cu dishing과 표면 거칠기, 절연막의 화학 상태, particle과 다이 휨이 포함된다. 장비는 높은 정렬 정확도뿐 아니라 청정도를 제공해야 하고, 공정은 이 입력 상태에 맞는 접촉·본딩 profile을 적용해야 한다. 소재·장비·공정·계측을 독립적으로 최적화하기 어려운 이유다.",
+                    "Dielectric 표면의 활성화와 hydrophilicity는 접촉 및 초기 접합에 영향을 주며, Cu의 오염과 산화 상태는 금속 접합의 조건을 바꾼다. 표면 준비가 좋더라도 접촉 중 공기가 갇히거나 overlay가 틀어지면 최종 접합은 달라질 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "발표의 fluxless TCB에서는 수소 플라즈마 기반 AOR (Active Oxide Removal)로 산화물 제거를 지원하고, 이후 불활성 분위기로 재산화를 억제하는 방향을 설명한다. 이는 투입 표면의 산화 상태를 알고 제거·보존·접합을 이어야 한다는 공정 통합의 예다.",
+                    "Metrology는 표면 형상·화학·particle, 접합 후 alignment와 void를 각각 확인한다. 장비가 빠르고 정확하게 움직였다는 기록과 실제 접합면이 양호하다는 증거는 다르다. 공정 중에 방어·검사 기능을 넣어야 양산 품질을 관리할 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "피치 축소와 박막·대형 다이의 휨으로 인해 mass reflow, TCB와 hybrid bonding의 적용 영역이 달라진다.",
+                    "입력 표면의 Cu dishing, 화학 상태, particle, die warpage와 장비 정렬·청정도를 함께 관리해야 한다. 공정과 metrology가 별도로 움직이면 양산에 필요한 제어가 어렵다.",
+                    "hybrid bonding에서는 silanol·오염·표면 형상·void·overlay를 관리하고, fluxless TCB에서는 수소 플라즈마 기반 AOR과 재산화 억제를 설명했다.",
+                    "장비 단독 공급에서 소재·고객·계측 기업과의 공동 개발로 전환해야 한다는 메시지다. 정렬·throughput 수치는 발표 당시 장비 사양과 계획을 구분해야 한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "장비 사양의 비교에는 정확도와 UPH (Units Per Hour) 외에 입력 표면 스펙, 전처리 및 이송, 인라인 계측과 재작업 전략을 포함해야 한다. ASMPT의 메시지는 장비 공급자가 기계만 제공하는 역할에서 소재와 고객 공정·계측까지 함께 설계하는 역할로 확장된다는 것이다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "TCB",
+                  "full": "Thermocompression Bonding"
+                },
+                {
+                  "term": "AOR",
+                  "full": "Active Oxide Removal"
+                },
+                {
+                  "term": "UPH",
+                  "full": "Units Per Hour"
+                }
+              ],
+              "detailCharacters": 1290,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T27",
+              "label": "CMP 접촉역학과 Cu dishing 제어",
+              "file": "T27.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T27.pdf",
+              "pageCount": 9,
+              "topics": [
+                "Hybrid Bonding",
+                "Bonding Equipment / Process",
+                "AI / Simulation",
+                "Metrology / DIC"
+              ],
+              "summary": "Sukkyung Kang · Hanyang University\nCu Dishing Mechanism Based on CMP Pad-Wafer Contact Mechanics\n1. Cu dishing이 너무 깊으면 본딩 후에도 접촉이 부족하고, 너무 얕으면 열팽창으로 절연막에 응력이 생길 수 있다. 적절한 recess 제어가 필요하다.\n2. Cu와 SiO₂의 경도 차이로 초기 dishing이 발생하고, compliant pad가 trench 안으로 변형되면서 Cu 제거가 계속되는 메커니즘을 제시했다.\n3. 패드 변형과 연마를 분리한 모델에 국부 접촉압과 asperity 높이 편차를 반영한다. 3D 프린팅 microstructured pad로 접촉 형상과 탄성률을 조절했다.\n4. 발표의 약 70% dishing 감소는 해당 pad·조건의 비교 결과다. 더 부드러운 pad도 더 많은 asperity가 하중을 분담하면 최대 국부압이 낮아져 dishing이 감소할 수 있다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Hanyang University",
+              "presenter": "Sukkyung Kang",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "Hybrid bonding에서는 Cu가 절연막보다 적절하게 낮은 recess를 가져야 열처리 후 접촉을 형성할 수 있다. Dishing이 너무 깊으면 접촉이 부족하고, 반대로 너무 얕으면 Cu의 열팽창이 주변 절연막에 과도한 응력을 줄 수 있어 정밀한 제어가 필요하다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "CMP (Chemical Mechanical Polishing)에서 Cu와 SiO₂의 경도 차이는 같은 연마 조건에서도 다른 제거 깊이를 만들 수 있다. 초기 dishing 이후에는 compliant pad가 오목한 영역으로 변형해 Cu에 하중을 계속 전달한다. 그 결과 연마가 더 진행되지만, 주어진 하중에서 pad가 변형할 수 있는 정도에는 한계가 있어 포화 거동을 갖는다.",
+                    "모델은 접촉 압력을 pad 변형에 쓰이는 부분과 실제 제거에 기여하는 부분으로 나누고, 제거 거동을 Preston 관계와 연결한다. 이 관계에서는 제거율이 접촉 압력과 상대 운동 속도에 의존한다. 평균 압력만 알면 충분하지 않고 개별 asperity의 하중 분담을 알아야 하는 이유다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "연구는 3D 프린팅한 microstructured pad로 돌기 형상·면적과 재료 탄성률을 조절한다. 상용 pad의 무작위 표면과 비교해 실제 접촉 상태를 더 통제하려는 접근이다. 여기에 asperity 높이 편차를 반영하면 국부 압력과 최대 dishing의 변화를 설명할 수 있다.",
+                    "부드러운 pad가 더 깊게 변형되므로 항상 dishing이 커질 것이라는 예상과 달리, 더 많은 돌기가 접촉해 하중을 나누면 국부 압력이 낮아질 수 있다. 따라서 pad 탄성률의 효과는 실접촉 면적이 변하는 효과와 함께 해석해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "Cu dishing이 너무 깊으면 본딩 후에도 접촉이 부족하고, 너무 얕으면 열팽창으로 절연막에 응력이 생길 수 있다. 적절한 recess 제어가 필요하다.",
+                    "Cu와 SiO₂의 경도 차이로 초기 dishing이 발생하고, compliant pad가 trench 안으로 변형되면서 Cu 제거가 계속되는 메커니즘을 제시했다.",
+                    "패드 변형과 연마를 분리한 모델에 국부 접촉압과 asperity 높이 편차를 반영한다. 3D 프린팅 microstructured pad로 접촉 형상과 탄성률을 조절했다.",
+                    "발표의 약 70% dishing 감소는 해당 pad·조건의 비교 결과다. 더 부드러운 pad도 더 많은 asperity가 하중을 분담하면 최대 국부압이 낮아져 dishing이 감소할 수 있다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "발표의 약 70% 감소는 특정 pad와 연마 조건에서의 dishing 비교다. 핵심 설계 변수는 명목 압력이나 형상 이름 하나보다 최대 국부압과 돌기 높이 분포다. Wafer 전체의 waviness, 패턴 밀도와 slurry 화학은 별도의 길이 스케일과 원인을 갖기 때문에 국부 dishing 모델과 구분해 다루어야 한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "CMP",
+                  "full": "Chemical Mechanical Polishing"
+                }
+              ],
+              "detailCharacters": 1367,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T28",
+              "label": "FCBGA pad cratering의 열사이클 손상",
+              "file": "T28.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T28.pdf",
+              "pageCount": 6,
+              "topics": [
+                "Reliability",
+                "AI / Simulation",
+                "Metrology / DIC",
+                "Packaging Materials"
+              ],
+              "summary": "Minho Oh · KAIST\nEvaluation of Pad Cratering Fracture in FCBGA Packages Under Thermal Cycling\n1. 강한 solder joint에서는 파괴가 solder/IMC뿐 아니라 Cu pad 아래 prepreg 내부로 이동할 수 있다는 문제를 다룬다.\n2. DCB 시험과 탄소성 FEM의 J-integral을 이용해 파괴 위치와 저항을 평가했다. 단순 인장·전단 강도와 달리 fracture mechanics 관점의 비교다.\n3. 발표에는 0~125 °C 열사이클 후 0·200·400·500 cycle 상태를 비교한 것으로 기술된다. 열사이클이 진행될수록 파괴하중과 J-integral이 감소하고 약 400 cycle 이후 완만해지는 경향을 설명한다.\n4. 파면 분석은 Cu-pad/PPG 계면보다 PPG 내부 파괴를 지지한다. 점탄성 prepreg와 viscoplastic solder의 잔류응력·누적 creep을 함께 고려했다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "KAIST",
+              "presenter": "Minho Oh",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "Solder joint가 강해져도 패키지 전체가 항상 더 견고해지는 것은 아니다. 하중이 더 약한 위치로 전달되면 파괴가 solder/IMC (Intermetallic Compound) 근처에서 Cu pad 아래의 복합재 내부로 이동할 수 있다. Pad cratering은 이러한 파괴 위치의 변화를 보여주는 사례다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "DCB (Double Cantilever Beam) 시험은 균열을 벌리는 하중과 변위를 측정해 계면 또는 재료 내부의 파괴 저항을 평가한다. 단순한 최대 전단·인장 강도와 달리 균열 진전에 필요한 에너지의 관점으로 분석할 수 있다. J-integral은 시험 형상과 탄소성 응답을 해석 모델에 연결해 균열 선단의 에너지 상태를 평가하는 지표다.",
+                    "열사이클 동안 solder는 시간 의존 변형을 하고 prepreg도 점탄성 응답을 보인다. 한 사이클 후의 응력이나 변형이 완전히 원래 상태로 돌아오지 않으면 잔류 상태와 누적 손상이 달라진다. 특정 시점의 변형률 크기와 전체 이력의 누적 equivalent creep strain은 서로 다른 정보를 제공한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "시험 하중을 이용한 3D·2D 모델을 비교하고, 경계 조건을 맞춘 뒤 계산 효율을 위해 2D 모델을 활용했다. 파면 성분과 단면 관찰은 균열이 Cu-pad/prepreg 접착면인지, prepreg 내부인지 구분하는 근거로 사용한다.",
+                    "0~125 °C 열사이클 이후의 DCB 결과를 비교해 파괴하중과 J-integral이 낮아지는 경향을 분석했다. 약 400 cycle 이후 변화가 완만해지는 것은 해당 시험에서 관찰한 저항의 변화이며, 모든 형태의 손상 축적이 멈춘다는 의미는 아니다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "강한 solder joint에서는 파괴가 solder/IMC뿐 아니라 Cu pad 아래 prepreg 내부로 이동할 수 있다는 문제를 다룬다.",
+                    "DCB 시험과 탄소성 FEM (Finite Element Method)의 J-integral을 이용해 파괴 위치와 저항을 평가했다. 단순 인장·전단 강도와 달리 fracture mechanics 관점의 비교다.",
+                    "발표에는 0~125 °C 열사이클 후 0·200·400·500 cycle 상태를 비교한 것으로 기술된다. 열사이클이 진행될수록 파괴하중과 J-integral이 감소하고 약 400 cycle 이후 완만해지는 경향을 설명한다.",
+                    "파면 분석은 Cu-pad/PPG (Prepreg) 계면보다 PPG 내부 파괴를 지지한다. 점탄성 prepreg와 viscoplastic solder의 잔류응력·누적 creep을 함께 고려했다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "접합재를 강화한 이후에는 평가 위치를 solder joint에만 고정하지 말고 pad 아래 재료와 계면까지 넓혀야 한다. 파면·단면·하중 응답·파괴역학 해석을 함께 사용할 때 손상의 위치와 원인을 구분하고 재료 변경의 효과를 평가할 수 있다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "IMC",
+                  "full": "Intermetallic Compound"
+                },
+                {
+                  "term": "DCB",
+                  "full": "Double Cantilever Beam"
+                },
+                {
+                  "term": "FEM",
+                  "full": "Finite Element Method"
+                },
+                {
+                  "term": "PPG",
+                  "full": "Prepreg"
+                }
+              ],
+              "detailCharacters": 1374,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T29",
+              "label": "D2D 하이브리드 본딩의 표면과 열처리",
+              "file": "T29.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T29.pdf",
+              "pageCount": 6,
+              "topics": [
+                "Hybrid Bonding",
+                "Bonding Equipment / Process",
+                "Metrology / DIC",
+                "Reliability"
+              ],
+              "summary": "Byungchan Jung · JUSTEM\nExperimental Investigation of Key Process Parameters for Die-to-Die Hybrid Bonding\n1. plasma activation, 표면 젖음성, Cu topography와 annealing 조건이 dielectric 및 Cu/SiO₂ 본딩에 미치는 영향을 평가했다.\n2. 발표에는 물 접촉각이 약 62°에서 3.2°로 감소하고, dielectric 최대 shear stress가 0.301 MPa에서 1.951 MPa로 약 6.5배 증가한 것으로 기록되어 있다.\n3. 초기 Cu dishing 약 3 nm인 시험면에서 2시간 anneal을 비교했다. 250 °C는 불완전 접촉, 300 °C 이상에서 더 연속적인 Cu 접촉을 관찰했다고 설명한다.\n4. 350 °C EBSD 결과만으로 계면 전체의 결정립 연속성을 확정하지 않았다. 중앙부와 가장자리의 접합 차이도 존재하며 D2W prototype 장비 개발에 반영하고 있다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "JUSTEM",
+              "presenter": "Byungchan Jung",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "Die-to-die hybrid bonding은 절연막과 Cu의 접합을 함께 만족해야 한다. 표면이 친수성으로 바뀌었다는 관측, 전단 강도가 높아졌다는 결과와 Cu 계면이 연속적으로 보인다는 결과는 각각 다른 단계의 증거다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "Plasma activation은 절연막 표면의 화학 상태와 젖음성을 바꾸고 초기 접합을 돕는다. 물 접촉각은 이를 확인하는 한 가지 지표지만 최종 접합강도 자체와 같지는 않다. 발표는 접촉각 변화와 die shear 결과를 연결해 표면 처리의 효과를 비교한다.",
+                    "Cu/SiO₂ 면에서는 초기 dishing과 annealing 온도가 Cu 접촉을 좌우한다. Cu와 절연막의 열팽창 차이 및 열처리 중 계면 변화가 작용하므로, 동일한 온도에서도 초기 표면과 형상이 다르면 결과가 달라질 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "초기 Cu topography는 AFM (Atomic Force Microscopy)으로 평가하고, 250·300·350 °C에서 2시간 anneal한 뒤 단면 SEM (Scanning Electron Microscopy)으로 접촉 상태를 비교한다. 250 °C의 불완전 접촉과 300 °C 이상의 연속적인 접촉은 이 시험면에서 온도 의존성이 크다는 결과다.",
+                    "350 °C의 EBSD (Electron Backscatter Diffraction)는 결정방향과 grain boundary를 관찰하는 별도 분석이다. 단면에서 접촉이 보인다는 사실만으로 전체 계면에서 결정립이 이어졌다고 결론 내리지는 않는다. 중앙과 가장자리의 균일도, alignment key의 영상 인식과 장비 동작도 prototype 개발에 반영한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "plasma activation, 표면 젖음성, Cu topography와 annealing 조건이 dielectric 및 Cu/SiO₂ 본딩에 미치는 영향을 평가했다.",
+                    "발표에는 물 접촉각이 약 62°에서 3.2°로 감소하고, dielectric 최대 shear stress가 0.301 MPa에서 1.951 MPa로 약 6.5배 증가한 것으로 기록되어 있다.",
+                    "초기 Cu dishing 약 3 nm인 시험면에서 2시간 anneal을 비교했다. 250 °C는 불완전 접촉, 300 °C 이상에서 더 연속적인 Cu 접촉을 관찰했다고 설명한다.",
+                    "350 °C EBSD 결과만으로 계면 전체의 결정립 연속성을 확정하지 않았다. 중앙부와 가장자리의 접합 차이도 존재하며 D2W (Die-to-Wafer) prototype 장비 개발에 반영하고 있다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "이 연구는 접촉각, 전단 강도, 표면 topography, 단면과 결정구조의 증거를 분리해 접합 조건을 평가하는 예다. 특정 시험의 온도를 모든 hybrid bonding의 최소 요구 온도로 일반화하기보다, 표면 준비와 형상·열이력이 함께 정해진 공정창으로 이해해야 한다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "AFM",
+                  "full": "Atomic Force Microscopy"
+                },
+                {
+                  "term": "SEM",
+                  "full": "Scanning Electron Microscopy"
+                },
+                {
+                  "term": "EBSD",
+                  "full": "Electron Backscatter Diffraction"
+                },
+                {
+                  "term": "D2W",
+                  "full": "Die-to-Wafer"
+                }
+              ],
+              "detailCharacters": 1361,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T33",
+              "label": "WLUF 기반 3D 적층의 하중과 휨",
+              "file": "T33.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T33.pdf",
+              "pageCount": 5,
+              "topics": [
+                "Chiplet / 3D Integration",
+                "Warpage",
+                "Reliability",
+                "AI / Simulation",
+                "Bonding Equipment / Process",
+                "Packaging Materials"
+              ],
+              "summary": "Hsuan-Fang Liang · National Tsing Hua University\nThermomechanical Reliability and Bonding-Induced Warpage Analysis of Wafer-Level Underfill Based 3D Stacked-Chip Packages\n1. wafer-level underfill을 적용한 3D 적층에서 본딩 하중, 상부 die 두께와 microbump 배치의 영향을 실험과 2D FEM으로 비교했다.\n2. 발표에서는 50 µm 상부 다이의 휨 약 1.84 µm와 실험의 일치를 설명한다. 얇은 다이는 유연해 solder 변형을 분산할 수 있으나 본딩 하중에 따른 휨 민감도도 커진다.\n3. 상부 die가 100 µm 미만일 때 4 kgf와 1 kgf 본딩 조건 사이의 휨 차이가 커졌다고 설명한다. 중심부의 bump-free 공간은 내부 microbump의 위험을 증가시킬 수 있다.\n4. 열사이클에서 solder/IMC 부근 손상과 CTE 불일치가 주요 failure mode로 논의되며, 적절한 하중 제한과 dummy bump 배치를 설계 방향으로 제시한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "National Tsing Hua University",
+              "presenter": "Hsuan-Fang Liang",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "Wafer-level underfill을 적용한 3D 적층은 본딩 중의 하중과 경화·냉각 이력이 최종 microbump의 상태를 바꾼다. 같은 bump 구조도 상부 die의 두께와 bump-free 영역, 하중 조건에 따라 휨과 국부 변형이 달라질 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "얇은 다이는 유연해서 열변형을 일부 분산할 수 있지만 본딩 하중에 더 크게 휘어질 수 있다. 따라서 “얇을수록 신뢰성에 유리하다” 또는 “두꺼울수록 안정적이다”라는 한 방향의 판단이 어렵다. 조립 중에 만들어진 잔류 형상과 운용 중의 반복 변형을 함께 고려해야 한다.",
+                    "중심부에 bump가 없는 영역은 안쪽 bump가 지지해야 하는 간격과 다이 굽힘을 바꾼다. 보통 바깥쪽 bump만 위험하다고 가정하기 쉽지만 구조에 따라 안쪽 bump에도 변형이 집중될 수 있다. Dummy bump는 전기적 기능 외에 기계적 지지의 역할로 배치할 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "해석은 microbump 접촉, 본딩 하중, underfill 경화와 냉각 및 열사이클을 순서대로 반영한다. 실험에서 관찰한 휨과 solder/IMC (Intermetallic Compound) 주변의 균열 위치를 함께 비교해 모델을 검증한다. 변형값 하나와 failure mode가 동시에 맞는지 확인하는 것이 중요하다.",
+                    "상부 die 두께와 본딩 하중, 중심부 배치 간격을 바꾸는 parametric study로 설계 민감도를 비교한다. CTE (Coefficient of Thermal Expansion) 불일치에 의한 반복 변형과 solder의 국부 소성 응답이 손상의 핵심이며, 초기 조립 형상이 이후 열사이클의 출발 조건이 된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "wafer-level underfill을 적용한 3D 적층에서 본딩 하중, 상부 die 두께와 microbump 배치의 영향을 실험과 2D FEM (Finite Element Method)으로 비교했다.",
+                    "발표에서는 50 µm 상부 다이의 휨 약 1.84 µm와 실험의 일치를 설명한다. 얇은 다이는 유연해 solder 변형을 분산할 수 있으나 본딩 하중에 따른 휨 민감도도 커진다.",
+                    "상부 die가 100 µm 미만인 구조에서는 본딩 하중에 따른 휨 차이가 커졌다. 중심부의 bump-free 공간이 커지면 내부 microbump의 위험이 증가할 수 있으므로, 본딩 하중과 지지 배치를 함께 설계한다.",
+                    "열사이클에서 solder/IMC 부근 손상과 CTE 불일치가 주요 failure mode로 논의되며, 적절한 하중 제한과 dummy bump 배치를 설계 방향으로 제시한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "이 발표의 설계 방향은 본딩 하중을 제한하고, 박막 다이의 유연성과 지지 구조를 함께 설계하는 것이다. 내부와 외부 bump를 같은 관점으로 평가하고, 휨만 줄이는 변경이 solder의 변형률까지 개선하는지 확인해야 한다. 공정 해석과 신뢰성 해석을 이어야 하는 이유를 구체적인 적층 사례로 보여준다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "IMC",
+                  "full": "Intermetallic Compound"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                },
+                {
+                  "term": "FEM",
+                  "full": "Finite Element Method"
+                }
+              ],
+              "detailCharacters": 1399,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            },
+            {
+              "type": "pdf",
+              "id": "T34",
+              "label": "첨단 패키징 소재의 기능별 요구와 개발 방향",
+              "file": "T34.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T34.pdf",
+              "pageCount": 4,
+              "topics": [
+                "Packaging Materials",
+                "Substrate",
+                "Thermal Management",
+                "Signal Integrity",
+                "HBM / Memory",
+                "Polymer / Interface Engineering"
+              ],
+              "summary": "이광주 · KwangJoo Lee · LG Chem\n첨단 패키징 소재 포트폴리오 및 핵심 기술 과제\n1. 기존 CCL·DAF·DFSR 및 공정 재료에서 NCF·MUF·PID·build-up film·액상 몰드·임시 접착 재료로 포트폴리오를 확장하는 방향을 제시했다.\n2. 핵심 과제를 미세 피치, 높은 열전달, 고속 신호를 위한 낮은 유전 손실, 박형 웨이퍼·기판 취급으로 정리했다.\n3. 미세 패턴·간극 충전·열전달·저손실·박형 취급의 요구를 소재별로 나누고, 양산 성숙도와 공정 호환성을 함께 평가하는 것이 핵심이다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "LG Chem",
+              "presenter": "이광주 · KwangJoo Lee",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "발표는 패키지의 대형화·박형화와 2.5D·3D 집적이 소재에 어떤 기능을 요구하는지 정리한다. 기존 패키지는 몰드·접착·기판·회로 보호에 초점이 있었다면, 첨단 패키지에서는 미세 배선과 고적층 메모리의 접합, 열 전달, 고속 신호, 얇은 웨이퍼 취급이 동시에 소재 설계를 좌우한다. 한 종류의 수지가 모든 요구를 해결하는 구조가 아니라, 위치와 공정에 따라 서로 다른 절연·접착·보호 재료를 조합하는 접근이다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "CCL (Copper-Clad Laminate)은 기판 배선의 지지 구조, DAF (Die Attach Film)는 다이 부착용 접착층, DFSR (Dry Film Solder Resist)은 기판 최외곽 회로의 보호막으로 구분된다. HBM (High Bandwidth Memory) 적층의 NCF (Non-Conductive Film)는 칩 사이 접합과 간극 충전에 사용되는 절연 접착 필름이며, MUF (Molded Underfill)는 성형 공정에서 간극 충전과 봉지를 통합하는 방향이다. 같은 에폭시 기반 재료라도 흐름성·접착·경화·기계 응답의 설계 목표가 서로 다르다.",
+                    "미세 피치에서는 PID (Photo Imageable Dielectric)의 감광 특성과 절연 성능, build-up film의 층간 절연 및 가공성, 얇은 Cu 배선과 도금액의 조합이 중요하다. 절연층이 미세 비아와 배선을 구현할 수 있어야 하고, 이후 도금과 세정 공정까지 견뎌야 실제 배선 구조로 완성된다.",
+                    "고속 신호용 소재는 낮은 Dk (Dielectric Constant)와 Df (Dissipation Factor)를 통해 전파 지연과 유전 손실을 줄이는 방향이다. 반면 방열 소재는 filler의 종류·함량과 계면을 통해 열 전달을 높이는 방향이다. 열관리용 high K는 높은 열전도 특성을 뜻하며, 유전율을 높이려는 설계와는 구분된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "소재 개발은 기능별 제품군과 공정 요구를 연결하는 방식으로 구성된다. 기존 양산 제품군과 개발 중 제품군을 구분하므로, 제시된 모든 소재가 동일한 양산 성숙도를 가졌다고 볼 수 없다. 향후 평가에서는 패턴 해상도·비아 형성성, 접착 강도, 경화수축, 온도별 탄성률, 열전도율, 유전 특성을 각각의 용도에 맞추어 검증해야 한다.",
+                    "얇은 웨이퍼의 공정에는 TBDB (Temporary Bonding and De-Bonding)와 고강성 carrier가 필요하다. 접착 상태에서는 연마·이송 중 변형을 억제하고, 분리 단계에서는 얇은 다이를 손상시키지 않아야 한다. 이는 최종 패키지에 남는 재료뿐 아니라 제조 중 사용하는 임시 재료도 집적 수율을 좌우한다는 의미다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "기존 CCL·DAF·DFSR 및 공정 재료에서 NCF·MUF·PID·build-up film·액상 몰드·임시 접착 재료로 포트폴리오를 확장하는 방향을 제시했다.",
+                    "핵심 과제를 미세 피치, 높은 열전달, 고속 신호를 위한 낮은 유전 손실, 박형 웨이퍼·기판 취급으로 정리했다.",
+                    "미세 패턴·간극 충전·열전달·저손실·박형 취급의 요구를 소재별로 나누고, 양산 성숙도와 공정 호환성을 함께 평가하는 것이 핵심이다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "설계 관점에서는 저손실과 고열전도, 높은 강성과 응력 완화가 항상 같은 배합 방향으로 개선되지 않는다는 점이 중요하다. 예를 들어 filler를 늘리면 열·기계 특성은 바뀌지만 점도와 좁은 간극 충전성도 변한다. 따라서 소재 단품의 최고 물성보다 실제 간극·배선·열이력에서 구현 가능한 공정 창을 기준으로 재료를 선정해야 한다. 이 소재 지도는 기판·접합·열설계를 초기 단계에서 함께 논의해야 하는 이유를 보여준다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "CCL",
+                  "full": "Copper-Clad Laminate"
+                },
+                {
+                  "term": "DAF",
+                  "full": "Die Attach Film"
+                },
+                {
+                  "term": "DFSR",
+                  "full": "Dry Film Solder Resist"
+                },
+                {
+                  "term": "HBM",
+                  "full": "High Bandwidth Memory"
+                },
+                {
+                  "term": "NCF",
+                  "full": "Non-Conductive Film"
+                },
+                {
+                  "term": "MUF",
+                  "full": "Molded Underfill"
+                },
+                {
+                  "term": "PID",
+                  "full": "Photo Imageable Dielectric"
+                },
+                {
+                  "term": "Dk",
+                  "full": "Dielectric Constant"
+                },
+                {
+                  "term": "Df",
+                  "full": "Dissipation Factor"
+                },
+                {
+                  "term": "TBDB",
+                  "full": "Temporary Bonding and De-Bonding"
+                }
+              ],
+              "program": "11/4 · 소재 기술 소개",
+              "detailCharacters": 1739,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 4일",
+              "sessionGroup": "11월 4일"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "id": "day-115",
+          "label": "11월 5일",
+          "children": [
+            {
+              "type": "pdf",
+              "id": "T13",
+              "label": "EMC 경화수축과 얇은 실리콘의 휨 분기",
+              "file": "T13.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T13.pdf",
+              "pageCount": 21,
+              "topics": [
+                "Warpage",
+                "Packaging Materials",
+                "AI / Simulation",
+                "Reliability",
+                "Chiplet / 3D Integration",
+                "Metrology / DIC"
+              ],
+              "summary": "Min Sang Ju · KAIST\nSimultaneous measurement of cure shrinkage and warpage via 3D-DIC for full-process warpage prediction of EMC-encapsulated package\n1. 3D-DIC로 경화 중 표면의 면내 변형률과 면외 휨을 동시에 추적한다. 경화수축과 열팽창 불일치가 구속된 EMC/Si 구조의 응력과 곡률을 만든다.\n2. 시험 구조는 25 × 25 mm 이층 시편, EMC 100 µm, Si 100 µm 또는 525 µm이다. 액상 EMC는 silica filler 75 wt%와 epoxy resin으로 소개된다.\n3. 경화가 진행되며 표면 변형률은 감소하고 곡률은 증가했다. 525 µm Si와 달리 100 µm Si에서는 냉각 중 대각 방향의 휨 모드와 곡률 분기가 관찰되었다.\n4. 실리콘의 이방성과 큰 변형을 반영한 비선형 FEM이 대각 휨 모드를 재현했다. 등방성 탄성만으로는 얇은 Si의 모드 전환을 충분히 설명하기 어렵다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "KAIST",
+              "presenter": "Min Sang Ju",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "EMC (Epoxy Molding Compound)가 경화하며 발생하는 화학적 수축과 냉각 중 열변형은 실리콘에 구속될 때 휨과 잔류응력으로 나타난다. 최종 휨 한 값만 측정하면 경화 중의 수축과 열팽창 불일치가 언제부터 구조에 작용했는지 분리해 이해하기 어렵다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "3D-DIC (Digital Image Correlation)는 표면의 패턴을 두 시점 또는 두 카메라 영상에서 추적해 면내 변형률과 면외 변위를 함께 얻는다. 발표는 이를 경화 과정에 적용해 표면 변형률이 줄어드는 시점과 곡률이 커지는 시점을 연결한다. 구속된 시편의 표면 변형률은 자유 상태의 순수 화학 수축과 같지 않으며, 실리콘과의 구속 및 굽힘을 함께 반영한 관측량이다.",
+                    "Si 두께를 바꾸면 재료는 같아도 구조의 굽힘 강성이 크게 바뀐다. 같은 재료와 폭의 판에서 굽힘 강성은 두께의 세제곱에 민감하다. 얇은 Si는 열응력에 더 유연하게 변형되며, 큰 변형과 결정 방향에 따른 강성 차이가 결합하면 구면형 굽힘에서 대각 방향의 모드로 전환될 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "비교 시편은 EMC 100 µm와 Si 100 또는 525 µm의 이층 구조다. 경화와 냉각 동안 방향별 곡률을 비교해 얇은 Si에서의 곡률 분기와 대각 휨을 관찰한다. 같은 최대 높이만 비교하는 것보다 변형 방향과 모드를 함께 확인하는 것이 중요한 측정 설계다.",
+                    "FEM (Finite Element Method)에서는 온도 의존 EMC 물성과 점탄성, Si의 이방성 및 기하학적 비선형성을 고려한다. 등방성 선형 판의 강성만으로 계산하면 방향에 따른 모드 선택과 분기를 놓칠 수 있다. 측정과 해석의 비교는 최대값뿐 아니라 두 방향의 곡률 변화가 재현되는지로 평가한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "3D-DIC로 경화 중 표면의 면내 변형률과 면외 휨을 동시에 추적한다. 경화수축과 열팽창 불일치가 구속된 EMC/Si 구조의 응력과 곡률을 만든다.",
+                    "시험 구조는 25 × 25 mm 이층 시편, EMC 100 µm, Si 100 µm 또는 525 µm이다. 액상 EMC는 silica filler 75 wt%와 epoxy resin으로 소개된다.",
+                    "경화가 진행되며 표면 변형률은 감소하고 곡률은 증가했다. 525 µm Si와 달리 100 µm Si에서는 냉각 중 대각 방향의 휨 모드와 곡률 분기가 관찰되었다.",
+                    "실리콘의 이방성과 큰 변형을 반영한 비선형 FEM이 대각 휨 모드를 재현했다. 등방성 탄성만으로는 얇은 Si의 모드 전환을 충분히 설명하기 어렵다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "박막 다이의 휨을 재료 CTE (Coefficient of Thermal Expansion) 한 값으로 보정하는 접근보다 경화 응답, 구속 조건과 결정 방향을 함께 사용하는 것이 필요하다. 이 연구는 재료 데이터베이스를 만드는 실험과 패키지 형상을 예측하는 해석 사이에 전영역 변형 측정이 중요한 연결 역할을 한다는 것을 보여준다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "EMC",
+                  "full": "Epoxy Molding Compound"
+                },
+                {
+                  "term": "DIC",
+                  "full": "Digital Image Correlation"
+                },
+                {
+                  "term": "FEM",
+                  "full": "Finite Element Method"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                }
+              ],
+              "detailCharacters": 1382,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
+            },
+            {
+              "type": "pdf",
+              "id": "T14",
+              "label": "에폭시 경화와 열변형의 분리 측정",
+              "file": "T14.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T14.pdf",
+              "pageCount": 15,
+              "topics": [
+                "Warpage",
+                "Packaging Materials",
+                "AI / Simulation",
+                "Metrology / DIC",
+                "Reliability"
+              ],
+              "summary": "Doojin Jeong · KETI\nTransient Warpage Analysis and Process-Based Numerical Simulation of Substrate-Epoxy-Silicon Structures Decoupled Cure Shrinkage\n1. DSC의 경화도(DOC)와 rheometer의 기계적 전이를 연결하고, 경화와 냉각에 따른 휨을 구분하는 실험 절차를 제시했다.\n2. 시험은 Si/3M DP460 epoxy/기판 구조에서 FR-4와 glass를 비교한다. 시편은 80 × 80 mm, 분석 영역은 중앙 60 × 60 mm이다.\n3. 60·80·100 °C에서 60분 유지하는 조건과 반복 열이력을 비교했다. TDM projection moiré로 얻은 높이 프로파일에서 곡률, PV, RMS를 계산한다.\n4. FR-4에서는 특히 상온으로 냉각할 때 휨이 크게 늘었고, glass는 시험 조건에서 더 낮은 휨을 보였다. 경화온도뿐 아니라 기판 물성과 열이력이 중요하다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "KETI",
+              "presenter": "Doojin Jeong",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "에폭시 접착층을 포함한 구조는 경화 반응에 따른 수축과 온도 변화에 따른 수축·팽창이 동시에 일어난다. 특히 겔화 전에는 재료가 유동하며 응력을 완화할 수 있지만, 네트워크가 형성된 뒤의 수축은 구속된 구조에 응력으로 전달될 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "DSC (Differential Scanning Calorimetry)는 경화 발열을 적분해 반응 진행도를 구하고, rheometer는 저장·손실 탄성률의 시간 변화를 통해 기계적 전이를 본다. 두 장비는 같은 현상을 다른 관측량으로 측정하므로, 같은 열이력의 시간축을 맞춰야 화학 반응과 하중 전달의 변화를 연결할 수 있다.",
+                    "발표에서 사용하는 등온 구간의 relative DOC (Degree of Cure)는 관측 구간에서의 반응 진행을 정규화한 값이다. 이를 모든 반응이 완결된 절대 경화도와 자동으로 같게 두어서는 안 된다. 또한 겔점을 탄성률 교차로 정의할 때에는 사용한 측정 조건과 교차점 선택이 해석의 기준 상태에 영향을 준다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "Si/epoxy/substrate 구조에서 FR-4와 glass를 비교하고, 60·80·100 °C 유지 조건 및 두 차례 열이력을 사용한다. 첫 번째 주기는 경화와 열변형이 함께 들어 있고, 이후 주기는 이미 경화된 구조의 열적 응답을 더 강하게 반영한다. 두 응답을 비교해 화학 반응의 기여와 냉각 시 CTE (Coefficient of Thermal Expansion) 불일치의 기여를 구분하는 접근이다.",
+                    "투영 모아레로 높이 형상을 얻고 중앙 영역의 대표 방향 프로파일에서 곡률, PV (Peak-to-Valley)와 RMS (Root Mean Square)를 계산한다. 곡률은 전체 굽힘의 크기와 방향, PV는 최고·최저 높이의 차이, RMS는 기준 형상과의 편차를 나타낸다. 서로 다른 변형 모드는 하나의 수치에서 같아 보일 수 있으므로 지표들을 함께 읽는다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "DSC의 경화도(DOC)와 rheometer의 기계적 전이를 연결하고, 경화와 냉각에 따른 휨을 구분하는 실험 절차를 제시했다.",
+                    "시험은 Si/3M DP460 epoxy/기판 구조에서 FR-4와 glass를 비교한다. 시편은 80 × 80 mm, 분석 영역은 중앙 60 × 60 mm이다.",
+                    "60·80·100 °C에서 60분 유지하는 조건과 반복 열이력을 비교했다. TDM projection moiré로 얻은 높이 프로파일에서 곡률, PV, RMS를 계산한다.",
+                    "FR-4에서는 특히 상온으로 냉각할 때 휨이 크게 늘었고, glass는 시험 조건에서 더 낮은 휨을 보였다. 경화온도뿐 아니라 기판 물성과 열이력이 중요하다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "FR-4에서 냉각 중 변형이 커지고 glass에서 더 낮은 휨이 나타난 결과는 기판 선택과 열이력이 함께 중요하다는 뜻이다. 단순히 낮은 경화온도를 고르는 것보다 최종 경화 상태, 점탄성 이완, 기판 강성과 CTE의 조합을 평가해야 한다. 이 절차는 공정 기반 휨 해석의 입력과 검증 데이터를 만드는 데 활용할 수 있다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "DSC",
+                  "full": "Differential Scanning Calorimetry"
+                },
+                {
+                  "term": "DOC",
+                  "full": "Degree of Cure"
+                },
+                {
+                  "term": "CTE",
+                  "full": "Coefficient of Thermal Expansion"
+                },
+                {
+                  "term": "PV",
+                  "full": "Peak-to-Valley"
+                },
+                {
+                  "term": "RMS",
+                  "full": "Root Mean Square"
+                }
+              ],
+              "detailCharacters": 1438,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
+            },
+            {
+              "type": "pdf",
+              "id": "T15",
+              "label": "하이브리드 본딩의 radial collet 설계",
+              "file": "T15.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T15.pdf",
+              "pageCount": 6,
+              "topics": [
+                "Hybrid Bonding",
+                "Bonding Equipment / Process",
+                "AI / Simulation",
+                "Reliability"
+              ],
+              "summary": "Ah-Young Park · University of Seoul\nDesign of a Radial Collet for Reducing Voids and Alignment Errors in Hybrid Bonding\n1. D2W 장비의 pick-up, 이송, 정렬·접근, 본딩 전파 순서를 따라 접촉 거동을 해석하고 push pin과 radial collet을 비교했다.\n2. 50·80 µm 돌출 조건에서 최대 응력은 push pin의 131.07·185.96 MPa 대비 radial collet의 11.64·16.51 MPa로 제시된다. 해당 모델에서 약 91% 감소다.\n3. 50 µm 조건의 본딩 완료 시간은 0.3194 s에서 0.4692 s로 증가했다. 전파가 느려지면서 공기 배출 시간을 확보하는 설계 방향을 제시한다.\n4. 응력과 접합 전파를 고려한 설계안으로 50 µm radial collet을 선택했다. 응력, 전파속도, void hotspot 위치와 공기 배출 경로를 함께 평가해야 한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "University of Seoul",
+              "presenter": "Ah-Young Park",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "하이브리드 본딩에서는 다이를 정확하게 놓는 것뿐 아니라 두 표면이 어디서 먼저 닿고 접촉이 어떻게 전파되는지도 중요하다. 접촉이 너무 빠르게 진행되거나 특정 위치에 하중이 집중되면 응력과 공기 포획의 위험이 커질 수 있다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "Push pin과 radial collet은 다이에 힘을 전달하는 위치와 분포가 다르다. 중앙에 집중된 힘은 국부 굽힘과 높은 응력을 만들 수 있고, 하중을 분산하는 툴은 같은 접합을 다른 압력 분포로 유도한다. 본딩 파의 속도는 접촉 진행과 공기 배출에 남는 시간에도 영향을 준다.",
+                    "툴의 돌출 높이는 더 크거나 더 작다는 이유만으로 좋은 값이 정해지지 않는다. 응력이 낮아져도 접촉 전파의 경로와 마지막에 닫히는 영역이 달라질 수 있기 때문이다. 따라서 최대 응력, 전파 시간과 void hotspot 위치를 함께 평가해야 한다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "해석은 pick-up, 이송, 정렬·접근과 접합 전파라는 실제 장비의 순서를 따른다. 50·80 µm 조건에서 두 툴을 비교하고, 국부 응력과 본딩 완료 시간을 평가했다. 50 µm radial collet의 완료 시간이 늘어난 결과는 공기 배출 시간을 확보하는 설계 방향과 연결된다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "D2W (Die-to-Wafer) 장비의 pick-up, 이송, 정렬·접근, 본딩 전파 순서를 따라 접촉 거동을 해석하고 push pin과 radial collet을 비교했다.",
+                    "50·80 µm 돌출 조건에서 최대 응력은 push pin의 131.07·185.96 MPa 대비 radial collet의 11.64·16.51 MPa로 제시된다. 해당 모델에서 약 91% 감소다.",
+                    "50 µm 조건의 본딩 완료 시간은 0.3194 s에서 0.4692 s로 증가했다. 전파가 느려지면서 공기 배출 시간을 확보하는 설계 방향을 제시한다.",
+                    "응력과 접합 전파를 고려한 설계안으로 50 µm radial collet을 선택했다. 응력, 전파속도, void hotspot 위치와 공기 배출 경로를 함께 평가해야 한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "응력 감소 약 91%와 완료 시간 증가 약 46.9%는 서로 다른 지표다. 전자는 다이의 국부 하중 상태, 후자는 접촉 전파를 설명하며 수율 개선율과 직접 같지 않다. 최종 선택은 공기 배출 경로까지 고려한 50 µm radial collet으로 제시된다. 이 연구는 접촉 툴의 형상이 정렬과 접합 품질의 일부라는 점을 보여준다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "D2W",
+                  "full": "Die-to-Wafer"
+                }
+              ],
+              "detailCharacters": 1152,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
+            },
+            {
+              "type": "pdf",
+              "id": "T16",
+              "label": "양산을 위한 장비와 공정의 통합 엔지니어링",
+              "file": "T16.pdf",
+              "relPath": "ISMP2026_Archive/pdfs/T16.pdf",
+              "pageCount": 10,
+              "topics": [
+                "Hybrid Bonding",
+                "Bonding Equipment / Process",
+                "AI / Simulation",
+                "Warpage"
+              ],
+              "summary": "Taewoo (Tim) Kang · Hanwha Semitech\nIntegrated Equipment & Process Engineering for Next-Generation High-Volume Advanced Packaging\n1. 장비의 명목 성능이 높아져도 다이 박막화·대형화와 공정창 축소가 더 빠르게 진행되면 안정적인 양산 결과를 얻기 어렵다는 engineering gap을 설명했다.\n2. 같은 장비와 recipe에서도 두께, 휨, 표면, 툴 특성이 달라지면 void·die shift·접합 품질이 달라진다. TCB와 D2W hybrid bonding은 접촉 방식도 다르다.\n3. 실제 장비의 force·Z-motion 응답, 툴 compliance와 평행도, 다이 물성을 측정해 접촉역학 디지털 트윈을 만들고 검증하는 절차를 제시했다.\n4. 물리 모델로 민감도와 위험을 먼저 좁힌 뒤 집중 DOE, 모델 검증, 툴·recipe 최적화로 연결한다. 장비 설치 이후에도 qualification과 HVM 안정화까지 협력 범위를 확장한다.",
+              "industry": {
+                "id": "semiconductor",
+                "label": "Semiconductor Packaging"
+              },
+              "organization": "Hanwha Semitech",
+              "presenter": "Taewoo (Tim) Kang",
+              "detailSections": [
+                {
+                  "heading": "기술 배경과 문제 정의",
+                  "paragraphs": [
+                    "제품의 다이가 더 얇고 커지고 피치가 줄면 공정창은 좁아지지만, 장비의 명목 정렬 정확도나 처리량이 개선되었다는 사실만으로 안정적인 양산이 보장되지는 않는다. 제품·재료·툴·장비의 상호작용을 함께 다루는 통합 엔지니어링이 필요하다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "구조와 작동 메커니즘",
+                  "paragraphs": [
+                    "TCB (Thermocompression Bonding)의 범프 접촉과 D2W (Die-to-Wafer) 하이브리드 본딩의 표면 접촉은 하중에 대응하는 방식이 다르다. 범프나 솔더의 변형은 일부 높이 차이를 흡수할 수 있지만, 표면 전체의 접촉은 다이 굽힘과 접촉 개시 위치에 민감하다. 같은 장비·recipe라도 다이 두께와 휨이 달라지면 압력 분포와 전파 경로가 바뀔 수 있다.",
+                    "측정해야 할 대상은 장비의 힘·접촉 응답과 Z축 운동, 툴의 기계적 물성과 평행도, 제품의 두께·휨 및 표면 상태다. 예를 들어 설정 하중이 같아도 툴의 compliance와 접촉 면적이 달라지면 실제 다이에 전달되는 응력은 달라진다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "실험과 해석 및 설계 방법",
+                  "paragraphs": [
+                    "발표의 예측 엔지니어링은 실제 시스템 특성화, 물리 모델 구축, 민감도·공정창 예측, 집중 DOE (Design of Experiments)와 검증, 최적화의 순서로 구성된다. 디지털 트윈은 장비 입력을 결과로 바로 치환하는 가상 복제품이라기보다 실측으로 보정한 접촉역학 모델을 통해 보이지 않는 압력·변형 분포를 추정하는 수단이다."
+                  ],
+                  "list": false
+                },
+                {
+                  "heading": "발표에서 제시한 주요 결과",
+                  "paragraphs": [
+                    "장비의 명목 성능이 높아져도 다이 박막화·대형화와 공정창 축소가 더 빠르게 진행되면 안정적인 양산 결과를 얻기 어렵다는 engineering gap을 설명했다.",
+                    "같은 장비와 recipe에서도 두께, 휨, 표면, 툴 특성이 달라지면 void·die shift·접합 품질이 달라진다. TCB와 D2W hybrid bonding은 접촉 방식도 다르다.",
+                    "실제 장비의 force·Z-motion 응답, 툴 compliance와 평행도, 다이 물성을 측정해 접촉역학 디지털 트윈을 만들고 검증하는 절차를 제시했다.",
+                    "물리 모델로 민감도와 위험을 먼저 좁힌 뒤 집중 DOE, 모델 검증, 툴·recipe 최적화로 연결한다. 장비 설치 이후에도 qualification과 HVM (High-Volume Manufacturing) 안정화까지 협력 범위를 확장한다."
+                  ],
+                  "list": true
+                },
+                {
+                  "heading": "설계와 공정 관점의 해석",
+                  "paragraphs": [
+                    "해석의 목적은 모든 실험을 없애는 것이 아니라 어떤 변수와 조합을 먼저 시험할지 좁히는 데 있다. 장비 설치 이전의 샘플 평가부터 recipe 개발, qualification과 HVM 안정화까지 모델과 실험을 반복 연결해야 한다. 공정창은 고정된 표가 아니라 제품과 재료 변경에 따라 이동하는 영역으로 관리하는 것이 핵심이다."
+                  ],
+                  "list": false
+                }
+              ],
+              "glossary": [
+                {
+                  "term": "TCB",
+                  "full": "Thermocompression Bonding"
+                },
+                {
+                  "term": "D2W",
+                  "full": "Die-to-Wafer"
+                },
+                {
+                  "term": "DOE",
+                  "full": "Design of Experiments"
+                },
+                {
+                  "term": "HVM",
+                  "full": "High-Volume Manufacturing"
+                }
+              ],
+              "detailCharacters": 1255,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2483,7 +2584,10 @@
                   "full": "Coefficient of Thermal Expansion"
                 }
               ],
-              "detailCharacters": 1312
+              "detailCharacters": 1312,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2570,7 +2674,10 @@
                   "full": "Dissipation Factor"
                 }
               ],
-              "detailCharacters": 1381
+              "detailCharacters": 1381,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2655,7 +2762,10 @@
                   "full": "Finite Element Method"
                 }
               ],
-              "detailCharacters": 1266
+              "detailCharacters": 1266,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2727,7 +2837,10 @@
                   "full": "Universal Chiplet Interconnect Express"
                 }
               ],
-              "detailCharacters": 990
+              "detailCharacters": 990,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2805,7 +2918,10 @@
                   "full": "Total Ionizing Dose"
                 }
               ],
-              "detailCharacters": 1350
+              "detailCharacters": 1350,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2892,7 +3008,10 @@
                 }
               ],
               "program": "11/5 10:05–10:30 · I2-02",
-              "detailCharacters": 1629
+              "detailCharacters": 1629,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -2998,7 +3117,10 @@
                 }
               ],
               "program": "11/5 15:20–15:45 · I2-18",
-              "detailCharacters": 2182
+              "detailCharacters": 2182,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -3085,7 +3207,10 @@
                 }
               ],
               "program": "11/5 16:50–17:10 · O2-17",
-              "detailCharacters": 1802
+              "detailCharacters": 1802,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             },
             {
               "type": "pdf",
@@ -3179,7 +3304,10 @@
                 }
               ],
               "program": "11/5 16:30–16:50 · O2-23",
-              "detailCharacters": 1719
+              "detailCharacters": 1719,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 5일",
+              "sessionGroup": "11월 5일"
             }
           ]
         },
@@ -3274,14 +3402,17 @@
                 }
               ],
               "program": "11/6 · Meet the Experts",
-              "detailCharacters": 1234
+              "detailCharacters": 1234,
+              "sessionType": "Technical",
+              "sessionLabel": "11월 6일",
+              "sessionGroup": "11월 6일"
             }
           ]
         },
         {
           "type": "folder",
           "id": "day-other",
-          "label": "전문 기술 발표",
+          "label": "기타 발표",
           "children": [
             {
               "type": "pdf",
@@ -3359,7 +3490,10 @@
                   "full": "Machine Learning"
                 }
               ],
-              "detailCharacters": 1282
+              "detailCharacters": 1282,
+              "sessionType": "Technical",
+              "sessionLabel": "기타 발표",
+              "sessionGroup": "기타 발표"
             }
           ]
         }
